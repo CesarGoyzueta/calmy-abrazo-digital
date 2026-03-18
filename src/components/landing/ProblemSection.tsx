@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { CloudRain, HelpCircle, Clock } from "lucide-react";
+import { CloudRain, HelpCircle, Clock, HeartCrack } from "lucide-react";
 
 const problems = [
   {
     icon: CloudRain,
     title: "Situaciones difíciles en el día a día",
-    description: "Los padres enfrentan momentos intensos sin tener a quién recurrir en ese instante.",
+    description: "Los padres enfrentan momentos emocionalmente intensos sin tener a quién recurrir en ese instante.",
   },
   {
     icon: HelpCircle,
@@ -16,6 +16,11 @@ const problems = [
     icon: Clock,
     title: "La soledad entre sesiones",
     description: "Las sesiones psicológicas son puntuales, pero la vida no espera entre citas.",
+  },
+  {
+    icon: HeartCrack,
+    title: "El agotamiento emocional",
+    description: "Sentirse abrumado, confundido o solo es más común de lo que crees. Y está bien pedir apoyo.",
   },
 ];
 
@@ -33,23 +38,28 @@ const ProblemSection = () => (
         <h2 className="mt-4 font-display text-3xl md:text-4xl font-medium text-foreground">
           El acompañamiento emocional no siempre está disponible cuando más se necesita
         </h2>
+        <p className="mt-4 font-body text-lg text-muted-foreground leading-relaxed">
+          Sabemos lo que se siente. Por eso creamos algo pensado para esos momentos.
+        </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 gap-6">
         {problems.map((p, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.15, ease: [0.33, 1, 0.68, 1] }}
-            className="glass-card-hover p-8 text-center"
+            transition={{ duration: 0.6, delay: i * 0.1, ease: [0.33, 1, 0.68, 1] }}
+            className="glass-card-hover p-8 flex items-start gap-5"
           >
-            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
+            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
               <p.icon className="text-primary" size={24} />
             </div>
-            <h3 className="font-display text-lg font-medium text-foreground mb-3">{p.title}</h3>
-            <p className="font-body text-muted-foreground leading-relaxed">{p.description}</p>
+            <div>
+              <h3 className="font-display text-lg font-medium text-foreground mb-2">{p.title}</h3>
+              <p className="font-body text-muted-foreground leading-relaxed">{p.description}</p>
+            </div>
           </motion.div>
         ))}
       </div>

@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { UserPlus, MessageSquare, Lightbulb } from "lucide-react";
 
 const steps = [
-  { icon: UserPlus, step: "01", title: "Crea el perfil de tu hijo", desc: "Comparte información básica para que Calmy pueda entender mejor tu situación." },
-  { icon: MessageSquare, step: "02", title: "Realiza una consulta", desc: "Escribe lo que te preocupa o lo que necesitas. Sin filtros, sin juicio." },
-  { icon: Lightbulb, step: "03", title: "Recibe orientación clara", desc: "Calmy te brinda herramientas prácticas basadas en evidencia psicológica." },
+  { icon: UserPlus, step: "01", title: "Crea el perfil de tu hijo", desc: "Comparte información básica para que Calmy pueda entender mejor tu situación y adaptarse a tus necesidades." },
+  { icon: MessageSquare, step: "02", title: "Realiza una consulta", desc: "Escribe lo que te preocupa o lo que necesitas. Sin filtros, sin juicio. Calmy te escucha." },
+  { icon: Lightbulb, step: "03", title: "Recibe orientación clara", desc: "Calmy te brinda herramientas prácticas y orientación basada en evidencia psicológica, a tu ritmo." },
 ];
 
 const HowItWorksSection = () => (
-  <section className="py-20 px-6">
+  <section id="como-funciona" className="py-20 px-6">
     <div className="max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -21,6 +21,9 @@ const HowItWorksSection = () => (
         <h2 className="mt-4 font-display text-3xl md:text-4xl font-medium text-foreground">
           Tres pasos para empezar
         </h2>
+        <p className="mt-4 font-body text-lg text-muted-foreground leading-relaxed">
+          Simple, humano y sin complicaciones. Así de fácil es comenzar.
+        </p>
       </motion.div>
 
       <div className="grid md:grid-cols-3 gap-8">
@@ -31,8 +34,12 @@ const HowItWorksSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.15, ease: [0.33, 1, 0.68, 1] }}
-            className="relative text-center"
+            className="glass-card p-8 text-center relative"
           >
+            {/* Connector line */}
+            {i < steps.length - 1 && (
+              <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary/30 to-secondary/30" />
+            )}
             <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mx-auto mb-6">
               <s.icon className="text-primary" size={28} />
             </div>

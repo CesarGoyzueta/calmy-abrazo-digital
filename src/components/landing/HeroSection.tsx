@@ -1,19 +1,11 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-family.jpg";
 
+const WAITLIST_URL = "#waitlist"; // TODO: Reemplazar con el link real del formulario de Google
+
 const HeroSection = () => {
-  const [nombre, setNombre] = useState("");
-  const [contacto, setContacto] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Lead capture placeholder
-    console.log("Lead:", { nombre, contacto });
-  };
-
   return (
     <section className="pt-24 pb-16 md:pt-32 md:pb-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -33,39 +25,48 @@ const HeroSection = () => {
               <span className="text-secondary">humano</span>
             </h1>
             <p className="mt-6 font-body text-lg text-muted-foreground leading-relaxed max-w-lg">
-              Calmy es tu compañera de bienestar emocional. Brinda orientación basada en evidencia psicológica con empatía y claridad.
+              {/* TODO: Reemplazar con la descripción definitiva */}
+              Orientación emocional basada en evidencia psicológica, diseñada para acompañar a padres de niños neurodivergentes en su día a día. Con empatía, claridad y a tu ritmo.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button variant="calm" size="lg">
-                Probar Calmy <ArrowRight className="ml-1" size={18} />
-              </Button>
-              <Button variant="calm-outline" size="lg">
-                Cómo funciona
-              </Button>
+            {/* Early adopter badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-6 inline-flex items-center gap-2 bg-secondary/10 text-secondary rounded-full px-4 py-2"
+            >
+              <Sparkles size={16} />
+              <span className="font-body text-sm font-medium">
+                Los primeros usuarios obtienen descuento exclusivo
+              </span>
+            </motion.div>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer">
+                <Button variant="calm" size="lg">
+                  Únete a la lista de espera <ArrowRight className="ml-1" size={18} />
+                </Button>
+              </a>
+              <a href="#como-funciona">
+                <Button variant="calm-outline" size="lg">
+                  Conoce más
+                </Button>
+              </a>
             </div>
 
-            {/* Lead form */}
-            <form onSubmit={handleSubmit} className="mt-8 bg-card/80 backdrop-blur-sm rounded-2xl p-5 shadow-[var(--shadow-soft)] space-y-3 max-w-md">
-              <p className="font-body text-sm font-semibold text-foreground">Empieza tu camino</p>
-              <input
-                type="text"
-                placeholder="Tu nombre"
-                value={nombre}
-                onChange={(e) => setNombre(e.target.value)}
-                className="w-full bg-background/80 border-none rounded-xl px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-              />
-              <input
-                type="text"
-                placeholder="WhatsApp o Email"
-                value={contacto}
-                onChange={(e) => setContacto(e.target.value)}
-                className="w-full bg-background/80 border-none rounded-xl px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-              />
-              <Button type="submit" variant="calm" className="w-full" size="default">
-                Empezar camino
-              </Button>
-            </form>
+            {/* Waitlist teaser */}
+            <div className="mt-8 bg-card/80 backdrop-blur-sm rounded-2xl p-5 shadow-[var(--shadow-soft)] max-w-md">
+              <p className="font-body text-sm font-semibold text-foreground">🌿 Sé de los primeros</p>
+              <p className="font-body text-sm text-muted-foreground mt-1 leading-relaxed">
+                Estamos preparando algo especial. Únete a la lista de espera y obtén acceso anticipado con beneficios exclusivos.
+              </p>
+              <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer">
+                <Button variant="calm" className="w-full mt-3" size="default">
+                  Quiero mi lugar
+                </Button>
+              </a>
+            </div>
           </motion.div>
 
           {/* Right — image */}
@@ -77,8 +78,8 @@ const HeroSection = () => {
           >
             <img
               src={heroImage}
-              alt="Madre e hijo compartiendo un momento de alegría y conexión"
-              className="w-full rounded-3xl object-cover aspect-[4/5] sepia-[0.15]"
+              alt="Madre e hijo compartiendo un momento de calma y conexión"
+              className="w-full rounded-3xl object-cover aspect-[4/5]"
             />
           </motion.div>
         </div>
