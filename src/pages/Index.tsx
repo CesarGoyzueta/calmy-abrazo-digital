@@ -3,9 +3,9 @@ import HeroSection from "@/components/landing/HeroSection";
 import ProblemSection from "@/components/landing/ProblemSection";
 import SolutionSection from "@/components/landing/SolutionSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
-import ValuesSection from "@/components/landing/ValuesSection";
+import ExamplesSection from "@/components/landing/ExamplesSection";
+import TrustSection from "@/components/landing/TrustSection";
 import AboutSection from "@/components/landing/AboutSection";
-import EthicsSection from "@/components/landing/EthicsSection";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
 
@@ -16,9 +16,9 @@ const Index = () => (
     <ProblemSection />
     <SolutionSection />
     <HowItWorksSection />
-    <ValuesSection />
+    <ExamplesSection />
+    <TrustSection />
     <AboutSection />
-    <EthicsSection />
     <CTASection />
     <Footer />
   </div>
