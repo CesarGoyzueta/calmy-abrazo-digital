@@ -25,20 +25,22 @@ const problems = [
 ];
 
 const ProblemSection = () => (
-  <section id="problema" className="py-20 px-6">
+  <section id="problema" className="py-24 px-6">
     <div className="max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-        className="text-center max-w-2xl mx-auto mb-16"
+        className="text-center max-w-3xl mx-auto mb-16"
       >
-        <span className="font-body text-xs font-semibold uppercase tracking-widest text-secondary">El desafío</span>
-        <h2 className="mt-4 font-display text-3xl md:text-4xl font-medium text-foreground">
-          El acompañamiento emocional no siempre está disponible cuando más se necesita
+        <span className="inline-block font-body text-sm font-semibold uppercase tracking-widest text-secondary bg-secondary/10 px-5 py-2 rounded-full mb-6">El desafío</span>
+        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+          El acompañamiento emocional{" "}
+          <span className="text-primary">no siempre está disponible</span>{" "}
+          cuando más se necesita
         </h2>
-        <p className="mt-4 font-body text-lg text-muted-foreground leading-relaxed">
+        <p className="mt-6 font-body text-xl text-muted-foreground leading-relaxed">
           Sabemos lo que se siente. Por eso creamos algo pensado para esos momentos.
         </p>
       </motion.div>
@@ -53,12 +55,12 @@ const ProblemSection = () => (
             transition={{ duration: 0.6, delay: i * 0.1, ease: [0.33, 1, 0.68, 1] }}
             className="glass-card-hover p-8 flex items-start gap-5"
           >
-            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <p.icon className="text-primary" size={24} />
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/15 to-secondary/15 flex items-center justify-center flex-shrink-0">
+              <p.icon className="text-primary" size={28} />
             </div>
             <div>
-              <h3 className="font-display text-lg font-medium text-foreground mb-2">{p.title}</h3>
-              <p className="font-body text-muted-foreground leading-relaxed">{p.description}</p>
+              <h3 className="font-display text-xl font-semibold text-foreground mb-2">{p.title}</h3>
+              <p className="font-body text-base text-muted-foreground leading-relaxed">{p.description}</p>
             </div>
           </motion.div>
         ))}

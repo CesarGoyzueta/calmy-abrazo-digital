@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-family.jpg";
 
-const WAITLIST_URL = "#waitlist"; // TODO: Reemplazar con el link real del formulario de Google
+const WAITLIST_URL = "#waitlist";
 
 const HeroSection = () => {
   return (
@@ -16,16 +16,23 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
           >
-            <span className="font-body text-xs font-semibold uppercase tracking-widest text-secondary">
-              Bienvenido a NeuroCalm
-            </span>
-            <h1 className="mt-4 font-display text-4xl md:text-5xl font-medium text-foreground leading-tight tracking-tight">
-              Acompañamiento emocional{" "}
-              <span className="text-primary">accesible</span> y{" "}
-              <span className="text-secondary">humano</span>
+            {/* Hook question */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-display text-xl md:text-2xl text-primary font-medium italic leading-snug"
+            >
+              "¿Cómo puedo ayudar a mi hijo si a veces no lo entiendo?"
+            </motion.p>
+
+            <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-tight">
+              Nos preocupamos por ello.{" "}
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Te presentamos Calmy.
+              </span>
             </h1>
             <p className="mt-6 font-body text-lg text-muted-foreground leading-relaxed max-w-lg">
-              {/* TODO: Reemplazar con la descripción definitiva */}
               Orientación emocional basada en evidencia psicológica, diseñada para acompañar a padres de niños neurodivergentes en su día a día. Con empatía, claridad y a tu ritmo.
             </p>
 
@@ -34,10 +41,10 @@ const HeroSection = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-6 inline-flex items-center gap-2 bg-secondary/10 text-secondary rounded-full px-4 py-2"
+              className="mt-6 inline-flex items-center gap-2 bg-secondary/15 text-secondary rounded-full px-4 py-2.5 border border-secondary/25"
             >
-              <Sparkles size={16} />
-              <span className="font-body text-sm font-medium">
+              <Sparkles size={18} />
+              <span className="font-body text-sm font-semibold">
                 Los primeros usuarios obtienen descuento exclusivo
               </span>
             </motion.div>
@@ -56,8 +63,8 @@ const HeroSection = () => {
             </div>
 
             {/* Waitlist teaser */}
-            <div className="mt-8 bg-card/80 backdrop-blur-sm rounded-2xl p-5 shadow-[var(--shadow-soft)] max-w-md">
-              <p className="font-body text-sm font-semibold text-foreground">🌿 Sé de los primeros</p>
+            <div className="mt-8 bg-card/90 backdrop-blur-sm rounded-2xl p-5 shadow-[var(--shadow-soft)] max-w-md border border-border/60">
+              <p className="font-body text-sm font-bold text-foreground">🌿 Sé de los primeros</p>
               <p className="font-body text-sm text-muted-foreground mt-1 leading-relaxed">
                 Estamos preparando algo especial. Únete a la lista de espera y obtén acceso anticipado con beneficios exclusivos.
               </p>
