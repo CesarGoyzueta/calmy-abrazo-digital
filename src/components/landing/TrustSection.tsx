@@ -37,20 +37,26 @@ const TrustSection = () => (
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {/* Lo que sí es */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="card-elevated p-7 border-l-4 border-secondary"
+          className="bg-card rounded-3xl border border-secondary/20 p-8 md:p-9"
         >
-          <h3 className="font-display text-lg font-bold text-foreground mb-5">Lo que sí es Calmy</h3>
-          <ul className="space-y-3.5">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+              <Check className="text-secondary" size={18} />
+            </div>
+            <h3 className="font-display text-lg font-bold text-foreground">Lo que sí es Calmy</h3>
+          </div>
+          <ul className="space-y-4">
             {isCalmy.map((item) => (
-              <li key={item} className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-full bg-secondary/12 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Check className="text-secondary" size={12} />
+              <li key={item} className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="text-secondary" size={11} />
                 </div>
                 <span className="font-body text-sm text-muted-foreground leading-relaxed">{item}</span>
               </li>
@@ -58,19 +64,25 @@ const TrustSection = () => (
           </ul>
         </motion.div>
 
+        {/* Lo que no es */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="card-elevated p-7 border-l-4 border-primary"
+          className="bg-card rounded-3xl border border-primary/15 p-8 md:p-9"
         >
-          <h3 className="font-display text-lg font-bold text-foreground mb-5">Lo que no es Calmy</h3>
-          <ul className="space-y-3.5">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center">
+              <X className="text-primary" size={18} />
+            </div>
+            <h3 className="font-display text-lg font-bold text-foreground">Lo que no es Calmy</h3>
+          </div>
+          <ul className="space-y-4">
             {isNotCalmy.map((item) => (
-              <li key={item} className="flex items-start gap-2.5">
-                <div className="w-5 h-5 rounded-full bg-primary/12 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <X className="text-primary" size={12} />
+              <li key={item} className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/8 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <X className="text-primary" size={11} />
                 </div>
                 <span className="font-body text-sm text-muted-foreground leading-relaxed">{item}</span>
               </li>

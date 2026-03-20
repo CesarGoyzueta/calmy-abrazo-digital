@@ -34,7 +34,7 @@ const AboutSection = () => (
         <span className="section-badge mb-5 inline-block">Nuestra historia</span>
         <h2 className="section-title">
           Por qué existe{" "}
-          <span className="text-primary">NeuroCalm</span>
+          <span className="text-primary">Calmy</span>
         </h2>
         <p className="mt-5 section-subtitle">
           Una necesidad real, un equipo comprometido, una solución humana.
