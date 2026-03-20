@@ -5,23 +5,23 @@ import { ArrowRight } from "lucide-react";
 const WAITLIST_URL = "#waitlist";
 
 const CTASection = () => (
-  <section className="py-24 md:py-32 px-6">
-    <div className="max-w-7xl mx-auto">
+  <section className="py-20 md:py-28">
+    <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-        className="rounded-[2rem] bg-gradient-to-br from-primary/8 to-secondary/8 border border-primary/10 p-12 md:p-20 text-center"
+        transition={{ duration: 0.6 }}
+        className="rounded-3xl bg-gradient-to-br from-primary/6 via-secondary/4 to-primary/6 border border-primary/10 p-10 md:p-16 text-center"
       >
-        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+        <h2 className="section-title mb-5">
           Empieza a acompañar con más{" "}
           <span className="text-secondary">claridad, calma y confianza</span>
         </h2>
-        <p className="font-body text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto mb-8">
+        <p className="section-subtitle max-w-lg mx-auto mb-7">
           Únete a la lista de espera para acceder antes al lanzamiento y recibir beneficios exclusivos.
         </p>
-        <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer">
+        <a href={WAITLIST_URL}>
           <Button variant="calm" size="xl">
             Quiero acceso anticipado <ArrowRight className="ml-1" size={20} />
           </Button>
