@@ -4,64 +4,62 @@ import { CloudRain, HelpCircle, Clock, HeartCrack } from "lucide-react";
 const problems = [
   {
     icon: CloudRain,
-    title: "No sabes cómo responder a una crisis emocional",
-    description: "Tu hijo está en pleno desbordo y necesitas saber qué hacer en ese momento, no mañana.",
+    title: "Crisis emocional sin guía",
+    description: "Tu hijo está en pleno desbordo y necesitas saber qué hacer ahora, no mañana.",
   },
   {
     icon: HelpCircle,
-    title: "Te preocupa una conducta y no sabes cómo interpretarla",
+    title: "Conductas que no sabes interpretar",
     description: "¿Es normal? ¿Debería preocuparme? Esa incertidumbre constante agota.",
   },
   {
     icon: Clock,
-    title: "Entre sesiones te quedas con dudas",
+    title: "Vacío entre sesiones",
     description: "Las citas con el profesional son puntuales, pero la vida no espera entre sesiones.",
   },
   {
     icon: HeartCrack,
-    title: "Te sientes agotado y quieres hacerlo mejor",
+    title: "Agotamiento y culpa",
     description: "Sentirse abrumado, confundido o solo es más común de lo que crees. Y está bien pedir apoyo.",
   },
 ];
 
 const ProblemSection = () => (
-  <section id="problema" className="py-24 md:py-32 px-6">
-    <div className="max-w-7xl mx-auto">
+  <section id="problema" className="py-20 md:py-28">
+    <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-        className="text-center max-w-3xl mx-auto mb-16"
+        transition={{ duration: 0.6 }}
+        className="text-center max-w-2xl mx-auto mb-14"
       >
-        <span className="inline-block font-body text-sm font-semibold uppercase tracking-widest text-secondary bg-secondary/10 px-5 py-2 rounded-full mb-6">
-          El desafío
-        </span>
-        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+        <span className="section-badge mb-5 inline-block">El desafío</span>
+        <h2 className="section-title">
           Hay momentos en los que necesitas orientación,{" "}
           <span className="text-primary">y no siempre hay a quién acudir</span>
         </h2>
-        <p className="mt-6 font-body text-xl text-muted-foreground leading-relaxed">
-          Criar con amor no siempre significa saber qué hacer en cada momento. Por eso pensamos Calmy para acompañarte cuando surgen dudas reales.
+        <p className="mt-5 section-subtitle">
+          Criar con amor no siempre significa saber qué hacer en cada momento. Calmy nace para acompañarte en esas dudas reales del día a día.
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div className="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
         {problems.map((p, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="glass-card-hover p-8 flex items-start gap-5"
+            transition={{ duration: 0.45, delay: i * 0.08 }}
+            className="card-elevated-hover p-7 flex items-start gap-4"
           >
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/15 to-secondary/15 flex items-center justify-center flex-shrink-0">
-              <p.icon className="text-primary" size={28} />
+            <div className="w-12 h-12 rounded-2xl bg-primary/8 flex items-center justify-center flex-shrink-0">
+              <p.icon className="text-primary" size={24} />
             </div>
             <div>
-              <h3 className="font-display text-lg font-semibold text-foreground mb-2">{p.title}</h3>
-              <p className="font-body text-base text-muted-foreground leading-relaxed">{p.description}</p>
+              <h3 className="font-display text-base font-bold text-foreground mb-1.5">{p.title}</h3>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">{p.description}</p>
             </div>
           </motion.div>
         ))}
