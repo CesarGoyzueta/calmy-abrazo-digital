@@ -32,14 +32,14 @@ const ProblemSection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-2xl mx-auto mb-14"
+        className="text-center max-w-2xl mx-auto mb-16"
       >
-        <span className="section-badge mb-5 inline-block">El desafío</span>
-        <h2 className="section-title">
+        <span className="section-badge mb-4 inline-block">El desafío</span>
+        <h2 className="section-title mt-2">
           Hay momentos en los que necesitas orientación,{" "}
           <span className="text-primary">y no siempre hay a quién acudir</span>
         </h2>
-        <p className="mt-5 section-subtitle">
+        <p className="mt-6 section-subtitle max-w-xl mx-auto">
           Criar con amor no siempre significa saber qué hacer en cada momento. Calmy nace para acompañarte en esas dudas reales del día a día.
         </p>
       </motion.div>
@@ -52,13 +52,13 @@ const ProblemSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: i * 0.08 }}
-            className="card-elevated-hover p-7 flex items-start gap-4"
+            className="card-elevated-hover p-8 flex items-start gap-5"
           >
             <div className="w-12 h-12 rounded-2xl bg-primary/8 flex items-center justify-center flex-shrink-0">
-              <p.icon className="text-primary" size={24} />
+              <p.icon className="text-primary" size={22} />
             </div>
             <div>
-              <h3 className="font-display text-base font-bold text-foreground mb-1.5">{p.title}</h3>
+              <h3 className="font-display text-base font-bold text-foreground mb-2">{p.title}</h3>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">{p.description}</p>
             </div>
           </motion.div>
