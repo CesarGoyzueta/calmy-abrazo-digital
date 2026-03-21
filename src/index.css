@@ -104,4 +104,28 @@
   .section-subtitle {
     @apply font-body text-lg text-muted-foreground leading-relaxed;
   }
+
+  .prose-calm {
+    @apply font-body text-base text-muted-foreground leading-relaxed;
+  }
+
+  .prose-calm p {
+    @apply mb-5;
+  }
+
+  .prose-calm h2 {
+    @apply font-display text-xl font-bold text-foreground mt-10 mb-4;
+  }
+
+  .prose-calm ul {
+    @apply list-disc pl-6 mb-5 space-y-2;
+  }
+
+  .prose-calm li {
+    @apply text-sm text-muted-foreground leading-relaxed;
+  }
+
+  .prose-calm a {
+    @apply text-primary hover:underline;
+  }
 }

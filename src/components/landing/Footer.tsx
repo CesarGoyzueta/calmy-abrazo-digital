@@ -1,23 +1,71 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/neurocalm-logo.png";
 
 const WAITLIST_URL = "#waitlist";
 
 const Footer = () => (
-  <footer className="py-10 px-5 border-t border-border/40">
-    <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
-      <img src={logo} alt="NeuroCalm" className="h-7" />
-      <div className="flex gap-5">
-        <a href="#" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
-          Política de privacidad
-        </a>
-        <a href={WAITLIST_URL} className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
-          Lista de espera
-        </a>
-        <a href="mailto:hola@neurocalm.app" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
-          Contacto
-        </a>
+  <footer className="py-12 px-5 border-t border-border/40 bg-card/30">
+    <div className="max-w-6xl mx-auto">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div>
+          <img src={logo} alt="Calmy" className="h-7 mb-3" />
+          <p className="font-body text-xs text-muted-foreground max-w-xs">
+            Acompañamiento emocional para padres, con base psicológica y orientación personalizada.
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-8">
+          <div>
+            <p className="font-display text-xs font-bold text-foreground uppercase tracking-wider mb-3">Producto</p>
+            <div className="flex flex-col gap-2">
+              <a href="#como-funciona" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Cómo funciona
+              </a>
+              <a href={WAITLIST_URL} className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Lista de espera
+              </a>
+              <a href="mailto:hola@neurocalm.app" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Contacto
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <p className="font-display text-xs font-bold text-foreground uppercase tracking-wider mb-3">Nosotros</p>
+            <div className="flex flex-col gap-2">
+              <Link to="/mision" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Misión
+              </Link>
+              <Link to="/vision" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Visión
+              </Link>
+              <Link to="/quienes-somos" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Quiénes somos
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            <p className="font-display text-xs font-bold text-foreground uppercase tracking-wider mb-3">Legal</p>
+            <div className="flex flex-col gap-2">
+              <Link to="/privacidad" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Política de privacidad
+              </Link>
+              <Link to="/terminos" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Términos y condiciones
+              </Link>
+              <Link to="/libro-reclamaciones" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Libro de reclamaciones
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
-      <p className="font-body text-[11px] text-muted-foreground">© 2025 NeuroCalm. Todos los derechos reservados.</p>
+
+      <div className="mt-10 pt-6 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p className="font-body text-[11px] text-muted-foreground">© 2025 Calmy. Todos los derechos reservados.</p>
+        <p className="font-body text-[11px] text-muted-foreground">Hecho con 💚 para familias que buscan claridad.</p>
+      </div>
     </div>
   </footer>
 );

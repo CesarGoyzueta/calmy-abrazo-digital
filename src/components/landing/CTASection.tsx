@@ -12,18 +12,18 @@ const CTASection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="rounded-3xl bg-gradient-to-br from-primary/6 via-secondary/4 to-primary/6 border border-primary/10 p-10 md:p-16 text-center"
+        className="rounded-3xl bg-gradient-to-br from-primary/5 via-secondary/4 to-primary/5 border border-primary/10 p-10 md:p-16 text-center max-w-3xl mx-auto"
       >
         <h2 className="section-title mb-5">
           Empieza a acompañar con más{" "}
           <span className="text-secondary">claridad, calma y confianza</span>
         </h2>
-        <p className="section-subtitle max-w-lg mx-auto mb-7">
+        <p className="section-subtitle max-w-md mx-auto mb-8">
           Únete a la lista de espera para acceder antes al lanzamiento y recibir beneficios exclusivos.
         </p>
         <a href={WAITLIST_URL}>
-          <Button variant="calm" size="xl">
-            Quiero acceso anticipado <ArrowRight className="ml-1" size={20} />
+          <Button variant="calm" size="xl" className="shadow-lg">
+            Quiero acceso anticipado <ArrowRight className="ml-1" size={18} />
           </Button>
         </a>
       </motion.div>

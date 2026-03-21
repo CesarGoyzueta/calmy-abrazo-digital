@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Sparkles } from "lucide-react";
 
 const examples = [
   {
@@ -33,7 +34,7 @@ const ExamplesSection = () => {
   }, []);
 
   return (
-    <section className="py-20 md:py-28 bg-card/50">
+    <section className="py-20 md:py-28 bg-card/40">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,12 +43,12 @@ const ExamplesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <span className="section-badge mb-5 inline-block">Ejemplos reales</span>
-          <h2 className="section-title">
+          <span className="section-badge mb-4 inline-block">Ejemplos reales</span>
+          <h2 className="section-title mt-2">
             Preguntas reales que podrías{" "}
             <span className="text-secondary">hacerle a Calmy</span>
           </h2>
-          <p className="mt-5 section-subtitle">
+          <p className="mt-6 section-subtitle max-w-xl mx-auto">
             Así se siente recibir orientación con contexto, empatía y claridad.
           </p>
         </motion.div>
@@ -63,7 +64,7 @@ const ExamplesSection = () => {
               className="card-elevated p-7 md:p-9"
             >
               {/* User */}
-              <div className="flex justify-end mb-5">
+              <div className="flex justify-end mb-6">
                 <div className="bg-primary/8 rounded-2xl rounded-tr-md px-4 py-3 max-w-[85%]">
                   <p className="font-body text-sm text-foreground leading-relaxed">
                     {examples[current].question}
@@ -74,19 +75,27 @@ const ExamplesSection = () => {
               {/* Calmy */}
               <div className="flex gap-2.5 items-start">
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
-                  <span className="text-primary-foreground text-[10px] font-bold font-display">C</span>
+                  <Sparkles className="text-primary-foreground" size={13} />
                 </div>
-                <div className="bg-background rounded-2xl rounded-tl-md px-4 py-3 border border-border/40 flex-1">
-                  <p className="font-body text-sm text-foreground leading-relaxed">
-                    {examples[current].answer}
+                <div>
+                  <p className="font-body text-[10px] font-semibold text-secondary uppercase tracking-wider mb-1.5">
+                    Ejemplo de respuesta
                   </p>
+                  <div className="bg-background rounded-2xl rounded-tl-md px-4 py-3 border border-border/40">
+                    <p className="font-body text-sm text-foreground leading-relaxed">
+                      {examples[current].answer}
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
           </AnimatePresence>
 
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-7">
+          {/* Dots + indicator */}
+          <div className="flex items-center justify-center gap-2 mt-7">
+            <span className="font-body text-[10px] text-muted-foreground mr-2">
+              {current + 1} / {examples.length}
+            </span>
             {examples.map((_, i) => (
               <button
                 key={i}
