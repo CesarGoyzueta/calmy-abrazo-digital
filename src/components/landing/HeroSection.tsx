@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, UserCheck, Clock, MessageCircle, Brain, User, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, UserCheck, Clock, MessageCircle, Brain, User, Sparkles, Shield } from "lucide-react";
 import heroImage from "@/assets/hero-family.jpg";
 
 const WAITLIST_URL = "#waitlist";
@@ -15,53 +15,60 @@ const trustChips = [
 const ease = [0.33, 1, 0.68, 1] as const;
 
 const HeroSection = () => (
-  <section className="pt-28 pb-16 md:pt-36 md:pb-24">
+  <section className="pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
     <div className="section-container">
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="grid lg:grid-cols-[1fr_1.1fr] gap-14 lg:gap-20 items-center">
         {/* Left — copy */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease }}
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
-            className="font-body text-sm md:text-base text-secondary font-semibold tracking-wide"
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-full px-4 py-2 mb-7"
           >
-            Cuando no sabes cómo acompañar a tu hijo, no deberías sentirte solo.
-          </motion.p>
-
-          <h1 className="mt-5 font-display text-[2.5rem] md:text-5xl font-extrabold text-foreground leading-[1.1] tracking-tight max-w-md">
-            Más claridad para{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              acompañar a tu hijo
+            <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+            <span className="font-body text-sm text-secondary font-semibold">
+              Acompañamiento con base psicológica
             </span>
+          </motion.div>
+
+          <h1 className="font-display text-[2.75rem] md:text-[3.5rem] lg:text-[3.75rem] font-extrabold text-foreground leading-[1.05] tracking-tight">
+            Orientación clara{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              para acompañar
+            </span>{" "}
+            a tu hijo
           </h1>
 
-          <p className="mt-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
+          <p className="mt-7 font-body text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[520px]">
             Calmy combina conocimiento psicológico con el contexto de tu hijo para darte orientación más clara, práctica y humana.
           </p>
 
           {/* Trust chips */}
-          <div className="mt-6 flex flex-wrap gap-2">
-            {trustChips.map((chip) => (
-              <span
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            {trustChips.map((chip, i) => (
+              <motion.span
                 key={chip.label}
-                className="inline-flex items-center gap-1.5 bg-card border border-border/60 rounded-full px-3.5 py-1.5 font-body text-xs font-medium text-foreground/80"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
+                className="inline-flex items-center gap-2 bg-card border border-border/70 rounded-full px-4 py-2 font-body text-sm font-medium text-foreground/85 shadow-sm"
               >
-                <chip.icon size={13} className="text-secondary" />
+                <chip.icon size={15} className="text-secondary" />
                 {chip.label}
-              </span>
+              </motion.span>
             ))}
           </div>
 
           {/* CTAs */}
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <a href={WAITLIST_URL}>
-              <Button variant="calm" size="lg">
-                Únete a la waitlist <ArrowRight className="ml-1" size={18} />
+              <Button variant="calm" size="xl" className="shadow-lg">
+                Únete a la waitlist <ArrowRight className="ml-1.5" size={20} />
               </Button>
             </a>
             <a href="#como-funciona">
@@ -71,51 +78,84 @@ const HeroSection = () => (
             </a>
           </div>
 
-          <p className="mt-5 font-body text-sm text-muted-foreground">
-            🌿 Los primeros usuarios obtendrán acceso anticipado y beneficios exclusivos.
+          <p className="mt-6 font-body text-sm text-muted-foreground flex items-center gap-1.5">
+            <span className="text-base">🌿</span> Los primeros usuarios obtendrán acceso anticipado y beneficios exclusivos.
           </p>
         </motion.div>
 
         {/* Right — product mockup composition */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease }}
-          className="relative hidden lg:flex justify-center"
+          transition={{ duration: 0.8, delay: 0.2, ease }}
+          className="relative hidden lg:flex justify-center items-center min-h-[520px]"
         >
-          {/* Main chat mockup */}
-          <div className="w-[340px] card-elevated p-0 overflow-hidden">
+          {/* Subtle glow behind mockup */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-[380px] h-[380px] rounded-full bg-gradient-to-br from-primary/8 to-secondary/8 blur-3xl" />
+          </div>
+
+          {/* Main chat mockup — larger and more prominent */}
+          <div className="relative w-[380px] card-elevated p-0 overflow-hidden z-10">
             {/* Chat header */}
-            <div className="flex items-center gap-3 px-5 py-4 border-b border-border/50">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-primary-foreground text-sm font-bold font-display">C</span>
+            <div className="flex items-center justify-between px-6 py-4 border-b border-border/50 bg-card">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-md">
+                  <span className="text-primary-foreground text-sm font-bold font-display">C</span>
+                </div>
+                <div>
+                  <p className="font-display text-sm font-bold text-foreground">Calmy</p>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+                    <p className="font-body text-[11px] text-secondary font-medium">Orientación activa</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="font-display text-sm font-bold text-foreground">Calmy</p>
-                <p className="font-body text-[11px] text-secondary font-medium">En línea · Orientación activa</p>
+              <div className="w-8 h-8 rounded-lg bg-muted/50 flex items-center justify-center">
+                <Shield className="text-muted-foreground" size={14} />
               </div>
             </div>
 
             {/* Chat messages */}
-            <div className="px-5 py-5 space-y-4">
+            <div className="px-6 py-6 space-y-5 bg-gradient-to-b from-card to-background/30">
               {/* User message */}
-              <div className="flex justify-end">
-                <div className="bg-primary/8 rounded-2xl rounded-tr-md px-4 py-2.5 max-w-[230px]">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="flex justify-end"
+              >
+                <div className="bg-primary/10 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[260px]">
                   <p className="font-body text-[13px] text-foreground leading-relaxed">
                     Mi hijo se frustra mucho cuando cambia la rutina, ¿cómo puedo ayudarlo?
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Calmy response */}
-              <div className="flex gap-2.5">
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Sparkles className="text-primary-foreground" size={12} />
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="flex gap-3"
+              >
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
+                  <Sparkles className="text-primary-foreground" size={13} />
                 </div>
-                <div className="bg-card border border-border/60 rounded-2xl rounded-tl-md px-4 py-3 max-w-[230px]">
+                <div className="bg-card border border-border/60 rounded-2xl rounded-tl-sm px-4 py-3 max-w-[260px] shadow-sm">
                   <p className="font-body text-[13px] text-foreground leading-relaxed">
-                    Entiendo tu preocupación. Para niños con su perfil, los cambios pueden generar ansiedad. Te sugiero anticipar con apoyo visual… 💚
+                    Entiendo tu preocupación. Para niños con su perfil, los cambios inesperados pueden generar mucha ansiedad. Te sugiero anticipar con apoyo visual y validar su emoción antes de redirigir… 💚
                   </p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Input bar */}
+            <div className="px-6 py-4 border-t border-border/40 bg-card">
+              <div className="flex items-center gap-3 bg-muted/40 rounded-xl px-4 py-2.5">
+                <p className="font-body text-xs text-muted-foreground flex-1">Escribe tu consulta…</p>
+                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                  <ArrowRight className="text-primary-foreground" size={13} />
                 </div>
               </div>
             </div>
@@ -123,46 +163,46 @@ const HeroSection = () => (
 
           {/* Floating card: Perfil del niño */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.5, ease }}
-            className="absolute -left-4 top-16 card-elevated px-4 py-3 flex items-center gap-3 max-w-[180px]"
+            initial={{ opacity: 0, x: -30, y: 10 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0, ease }}
+            className="absolute -left-6 top-24 z-20 card-elevated px-5 py-4 flex items-center gap-3 shadow-lg"
           >
-            <div className="w-9 h-9 rounded-xl bg-primary/8 flex items-center justify-center flex-shrink-0">
-              <User className="text-primary" size={16} />
+            <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <User className="text-primary" size={18} />
             </div>
             <div>
-              <p className="font-display text-xs font-bold text-foreground">Perfil del niño</p>
-              <p className="font-body text-[10px] text-muted-foreground">Contexto personalizado</p>
+              <p className="font-display text-sm font-bold text-foreground">Perfil del niño</p>
+              <p className="font-body text-[11px] text-muted-foreground mt-0.5">Contexto personalizado</p>
             </div>
           </motion.div>
 
           {/* Floating card: Base psicológica */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.65, ease }}
-            className="absolute -right-4 bottom-20 card-elevated px-4 py-3 flex items-center gap-3 max-w-[190px]"
+            initial={{ opacity: 0, x: 30, y: -10 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.15, ease }}
+            className="absolute -right-6 bottom-28 z-20 card-elevated px-5 py-4 flex items-center gap-3 shadow-lg"
           >
-            <div className="w-9 h-9 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
-              <Brain className="text-secondary" size={16} />
+            <div className="w-11 h-11 rounded-xl bg-secondary/12 flex items-center justify-center flex-shrink-0">
+              <Brain className="text-secondary" size={18} />
             </div>
             <div>
-              <p className="font-display text-xs font-bold text-foreground">Base psicológica</p>
-              <p className="font-body text-[10px] text-muted-foreground">Conocimiento estructurado</p>
+              <p className="font-display text-sm font-bold text-foreground">Base psicológica</p>
+              <p className="font-body text-[11px] text-muted-foreground mt-0.5">Conocimiento estructurado</p>
             </div>
           </motion.div>
 
-          {/* Small hero image accent */}
+          {/* Hero image accent — repositioned */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.8, ease }}
-            className="absolute -bottom-3 -left-8 w-24 h-24 rounded-2xl overflow-hidden shadow-[var(--shadow-card)] border-2 border-card"
+            transition={{ duration: 0.6, delay: 1.3, ease }}
+            className="absolute -bottom-2 -left-10 w-28 h-28 rounded-2xl overflow-hidden shadow-lg border-[3px] border-card z-20"
           >
             <img
               src={heroImage}
-              alt="Madre e hijo"
+              alt="Madre e hijo compartiendo un momento"
               className="w-full h-full object-cover"
             />
           </motion.div>
