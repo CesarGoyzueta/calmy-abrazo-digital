@@ -24,24 +24,18 @@ const Footer = () => (
               <a href={WAITLIST_URL} className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
                 Lista de espera
               </a>
-              <a href="mailto:hola@neurocalm.app" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
-                Contacto
-              </a>
             </div>
           </div>
 
           <div>
-            <p className="font-display text-xs font-bold text-foreground uppercase tracking-wider mb-3">Nosotros</p>
+            <p className="font-display text-xs font-bold text-foreground uppercase tracking-wider mb-3">Empresa</p>
             <div className="flex flex-col gap-2">
-              <Link to="/mision" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
-                Misión
+              <Link to="/sobre-calmy" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Sobre Calmy
               </Link>
-              <Link to="/vision" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
-                Visión
-              </Link>
-              <Link to="/quienes-somos" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
-                Quiénes somos
-              </Link>
+              <a href="mailto:hola@neurocalm.app" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+                Contacto
+              </a>
             </div>
           </div>
 
