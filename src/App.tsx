@@ -5,9 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import Mision from "./pages/Mision.tsx";
-import Vision from "./pages/Vision.tsx";
-import QuienesSomos from "./pages/QuienesSomos.tsx";
+import SobreCalmy from "./pages/SobreCalmy.tsx";
 import Privacidad from "./pages/Privacidad.tsx";
 import Terminos from "./pages/Terminos.tsx";
 import LibroReclamaciones from "./pages/LibroReclamaciones.tsx";
@@ -22,9 +20,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/mision" element={<Mision />} />
-          <Route path="/vision" element={<Vision />} />
-          <Route path="/quienes-somos" element={<QuienesSomos />} />
+          <Route path="/sobre-calmy" element={<SobreCalmy />} />
           <Route path="/privacidad" element={<Privacidad />} />
           <Route path="/terminos" element={<Terminos />} />
           <Route path="/libro-reclamaciones" element={<LibroReclamaciones />} />

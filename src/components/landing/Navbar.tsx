@@ -10,7 +10,6 @@ const navLinks = [
   { href: "#solucion", label: "Solución" },
   { href: "#como-funciona", label: "Cómo funciona" },
   { href: "#confianza", label: "Transparencia" },
-  { href: "#equipo", label: "Equipo" },
 ];
 
 const Navbar = () => {
@@ -33,7 +32,7 @@ const Navbar = () => {
     >
       <div className="section-container h-16 flex items-center justify-between">
         <a href="#" className="flex items-center">
-          <img src={logo} alt="NeuroCalm" className="h-8" />
+          <img src={logo} alt="Calmy" className="h-8" />
         </a>
 
         <div className="hidden md:flex items-center gap-7">
