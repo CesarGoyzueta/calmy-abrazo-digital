@@ -5,22 +5,22 @@ const problems = [
   {
     icon: CloudRain,
     title: "Crisis emocional sin guía",
-    description: "Tu hijo está en pleno desbordo y necesitas saber qué hacer ahora, no mañana.",
+    description: "Tu hijo está en pleno desbordo y necesitas saber qué hacer ahora, no mañana. La urgencia no espera.",
   },
   {
     icon: HelpCircle,
     title: "Conductas que no sabes interpretar",
-    description: "¿Es normal? ¿Debería preocuparme? Esa incertidumbre constante agota.",
+    description: "¿Es normal? ¿Debería preocuparme? Esa incertidumbre constante agota y paraliza.",
   },
   {
     icon: Clock,
     title: "Vacío entre sesiones",
-    description: "Las citas con el profesional son puntuales, pero la vida no espera entre sesiones.",
+    description: "Las citas con el profesional son puntuales, pero la vida no espera. Necesitas apoyo continuo.",
   },
   {
     icon: HeartCrack,
     title: "Agotamiento y culpa",
-    description: "Sentirse abrumado, confundido o solo es más común de lo que crees. Y está bien pedir apoyo.",
+    description: "Sentirse abrumado, confundido o solo es más común de lo que crees. La carga emocional pesa.",
   },
 ];
 
@@ -40,7 +40,7 @@ const ProblemSection = () => (
           <span className="text-primary">y no siempre hay a quién acudir</span>
         </h2>
         <p className="mt-6 section-subtitle max-w-xl mx-auto">
-          Criar con amor no siempre significa saber qué hacer en cada momento. Calmy nace para acompañarte en esas dudas reales del día a día.
+          Criar con amor no siempre significa saber qué hacer. Y en esos momentos, decidir sin claridad puede sentirse abrumador.
         </p>
       </motion.div>
 

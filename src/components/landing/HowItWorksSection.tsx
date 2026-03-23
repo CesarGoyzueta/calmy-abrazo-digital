@@ -6,14 +6,14 @@ const steps = [
     icon: UserPlus,
     step: "01",
     title: "Comparte el contexto de tu hijo",
-    desc: "Edad, necesidades, antecedentes y situaciones que te preocupan. Esto ayuda a que Calmy entienda mejor el contexto familiar.",
+    desc: "Edad, necesidades, antecedentes y situaciones que te preocupan. Esto permite que Calmy personalice cada respuesta a tu realidad familiar.",
     highlight: false,
   },
   {
     icon: Brain,
     step: "02",
     title: "Calmy consulta una base psicológica estructurada",
-    desc: "El sistema combina tu consulta con conocimiento psicológico confiable para responder con mayor claridad, coherencia y sustento.",
+    desc: "El sistema combina tu consulta con conocimiento psicológico real y confiable para responder con mayor claridad, coherencia y sustento.",
     highlight: true,
   },
   {
@@ -101,6 +101,17 @@ const HowItWorksSection = () => (
             </motion.div>
           ))}
         </div>
+
+        {/* Microcopy */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-10 font-body text-sm text-muted-foreground italic"
+        >
+          No es solo responder, es ayudarte a tomar mejores decisiones en el momento.
+        </motion.p>
       </div>
     </div>
   </section>
