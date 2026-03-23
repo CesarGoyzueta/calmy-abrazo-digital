@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { BookOpen, Brain, ShieldCheck } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import founderTech from "@/assets/founder-tech.jpg";
 import founderPsych from "@/assets/founder-psych.jpg";
@@ -7,75 +9,171 @@ const founders = [
     photo: founderTech,
     name: "Cofundador",
     role: "Producto, IA y Tecnología",
-    bio: "Apasionado por la tecnología con propósito. Lidera el desarrollo de Calmy combinando inteligencia artificial con sensibilidad humana.",
+    bio: "Construye tecnología con propósito y lidera el desarrollo de Calmy para que la experiencia sea útil, clara y humana.",
   },
   {
     photo: founderPsych,
     name: "Cofundadora",
     role: "Psicología y Contenido Clínico",
-    bio: "Profesional de la psicología con enfoque en neurodivergencia. Diseña la base científica y emocional de cada respuesta de Calmy.",
+    bio: "Aporta el enfoque psicológico y diseña la base científica y emocional que guía cada respuesta de Calmy.",
   },
 ];
 
+const pillars = [
+  {
+    icon: BookOpen,
+    title: "Base psicológica estructurada",
+    text: "Las respuestas se construyen sobre conocimiento psicológico organizado y consistente, no sobre consejos genéricos.",
+  },
+  {
+    icon: Brain,
+    title: "Personalización con contexto",
+    text: "Calmy toma en cuenta el perfil del niño, antecedentes y preocupaciones frecuentes para orientar mejor cada respuesta.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Respeto por los límites",
+    text: "Calmy acompaña, orienta y ayuda a organizar dudas. No reemplaza terapia, diagnóstico ni evaluación profesional.",
+  },
+];
+
+const commitments = [
+  "Transparencia sobre lo que Calmy es y lo que no es",
+  "Respeto por el rol de los profesionales de salud mental",
+  "Mejora continua basada en evidencia y retroalimentación",
+  "Accesibilidad para familias que necesitan apoyo",
+];
+
+const fade = {
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true } as const,
+  transition: { duration: 0.5 },
+};
+
 const SobreCalmy = () => (
   <PageLayout>
-    <span className="section-badge mb-4 inline-block">Sobre Calmy</span>
-    <h1 className="font-display text-3xl md:text-4xl font-extrabold text-foreground leading-tight mt-2 mb-8">
-      Por qué existe Calmy
-    </h1>
-
-    <div className="prose-calm">
-      <p>
+    {/* ── SECCIÓN 1: INTRO ── */}
+    <motion.section {...fade} className="mb-20">
+      <span className="section-badge mb-4 inline-block">Sobre Calmy</span>
+      <h1 className="font-display text-3xl md:text-4xl font-extrabold text-foreground leading-tight mt-2 mb-6">
+        Por qué existe Calmy
+      </h1>
+      <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
         Calmy nace de una necesidad real: la de padres que buscan orientación clara para acompañar a sus hijos y muchas veces no la encuentran en el momento en que más la necesitan.
       </p>
-      <p>
-        Criar con amor es solo el punto de partida. El día a día trae dudas, momentos difíciles y situaciones que necesitan orientación clara. Y no siempre hay un profesional disponible en ese instante.
+      <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mt-4">
+        Criar con amor no siempre significa saber qué hacer. El día a día trae dudas, momentos difíciles e incertidumbre. Calmy nace para estar ahí en esos momentos, con acompañamiento más claro, humano y útil.
+      </p>
+    </motion.section>
+
+    {/* ── SECCIÓN 2: QUIÉNES SOMOS ── */}
+    <motion.section {...fade} className="mb-20">
+      <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">
+        Quiénes somos
+      </h2>
+      <p className="font-body text-sm md:text-base text-muted-foreground mb-10 max-w-xl">
+        Un equipo que combina psicología y tecnología para acompañar a familias en momentos reales.
       </p>
 
-      <h2>Qué estamos construyendo</h2>
-      <p>
-        Calmy es un asistente conversacional de acompañamiento emocional para padres de niños neurodivergentes o con necesidades emocionales, conductuales o de desarrollo. Combina una base de conocimiento psicológica estructurada con información relevante sobre cada niño y su entorno, para ofrecer orientación que realmente tenga sentido.
-      </p>
-      <p>
-        No buscamos reemplazar a ningún profesional. Buscamos estar ahí cuando no hay uno disponible: en el momento de la crisis, en la duda del día a día, en la pregunta que surge a las 10 de la noche.
-      </p>
+      <div className="grid sm:grid-cols-2 gap-6">
+        {founders.map((f, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: i * 0.1 }}
+            className="bg-card rounded-2xl border border-border/60 overflow-hidden shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-hover)] transition-all duration-300"
+          >
+            <div className="h-56 overflow-hidden">
+              <img
+                src={f.photo}
+                alt={`${f.name} – ${f.role}`}
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div className="p-7">
+              <span className="font-body text-[11px] font-bold uppercase tracking-wider text-secondary">
+                Cofundador/a · {f.role}
+              </span>
+              <h4 className="mt-2 font-display text-lg font-bold text-foreground">
+                {f.name}
+              </h4>
+              <p className="mt-2.5 font-body text-sm text-muted-foreground leading-relaxed">
+                {f.bio}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </motion.section>
 
-      <h2>Nuestro enfoque</h2>
-      <p>
-        No creemos en soluciones genéricas. Creemos en herramientas que entienden el contexto, que se adaptan a cada familia y que respetan siempre los límites de lo que una herramienta tecnológica puede y debe hacer.
-      </p>
+    {/* ── SECCIÓN 3: QUÉ ESTAMOS CONSTRUYENDO ── */}
+    <motion.section {...fade} className="mb-20">
+      <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-5">
+        Qué estamos construyendo
+      </h2>
+      <div className="space-y-4 max-w-2xl">
+        <p className="font-body text-base text-muted-foreground leading-relaxed">
+          Calmy es un asistente conversacional diseñado para acompañar emocionalmente a padres en su día a día.
+        </p>
+        <p className="font-body text-base text-muted-foreground leading-relaxed">
+          Combina una base de conocimiento psicológico estructurada con el contexto del niño y su entorno para ofrecer orientación más clara, práctica y humana.
+        </p>
+        <p className="font-body text-base text-muted-foreground leading-relaxed">
+          No busca reemplazar a ningún profesional. Busca acompañar cuando más lo necesitas: en la duda cotidiana, en la incertidumbre y en esos momentos en que no sabes cómo actuar.
+        </p>
+      </div>
+    </motion.section>
 
-      <h2>Nuestro compromiso</h2>
-      <ul>
-        <li>Transparencia sobre lo que Calmy es y lo que no es.</li>
-        <li>Respeto por el rol del profesional de salud mental.</li>
-        <li>Mejora continua basada en evidencia y retroalimentación.</li>
-        <li>Accesibilidad para todas las familias que lo necesiten.</li>
-      </ul>
+    {/* ── SECCIÓN 4: CÓMO LO HACEMOS ── */}
+    <motion.section {...fade} className="mb-20">
+      <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">
+        Cómo lo hacemos
+      </h2>
+      <div className="grid sm:grid-cols-3 gap-5">
+        {pillars.map((p, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: i * 0.08 }}
+            className="bg-card rounded-2xl border border-border/60 p-7 shadow-[var(--shadow-soft)]"
+          >
+            <div className="w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center mb-4">
+              <p.icon className="text-primary" size={20} />
+            </div>
+            <h4 className="font-display text-base font-bold text-foreground mb-2">
+              {p.title}
+            </h4>
+            <p className="font-body text-sm text-muted-foreground leading-relaxed">
+              {p.text}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </motion.section>
 
-      <h2>El equipo</h2>
-      <p>
-        Somos un equipo pequeño pero comprometido, formado por profesionales de tecnología, inteligencia artificial y psicología, unidos por la convicción de que el acompañamiento emocional puede ser más accesible, más humano y más útil.
-      </p>
-    </div>
-
-    {/* Founders */}
-    <div className="grid sm:grid-cols-2 gap-5 mt-10">
-      {founders.map((f, i) => (
-        <div key={i} className="card-elevated overflow-hidden">
-          <div className="h-48 overflow-hidden">
-            <img src={f.photo} alt={`${f.name} - ${f.role}`} className="w-full h-full object-cover object-top" />
-          </div>
-          <div className="p-6">
-            <span className="font-body text-[11px] font-bold uppercase tracking-wider text-secondary">
-              Cofundador/a · {f.role}
+    {/* ── SECCIÓN 5: NUESTRO COMPROMISO ── */}
+    <motion.section {...fade}>
+      <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">
+        Nuestro compromiso
+      </h2>
+      <ul className="space-y-4 max-w-2xl">
+        {commitments.map((c, i) => (
+          <li key={i} className="flex items-start gap-3">
+            <div className="w-5 h-5 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <ShieldCheck className="text-secondary" size={12} />
+            </div>
+            <span className="font-body text-sm md:text-base text-muted-foreground leading-relaxed">
+              {c}
             </span>
-            <h4 className="mt-1.5 font-display text-lg font-bold text-foreground">{f.name}</h4>
-            <p className="mt-2 font-body text-sm text-muted-foreground leading-relaxed">{f.bio}</p>
-          </div>
-        </div>
-      ))}
-    </div>
+          </li>
+        ))}
+      </ul>
+    </motion.section>
   </PageLayout>
 );
 
