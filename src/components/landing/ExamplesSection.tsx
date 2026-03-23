@@ -4,8 +4,8 @@ import { Sparkles } from "lucide-react";
 
 const examples = [
   {
-    question: "Mi hijo se frustra mucho cuando cambia la rutina, ¿cómo puedo ayudarlo?",
-    answer: "Los cambios de rutina pueden ser especialmente desafiantes. Te sugiero anticipar las transiciones con apoyos visuales y darle un espacio seguro para expresar lo que siente antes de redirigir.",
+    question: "Mi hijo hace berrinches cuando cambiamos la rutina. No sé si insistir o darle espacio.",
+    answer: "Los cambios de rutina pueden ser especialmente difíciles para niños con su perfil. Te sugiero anticipar las transiciones con apoyos visuales y validar lo que siente antes de redirigir. Eso le da seguridad sin ceder el límite.",
   },
   {
     question: "No sé si insistir o darle espacio cuando no quiere hablar.",
@@ -17,7 +17,7 @@ const examples = [
   },
   {
     question: "¿Cómo puedo prepararlo mejor para una situación nueva?",
-    answer: "Anticipar es una de las mejores herramientas. Puedes usar historias sociales, fotos del lugar o ensayar lo que va a pasar. Esto reduce la incertidumbre.",
+    answer: "Anticipar es una de las mejores herramientas. Puedes usar historias sociales, fotos del lugar o ensayar lo que va a pasar. Esto reduce la incertidumbre y le da más seguridad.",
   },
 ];
 

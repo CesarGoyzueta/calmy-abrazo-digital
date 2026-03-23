@@ -15,8 +15,8 @@ const CTASection = () => (
         className="rounded-3xl bg-gradient-to-br from-primary/5 via-secondary/4 to-primary/5 border border-primary/10 p-10 md:p-16 text-center max-w-3xl mx-auto"
       >
         <h2 className="section-title mb-5">
-          Empieza a acompañar con más{" "}
-          <span className="text-secondary">claridad, calma y confianza</span>
+          Empieza a acompañar a tu hijo con más{" "}
+          <span className="text-secondary">claridad y confianza</span>
         </h2>
         <p className="section-subtitle max-w-md mx-auto mb-8">
           Únete a la lista de espera para acceder antes al lanzamiento y recibir beneficios exclusivos.

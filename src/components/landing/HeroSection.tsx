@@ -22,24 +22,23 @@ const HeroSection = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease }}
         >
-          <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm mb-5">
+          <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-md mb-5">
             Cuando no sabes cómo acompañar a tu hijo, no deberías sentirte solo.
           </p>
 
           <h1 className="font-display text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-foreground leading-[1.1] tracking-tight">
-            Orientación clara{" "}
+            Cuando no sabes cómo ayudar a tu hijo,{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              para acompañar
-            </span>{" "}
-            a tu hijo
+              tener orientación clara lo cambia todo
+            </span>
           </h1>
 
-          <p className="mt-5 font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-md">
-            Calmy combina conocimiento psicológico con el contexto de tu hijo para darte orientación más clara, práctica y humana.
+          <p className="mt-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
+            Calmy combina conocimiento psicológico con el contexto de tu hijo para darte orientación clara, práctica y humana en los momentos que más lo necesitas.
           </p>
 
           {/* Trust chips */}
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-7 flex flex-wrap gap-2.5">
             {trustChips.map((chip, i) => (
               <motion.span
                 key={chip.label}
@@ -55,7 +54,7 @@ const HeroSection = () => (
           </div>
 
           {/* CTAs */}
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-9 flex flex-wrap items-center gap-3">
             <a href={WAITLIST_URL}>
               <Button variant="calm" size="xl" className="shadow-lg">
                 Únete a la lista de espera <ArrowRight className="ml-1" size={18} />
@@ -68,7 +67,7 @@ const HeroSection = () => (
             </a>
           </div>
 
-          <p className="mt-4 font-body text-xs text-muted-foreground flex items-center gap-1.5">
+          <p className="mt-5 font-body text-xs text-muted-foreground flex items-center gap-1.5">
             <span className="text-sm">🌿</span> Accede antes al lanzamiento y recibe beneficios exclusivos.
           </p>
         </motion.div>
@@ -116,7 +115,7 @@ const HeroSection = () => (
               >
                 <div className="bg-primary/8 rounded-2xl rounded-tr-sm px-3 py-2.5 max-w-[220px]">
                   <p className="font-body text-[11px] text-foreground leading-relaxed">
-                    Mi hijo se frustra mucho cuando cambia la rutina, ¿cómo puedo ayudarlo?
+                    Mi hijo hace berrinches cuando cambiamos la rutina. No sé si insistir o darle espacio.
                   </p>
                 </div>
               </motion.div>
@@ -132,7 +131,7 @@ const HeroSection = () => (
                 </div>
                 <div className="bg-card border border-border/40 rounded-2xl rounded-tl-sm px-3 py-2.5 max-w-[220px] shadow-sm">
                   <p className="font-body text-[11px] text-foreground leading-relaxed">
-                    Para niños con su perfil, los cambios inesperados pueden generar mucha ansiedad. Te sugiero anticipar con apoyo visual y validar su emoción antes de redirigir… 💚
+                    Los cambios de rutina pueden ser especialmente difíciles para niños con su perfil. Te sugiero anticipar con apoyos visuales y validar lo que siente antes de redirigir… 💚
                   </p>
                 </div>
               </motion.div>

@@ -23,7 +23,7 @@ const features = [
 ];
 
 const chatMessages = [
-  { type: "user" as const, text: "Mi hijo se frustra mucho cuando cambia la rutina. No sé cómo ayudarlo." },
+  { type: "user" as const, text: "Mi hijo hace berrinches cuando cambiamos la rutina. No sé si insistir o darle espacio." },
   { type: "bot" as const, text: "Es muy común que los cambios de rutina generen frustración en niños con su perfil. Te sugiero anticipar las transiciones con apoyos visuales y validar su emoción antes de redirigir. ¿Quieres que profundicemos en estrategias específicas? 💚" },
 ];
 
@@ -43,7 +43,10 @@ const SolutionSection = () => (
           <span className="text-secondary">orientación con contexto y sustento</span>
         </h2>
         <p className="mt-6 section-subtitle max-w-xl mx-auto">
-          Calmy combina una base de conocimiento psicológica estructurada con información relevante sobre tu hijo y tu situación.
+          Calmy combina una base de conocimiento psicológico estructurada, basada en principios reales de acompañamiento emocional, con información relevante sobre tu hijo y su contexto.
+        </p>
+        <p className="mt-3 font-body text-xs font-medium text-secondary/80 tracking-wide uppercase">
+          ✦ Diseñado con enfoque en evidencia psicológica aplicada al día a día
         </p>
       </motion.div>
 

@@ -30,10 +30,13 @@ const TrustSection = () => (
         </div>
         <h2 className="section-title">
           Para{" "}
-          <span className="text-primary">acompañarte</span>, no para reemplazar al profesional
+          <span className="text-primary">acompañarte</span>, no para reemplazar a un profesional
         </h2>
         <p className="mt-6 section-subtitle max-w-xl mx-auto">
           La transparencia es parte de nuestro compromiso contigo.
+        </p>
+        <p className="mt-3 font-body text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
+          Calmy no reemplaza terapia, pero puede ayudarte a tomar decisiones con más claridad en el día a día.
         </p>
       </motion.div>
 
