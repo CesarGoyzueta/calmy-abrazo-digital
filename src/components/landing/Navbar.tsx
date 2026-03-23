@@ -10,6 +10,7 @@ const navLinks = [
   { href: "#solucion", label: "Solución" },
   { href: "#como-funciona", label: "Cómo funciona" },
   { href: "#confianza", label: "Transparencia" },
+  { href: "/sobre-calmy", label: "Quiénes somos", isRoute: true },
 ];
 
 const Navbar = () => {
