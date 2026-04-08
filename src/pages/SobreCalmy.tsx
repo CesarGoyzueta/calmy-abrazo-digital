@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import { BookOpen, Brain, ShieldCheck } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
-import founderTech from "@/assets/founder-tech.jpg";
-import founderPsych from "@/assets/founder-psych.jpg";
+import founderTech from "@/assets/founder-tech.jpeg";
+import founderPsych from "@/assets/founder-psych.png";
 
 const founders = [
   {
     photo: founderTech,
-    name: "Cofundador",
+    name: "César Goyzueta",
+    title: "Co-Founder, CEO & CTO",
     role: "Producto, IA y Tecnología",
     bio: "Construye tecnología con propósito y lidera el desarrollo de Calmy para que la experiencia sea útil, clara y humana.",
   },
   {
     photo: founderPsych,
-    name: "Cofundadora",
+    name: "Erika Rubio",
+    title: "Co-Founder, CMO & Head of Psychology",
     role: "Psicología y Contenido Clínico",
     bio: "Aporta el enfoque psicológico y diseña la base científica y emocional que guía cada respuesta de Calmy.",
   },
@@ -86,7 +88,7 @@ const SobreCalmy = () => (
             transition={{ duration: 0.45, delay: i * 0.1 }}
             className="bg-card rounded-2xl border border-border/60 overflow-hidden shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-hover)] transition-all duration-300"
           >
-            <div className="h-56 overflow-hidden">
+            <div className="overflow-hidden" style={{ height: "28rem" }}>
               <img
                 src={f.photo}
                 alt={`${f.name} – ${f.role}`}
@@ -100,6 +102,7 @@ const SobreCalmy = () => (
               <h4 className="mt-2 font-display text-lg font-bold text-foreground">
                 {f.name}
               </h4>
+              <p className="mt-0.5 font-body text-[11px] font-semibold text-muted-foreground/70 uppercase tracking-wider">{f.title}</p>
               <p className="mt-2.5 font-body text-sm text-muted-foreground leading-relaxed">
                 {f.bio}
               </p>

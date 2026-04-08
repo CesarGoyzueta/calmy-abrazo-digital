@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Referencia — Formulario Libro de Reclamaciones (Ley N° 29571)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .header {
+      background: #0f766e;
+      color: white;
+      padding: 2rem 2rem 1.5rem;
+    }
+    .header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .header p { font-size: 0.85rem; opacity: 0.85; line-height: 1.5; }
+    .law-note {
+      background: #f0fdfa;
+      border-left: 4px solid #0f766e;
+      padding: 0.75rem 1rem;
+      font-size: 0.78rem;
+      color: #134e4a;
+      margin: 1.5rem 2rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .section {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .section:last-of-type { border-bottom: none; }
+    .section-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0f766e;
+      margin-bottom: 1.2rem;
+    }
+    .field { margin-bottom: 1.25rem; }
+    .field:last-child { margin-bottom: 0; }
+    .field label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 0.35rem;
+    }
+    .required-badge {
+      display: inline-block;
+      background: #fef2f2;
+      color: #dc2626;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .optional-badge {
+      display: inline-block;
+      background: #f3f4f6;
+      color: #6b7280;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .field-note {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-top: 0.3rem;
+      line-height: 1.4;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      padding: 0.55rem 0.85rem;
+      font-size: 0.88rem;
+      color: #374151;
+      background: #f9fafb;
+      margin-top: 0.3rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    input:focus, textarea:focus, select:focus { border-color: #0f766e; background: #fff; }
+    textarea { resize: vertical; min-height: 100px; }
+    .radio-group, .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+    .radio-item, .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      cursor: pointer;
+    }
+    .radio-item input, .checkbox-item input {
+      width: auto;
+      margin-top: 2px;
+      accent-color: #0f766e;
+      cursor: pointer;
+    }
+    .radio-item span, .checkbox-item span {
+      font-size: 0.88rem;
+      color: #374151;
+      line-height: 1.4;
+    }
+    .radio-item .sub { font-size: 0.75rem; color: #6b7280; margin-top: 2px; }
+    .tipo-box {
+      border: 1.5px solid #d1d5db;
+      border-radius: 10px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tipo-box:hover { border-color: #0f766e; background: #f0fdfa; }
+    .tipo-box strong { font-size: 0.9rem; display: block; margin-bottom: 3px; }
+    .tipo-box p { font-size: 0.78rem; color: #6b7280; line-height: 1.4; }
+    .tipo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.5rem; }
+    @media (max-width: 480px) { .tipo-row { grid-template-columns: 1fr; } }
+    .consent-box {
+      background: #f0fdfa;
+      border: 1.5px solid #99f6e4;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+    .consent-box label { font-size: 0.83rem; color: #134e4a; font-weight: 500; }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background: #0f766e;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 0.85rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      transition: background 0.15s;
+    }
+    .submit-btn:hover { background: #0d6661; }
+    .legal-footer {
+      background: #f9fafb;
+      border-top: 1px solid #e5e7eb;
+      padding: 1rem 2rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .legend {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0.75rem 2rem;
+      border-bottom: 1px solid #f3f4f6;
+      font-size: 0.75rem;
+      color: #374151;
+      background: #fafafa;
+    }
+    .legend span { display: flex; align-items: center; gap: 5px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>Libro de Reclamaciones</h1>
+    <p>Calmy · NeuroCalm &nbsp;|&nbsp; En cumplimiento con la Ley N° 29571 — Código de Protección y Defensa del Consumidor y el D.S. N° 011-2011-PCM</p>
+  </div>
+
+  <div class="legend">
+    <span><span class="required-badge">Obligatorio</span> Campo requerido por ley</span>
+    <span><span class="optional-badge">Opcional</span> Información de apoyo</span>
+  </div>
+
+  <div class="law-note">
+    El registro de tu reclamo o queja no impide que puedas acudir al INDECOPI u otras vías legales disponibles. Responderemos en un plazo máximo de <strong>30 días calendario</strong>.
+  </div>
+
+  <form>
+
+    <!-- SECCIÓN 1: TIPO -->
+    <div class="section">
+      <p class="section-title">1 — Tipo de registro <span class="required-badge">Obligatorio</span></p>
+
+      <div class="field">
+        <label>¿Qué deseas registrar?</label>
+        <p class="field-note">Selecciona la opción que mejor describe tu situación.</p>
+        <div class="tipo-row" style="margin-top:0.75rem;">
+          <label class="tipo-box">
+            <input type="radio" name="tipo" value="reclamo" style="width:auto; margin-bottom:0.5rem; accent-color:#0f766e;">
+            <strong>Reclamo</strong>
+            <p>Disconformidad con el servicio recibido (ej.: no funcionó correctamente, cobro incorrecto, problema con el acceso).</p>
+          </label>
+          <label class="tipo-box">
+            <input type="radio" name="tipo" value="queja" style="width:auto; margin-bottom:0.5rem; accent-color:#0f766e;">
+            <strong>Queja</strong>
+            <p>Mala atención, trato inadecuado o conducta inapropiada del proveedor o del sistema.</p>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 2: DATOS DEL CONSUMIDOR -->
+    <div class="section">
+      <p class="section-title">2 — Datos del consumidor</p>
+
+      <div class="field">
+        <label>Nombre completo <span class="required-badge">Obligatorio</span></label>
+        <input type="text" placeholder="Ej.: María García López" />
+      </div>
+
+      <div class="field">
+        <label>DNI o Carné de Extranjería <span class="required-badge">Obligatorio</span></label>
+        <input type="text" placeholder="Ej.: 12345678" maxlength="12" />
+        <p class="field-note">Requerido por el D.S. N° 011-2011-PCM para identificar al reclamante.</p>
+      </div>
+
+      <div class="field">
+        <label>Correo electrónico <span class="required-badge">Obligatorio</span></label>
+        <input type="email" placeholder="Ej.: maria@correo.com" />
+        <p class="field-note">Aquí te notificaremos la respuesta a tu reclamo o queja.</p>
+      </div>
+
+      <div class="field">
+        <label>Teléfono de contacto <span class="optional-badge">Opcional</span></label>
+        <input type="text" placeholder="Ej.: +51 987 654 321" />
+      </div>
+
+      <div class="field">
+        <label>¿Eres menor de edad? <span class="required-badge">Obligatorio</span></label>
+        <div class="radio-group">
+          <label class="radio-item">
+            <input type="radio" name="menor" value="no" />
+            <span>No, soy mayor de 18 años</span>
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="menor" value="si" />
+            <span>Sí — el reclamo lo presenta mi padre, madre o tutor legal</span>
+          </label>
+        </div>
+        <p class="field-note">Si eres menor, quien complete el formulario debe ser el representante legal.</p>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 3: SERVICIO INVOLUCRADO -->
+    <div class="section">
+      <p class="section-title">3 — Servicio involucrado</p>
+
+      <div class="field">
+        <label>¿Qué servicio está involucrado? <span class="required-badge">Obligatorio</span></label>
+        <select>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option>Acceso a la plataforma / cuenta</option>
+          <option>Conversaciones con Calmy (IA)</option>
+          <option>Lista de espera</option>
+          <option>Suscripción o cobro</option>
+          <option>Atención al cliente</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Fecha en que ocurrió el hecho <span class="required-badge">Obligatorio</span></label>
+        <input type="date" />
+        <p class="field-note">Requerido por el D.S. N° 011-2011-PCM.</p>
+      </div>
+
+      <div class="field">
+        <label>Monto involucrado en soles (S/) <span class="optional-badge">Opcional</span></label>
+        <input type="number" placeholder="Ej.: 49.90" min="0" step="0.01" />
+        <p class="field-note">Solo si aplica (ej.: cobro indebido, no reembolso).</p>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 4: DETALLE -->
+    <div class="section">
+      <p class="section-title">4 — Descripción del reclamo o queja</p>
+
+      <div class="field">
+        <label>Describe con detalle lo sucedido <span class="required-badge">Obligatorio</span></label>
+        <textarea placeholder="Explica qué ocurrió, cuándo y cómo afectó tu experiencia con el servicio..."></textarea>
+        <p class="field-note">Cuanta más información proporciones, mejor podremos atenderte.</p>
+      </div>
+
+      <div class="field">
+        <label>¿Qué solución esperas? <span class="required-badge">Obligatorio</span></label>
+        <textarea placeholder="Ej.: Solicito el reembolso del monto cobrado / solicito una disculpa formal / solicito que se corrija el error..."></textarea>
+        <p class="field-note">Requerido por el D.S. N° 011-2011-PCM (pedido del consumidor).</p>
+      </div>
+
+      <div class="field">
+        <label>Archivos adjuntos (capturas, comprobantes) <span class="optional-badge">Opcional</span></label>
+        <input type="file" multiple accept="image/*,.pdf" style="background:white; padding:0.4rem;" />
+        <p class="field-note">Formatos: JPG, PNG, PDF. Máx. 10 MB por archivo.</p>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 5: CONSENTIMIENTO -->
+    <div class="section">
+      <p class="section-title">5 — Consentimiento y declaración</p>
+
+      <div class="consent-box">
+        <div class="checkbox-item" style="margin-bottom:0.85rem;">
+          <input type="checkbox" id="consent1" required />
+          <label for="consent1">
+            Autorizo que <strong>NeuroCalm</strong> trate mis datos personales con la única finalidad de atender este reclamo o queja, conforme a la <strong>Ley N° 29733</strong> — Ley de Protección de Datos Personales. <span class="required-badge">Obligatorio</span>
+          </label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="consent2" required />
+          <label for="consent2">
+            Declaro que la información proporcionada es verídica y que soy el/la consumidor/a o representante legal indicado. <span class="required-badge">Obligatorio</span>
+          </label>
+        </div>
+      </div>
+
+      <p style="font-size:0.75rem; color:#6b7280; margin-top:1rem; line-height:1.5;">
+        Recibirás un correo de confirmación con tu número de registro. Si no estás satisfecho/a con nuestra respuesta, puedes acudir al <strong>INDECOPI</strong> (0800-4-4040 o <em>www.indecopi.gob.pe</em>) sin costo alguno.
+      </p>
+
+      <button type="submit" class="submit-btn">Enviar reclamo o queja</button>
+    </div>
+
+  </form>
+
+  <div class="legal-footer">
+    NeuroCalm · <em>[Razón social completa]</em> · RUC: <em>[00000000000]</em><br>
+    Conforme al Art. 150° de la Ley N° 29571 y D.S. N° 011-2011-PCM · Plazo de respuesta: 30 días calendario
+  </div>
+
+</div>
+
+</body>
+</html>

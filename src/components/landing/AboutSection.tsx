@@ -1,21 +1,23 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import founderTech from "@/assets/founder-tech.jpg";
-import founderPsych from "@/assets/founder-psych.jpg";
+import founderTech from "@/assets/founder-tech.jpeg";
+import founderPsych from "@/assets/founder-psych.png";
 
 const founders = [
   {
     photo: founderTech,
-    name: "Cofundador",
+    name: "César Goyzueta",
+    title: "Co-Founder, CEO & CTO",
     role: "Producto, IA y Tecnología",
-    bio: "Apasionado por construir tecnología con propósito, enfocada en ayudar a familias de manera real.",
+    bio: "Construye tecnología con propósito y lidera el desarrollo de Calmy para que la experiencia sea útil, clara y humana.",
   },
   {
     photo: founderPsych,
-    name: "Cofundadora",
+    name: "Erika Rubio",
+    title: "Co-Founder, CMO & Head of Psychology",
     role: "Psicología y Contenido Clínico",
-    bio: "Comprometida con traducir el conocimiento psicológico en herramientas accesibles para padres.",
+    bio: "Aporta el enfoque psicológico y diseña la base científica y emocional que guía cada respuesta de Calmy.",
   },
 ];
 
@@ -49,7 +51,7 @@ const AboutSection = () => (
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="card-elevated overflow-hidden hover:shadow-[var(--shadow-hover)] transition-all duration-300"
           >
-            <div className="h-56 overflow-hidden">
+            <div className="h-112 overflow-hidden" style={{ height: "28rem" }}>
               <img src={f.photo} alt={`${f.name} - ${f.role}`} className="w-full h-full object-cover object-top" />
             </div>
             <div className="p-6">
@@ -57,6 +59,7 @@ const AboutSection = () => (
                 Cofundador/a · {f.role}
               </span>
               <h4 className="mt-1.5 font-display text-lg font-bold text-foreground">{f.name}</h4>
+              <p className="mt-0.5 font-body text-[11px] font-semibold text-muted-foreground/70 uppercase tracking-wider">{f.title}</p>
               <p className="mt-2 font-body text-sm text-muted-foreground leading-relaxed">{f.bio}</p>
             </div>
           </motion.div>
