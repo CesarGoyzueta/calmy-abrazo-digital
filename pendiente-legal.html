@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendientes Legales — NeuroCalm / Calmy</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+      padding: 2rem 1rem;
+      line-height: 1.6;
+    }
+    .container { max-width: 780px; margin: 0 auto; }
+    h1 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .subtitle { color: #6b7280; font-size: 0.9rem; margin-bottom: 2rem; }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .badge-ok    { background: #d1fae5; color: #065f46; }
+    .badge-pend  { background: #fef3c7; color: #92400e; }
+    .badge-venta { background: #dbeafe; color: #1e40af; }
+    .badge-critico { background: #fee2e2; color: #991b1b; }
+
+    h2 { font-size: 1.05rem; font-weight: 700; color: #111827; }
+    h3 { font-size: 0.95rem; font-weight: 700; margin: 1rem 0 0.4rem; color: #374151; }
+    p  { font-size: 0.88rem; color: #4b5563; margin-bottom: 0.5rem; }
+    ul { padding-left: 1.2rem; margin-bottom: 0.5rem; }
+    li { font-size: 0.88rem; color: #4b5563; margin-bottom: 0.3rem; }
+    li strong { color: #111827; }
+
+    .check { color: #10b981; font-weight: 800; margin-right: 5px; }
+    .warn  { color: #f59e0b; font-weight: 800; margin-right: 5px; }
+    .dot   { color: #3b82f6; font-weight: 800; margin-right: 5px; }
+
+    .highlight {
+      background: #f0fdfa;
+      border-left: 4px solid #0d9488;
+      padding: 0.75rem 1rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.85rem;
+      color: #134e4a;
+      margin: 0.75rem 0;
+    }
+    .warning-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 0.75rem 1rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.85rem;
+      color: #78350f;
+      margin: 0.75rem 0;
+    }
+    .danger-box {
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+      padding: 0.75rem 1rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.85rem;
+      color: #7f1d1d;
+      margin: 0.75rem 0;
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0.75rem 0; }
+    th { background: #f9fafb; text-align: left; padding: 0.6rem 0.75rem; font-weight: 700; color: #374151; border-bottom: 2px solid #e5e7eb; }
+    td { padding: 0.6rem 0.75rem; border-bottom: 1px solid #f3f4f6; color: #4b5563; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    td strong { color: #111827; }
+
+    .step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .step-num {
+      background: #0d9488;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 0.78rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-content h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .step-content p  { font-size: 0.83rem; color: #6b7280; margin: 0; }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Pendientes Legales — NeuroCalm / Calmy</h1>
+  <p class="subtitle">Actualizado: abril 2026 · Pre-lanzamiento</p>
+
+  <!-- ESTADO ACTUAL -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-ok">Estado actual</span>
+      <h2>Lo que ya está cubierto (pre-lanzamiento)</h2>
+    </div>
+    <ul>
+      <li><span class="check">✓</span> Política de Privacidad publicada — cumple Ley N° 29733 para recolección de emails</li>
+      <li><span class="check">✓</span> Términos y Condiciones publicados — con ley aplicable peruana y jurisdicción Lima</li>
+      <li><span class="check">✓</span> Libro de Reclamaciones publicado — cumple Art. 150° Ley N° 29571</li>
+      <li><span class="check">✓</span> Solo se recolectan emails (lista de espera) — el nivel de riesgo legal es bajo</li>
+    </ul>
+    <div class="highlight">
+      <strong>Conclusión:</strong> Para operar como landing de pre-lanzamiento y recolectar emails, el estado actual es suficiente. No estás vendiendo nada, no estás facturando, no hay obligación tributaria activa.
+    </div>
+  </div>
+
+  <!-- CUÁNDO EMPIECES A VENDER -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-venta">Al momento de vender</span>
+      <h2>¿Qué necesitas cuando empieces a cobrar?</h2>
+    </div>
+
+    <div class="warning-box">
+      <strong>Regla clave en Perú:</strong> En cuanto recibas un sol por tu servicio (suscripción, pago único, etc.), estás obligado a tener RUC activo y emitir comprobantes de pago. Sin RUC = infracción SUNAT.
+    </div>
+
+    <h3>Paso 1 — Decide la estructura legal</h3>
+    <table>
+      <tr>
+        <th>Opción</th>
+        <th>Cuándo conviene</th>
+        <th>Costo aprox.</th>
+        <th>Responsabilidad</th>
+      </tr>
+      <tr>
+        <td><strong>Persona Natural con Negocio</strong></td>
+        <td>Si empiezas solo, ingresos bajos (&lt; S/ 8,000/mes), quieres velocidad</td>
+        <td>Gratis (solo sacar RUC en SUNAT)</td>
+        <td>Ilimitada — tu patrimonio personal responde</td>
+      </tr>
+      <tr>
+        <td><strong>EIRL</strong> (Empresa Individual de Responsabilidad Limitada)</td>
+        <td>Si quieres separar patrimonio personal desde el inicio sin socios</td>
+        <td>S/ 300–500 (SUNARP + notaría)</td>
+        <td>Limitada al capital aportado</td>
+      </tr>
+      <tr>
+        <td><strong>SAC</strong> (Sociedad Anónima Cerrada) ⭐ Recomendada</td>
+        <td>Tienen 2 fundadores, buscan inversión o escalar</td>
+        <td>S/ 500–800 (SUNARP + notaría)</td>
+        <td>Limitada — César y Erika como accionistas</td>
+      </tr>
+    </table>
+
+    <div class="highlight">
+      <strong>Recomendación para NeuroCalm:</strong> SAC. Tienen dos fundadores, el producto escala, y eventualmente buscarán inversión. Una SAC permite emitir acciones, aceptar socios y separar el patrimonio personal. Constituirla en Perú toma 2–4 semanas vía notaría o plataforma online (SUNARP en línea).
+    </div>
+
+    <h3>Paso 2 — Sacar el RUC</h3>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Si van como Persona Natural (temporal/rápido)</h4>
+        <p>Ingresar a <strong>sunat.gob.pe → Inscripción RUC</strong> con DNI. Es gratis e inmediato. RUC empieza con <strong>10</strong>.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Si van como SAC (recomendado)</h4>
+        <p>Primero constituyen la empresa en notaría → SUNARP inscribe → luego sacan RUC de la empresa en SUNAT. RUC empieza con <strong>20</strong>.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Elegir régimen tributario</h4>
+        <p>Ver tabla abajo según ingresos proyectados.</p>
+      </div>
+    </div>
+
+    <h3>Paso 3 — Elegir régimen tributario</h3>
+    <table>
+      <tr>
+        <th>Régimen</th>
+        <th>Límite ingresos</th>
+        <th>Impuesto</th>
+        <th>Comprobantes</th>
+        <th>Para NeuroCalm</th>
+      </tr>
+      <tr>
+        <td><strong>Nuevo RUS</strong></td>
+        <td>Hasta S/ 96,000/año</td>
+        <td>S/ 20–50/mes fijo</td>
+        <td>Solo boletas</td>
+        <td>❌ No aplica para servicios digitales SaaS</td>
+      </tr>
+      <tr>
+        <td><strong>Régimen Especial (RER)</strong></td>
+        <td>Hasta S/ 525,000/año</td>
+        <td>1.5% ventas netas/mes</td>
+        <td>Boletas y facturas</td>
+        <td>✅ Buena opción para inicio</td>
+      </tr>
+      <tr>
+        <td><strong>Régimen MYPE Tributario</strong></td>
+        <td>Hasta 1,700 UIT/año (~S/ 9M)</td>
+        <td>10% renta neta (primeras 15 UIT)</td>
+        <td>Boletas y facturas</td>
+        <td>✅ Recomendado si proyectan crecer rápido</td>
+      </tr>
+      <tr>
+        <td><strong>Régimen General</strong></td>
+        <td>Sin límite</td>
+        <td>29.5% renta neta anual</td>
+        <td>Boletas y facturas</td>
+        <td>Cuando escalen (inversión, exportación)</td>
+      </tr>
+    </table>
+
+    <div class="highlight">
+      <strong>Para el lanzamiento:</strong> Régimen MYPE Tributario. Pagan 10% solo sobre la ganancia real (no las ventas), pueden emitir facturas (importante para empresas que contraten), y pueden cambiar de régimen si crecen.
+    </div>
+  </div>
+
+  <!-- LO QUE CAMBIA EN EL SITIO -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-pend">Pendiente</span>
+      <h2>Qué actualizar en el sitio web cuando tengan RUC</h2>
+    </div>
+    <ul>
+      <li><span class="dot">→</span> <strong>Política de Privacidad (sección 1):</strong> Agregar razón social, RUC y dirección fiscal</li>
+      <li><span class="dot">→</span> <strong>Términos y Condiciones (sección 1):</strong> Mismo dato</li>
+      <li><span class="dot">→</span> <strong>Libro de Reclamaciones (pie de página):</strong> Agregar RUC en el footer legal</li>
+      <li><span class="dot">→</span> <strong>Footer del sitio:</strong> Considerar agregar "RUC: XXXXXXXXXXX" junto al copyright</li>
+      <li><span class="dot">→</span> <strong>Política de Privacidad (sección 5):</strong> Actualizar la cláusula de transferencia a terceros con los proveedores reales (Supabase, OpenAI, etc.)</li>
+      <li><span class="dot">→</span> <strong>Agregar Política de Reembolsos</strong> — obligatoria cuando haya cobros (Ley N° 29571, Art. 97°)</li>
+    </ul>
+  </div>
+
+  <!-- SOBRE PAGOS DIGITALES -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-venta">Pagos</span>
+      <h2>Cómo cobrar digitalmente en Perú (sin fricción)</h2>
+    </div>
+    <table>
+      <tr>
+        <th>Plataforma</th>
+        <th>Comisión aprox.</th>
+        <th>Emite comprobantes</th>
+        <th>Recomendación</th>
+      </tr>
+      <tr>
+        <td><strong>Stripe</strong></td>
+        <td>2.9% + $0.30 USD</td>
+        <td>No (lo emites tú)</td>
+        <td>✅ Mejor para suscripciones, acepta tarjetas internacionales</td>
+      </tr>
+      <tr>
+        <td><strong>Culqi</strong> (peruano)</td>
+        <td>~3.99% + IGV</td>
+        <td>No (lo emites tú)</td>
+        <td>✅ Ideal para mercado local, integra bien con SUNAT</td>
+      </tr>
+      <tr>
+        <td><strong>Mercado Pago</strong></td>
+        <td>~4.99%</td>
+        <td>No</td>
+        <td>Ok para inicio rápido, comisión alta</td>
+      </tr>
+      <tr>
+        <td><strong>Niubiz / VisaNet</strong></td>
+        <td>Variable (contrato)</td>
+        <td>No</td>
+        <td>Para cuando escalen con volumen</td>
+      </tr>
+    </table>
+    <div class="warning-box">
+      <strong>Ojo con el IGV:</strong> Si estás en RER o MYPE Tributario, tus precios deben incluir IGV (18%). Un plan de S/ 49 en realidad es S/ 41.53 + S/ 7.47 de IGV que van a SUNAT cada mes. Considera esto al definir precios.
+    </div>
+  </div>
+
+  <!-- MULTAS A EVITAR -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-critico">Riesgos</span>
+      <h2>Multas que evitar cuando empiecen a vender</h2>
+    </div>
+    <table>
+      <tr>
+        <th>Infracción</th>
+        <th>Multa aprox.</th>
+        <th>Cómo evitarla</th>
+      </tr>
+      <tr>
+        <td>Cobrar sin RUC activo</td>
+        <td>30–80% de la UIT (~S/ 1,600–4,280)</td>
+        <td>Tener RUC antes del primer cobro</td>
+      </tr>
+      <tr>
+        <td>No emitir comprobante de pago</td>
+        <td>25–65% de la UIT (~S/ 1,340–3,480)</td>
+        <td>Emitir boleta/factura en cada venta</td>
+      </tr>
+      <tr>
+        <td>No declarar IGV mensual</td>
+        <td>50% del tributo omitido + intereses</td>
+        <td>Presentar PDT mensual aunque sea en cero</td>
+      </tr>
+      <tr>
+        <td>No tener Libro de Reclamaciones visible</td>
+        <td>1–5 UIT (~S/ 5,350–26,750) — INDECOPI</td>
+        <td>Ya está publicado en el sitio ✓</td>
+      </tr>
+      <tr>
+        <td>No entregar política de privacidad</td>
+        <td>Hasta 100 UIT si hay denuncia — APDP</td>
+        <td>Ya está publicada en el sitio ✓</td>
+      </tr>
+    </table>
+    <div class="danger-box">
+      <strong>UIT 2026 = S/ 5,350.</strong> Las multas de SUNAT e INDECOPI se calculan sobre este valor. No son montos fijos — cambian cada año.
+    </div>
+  </div>
+
+  <!-- CHECKLIST ANTES DE LANZAR VENTAS -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge badge-pend">Checklist</span>
+      <h2>Lista antes de activar pagos</h2>
+    </div>
+    <ul style="list-style:none; padding:0;">
+      <li style="padding:0.4rem 0; border-bottom:1px solid #f3f4f6;">☐ &nbsp; Constituir SAC en notaría (o inscribir persona natural si van rápido)</li>
+      <li style="padding:0.4rem 0; border-bottom:1px solid #f3f4f6;">☐ &nbsp; Obtener RUC en SUNAT y activarlo con régimen MYPE Tributario</li>
+      <li style="padding:0.4rem 0; border-bottom:1px solid #f3f4f6;">☐ &nbsp; Abrir cuenta bancaria empresarial (BCP, Interbank, o Mibanco)</li>
+      <li style="padding:0.4rem 0; border-bottom:1px solid #f3f4f6;">☐ &nbsp; Integrar pasarela de pago (Culqi para Perú / Stripe para internacional)</li>
+      <li style="padding:0.4rem 0; border-bottom:1px solid #f3f4f6;">☐ &nbsp; Configurar emisión de comprobantes electrónicos (SUNAT OSE o PSE)</li>
+      <li style="padding:0.4rem 0; border-bottom:1px solid #f3f4f6;">☐ &nbsp; Actualizar Privacidad y Términos con RUC y razón social real</li>
+      <li style="padding:0.4rem 0; border-bottom:1px solid #f3f4f6;">☐ &nbsp; Publicar Política de Reembolsos</li>
+      <li style="padding:0.4rem 0;">☐ &nbsp; Activar Google Forms del Libro de Reclamaciones</li>
+    </ul>
+  </div>
+
+  <p class="footer-note">
+    Documento de referencia interno — NeuroCalm / Calmy · Abril 2026<br>
+    Este documento es orientativo. Consultar con un contador o abogado para decisiones definitivas.
+  </p>
+
+</div>
+</body>
+</html>

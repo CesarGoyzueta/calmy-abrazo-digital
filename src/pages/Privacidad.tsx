@@ -12,9 +12,8 @@ const Privacidad = () => (
 
       <h2>1. Responsable del tratamiento</h2>
       <p>
-        El responsable del tratamiento de tus datos personales es <strong>[TU NOMBRE COMPLETO]</strong>,
-        con RUC <strong>10756714071</strong>, domiciliado en <strong>[DISTRITO], Lima, Perú</strong>,
-        operando bajo el nombre comercial <strong>NeuroCalm / Calmy</strong>. Puedes contactarnos en{" "}
+        El responsable del tratamiento de tus datos personales es <strong>NeuroCalm</strong>,
+        con domicilio en Lima, Perú. Puedes contactarnos en{" "}
         <a href="mailto:hola@neurocalm.app" className="text-primary hover:underline">hola@neurocalm.app</a>.
       </p>
 

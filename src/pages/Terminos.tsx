@@ -12,9 +12,8 @@ const Terminos = () => (
 
       <h2>1. Identificación del proveedor</h2>
       <p>
-        El presente sitio web es operado por <strong>[TU NOMBRE COMPLETO]</strong>, con RUC{" "}
-        <strong>10756714071</strong>, domiciliado en <strong>[DISTRITO], Lima, Perú</strong>, bajo el
-        nombre comercial <strong>NeuroCalm / Calmy</strong>. Contacto:{" "}
+        El presente sitio web es operado por <strong>NeuroCalm</strong>, con domicilio en
+        Lima, Perú. Contacto:{" "}
         <a href="mailto:hola@neurocalm.app" className="text-primary hover:underline">hola@neurocalm.app</a>.
       </p>
 
