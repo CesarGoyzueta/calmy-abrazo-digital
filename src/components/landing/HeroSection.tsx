@@ -22,10 +22,6 @@ const HeroSection = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease }}
         >
-          <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-md mb-5">
-            Cuando no sabes cómo acompañar a tu hijo, no deberías sentirte solo.
-          </p>
-
           <h1 className="font-display text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-foreground leading-[1.1] tracking-tight">
             Cuando no sabes cómo ayudar a tu hijo,{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -77,7 +73,7 @@ const HeroSection = () => (
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease }}
-          className="relative hidden lg:flex justify-center items-center min-h-[480px]"
+          className="relative flex justify-center items-center min-h-[340px] lg:min-h-[480px] mt-10 lg:mt-0"
         >
           {/* Glow */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -153,7 +149,7 @@ const HeroSection = () => (
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 1.0, ease }}
-            className="absolute -left-6 top-16 z-20 card-elevated px-3.5 py-2.5 flex items-center gap-2.5 shadow-lg"
+            className="absolute -left-6 top-16 z-20 card-elevated px-3.5 py-2.5 hidden sm:flex items-center gap-2.5 shadow-lg"
           >
             <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0">
               <User className="text-primary" size={14} />
@@ -169,7 +165,7 @@ const HeroSection = () => (
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 1.1, ease }}
-            className="absolute -right-6 bottom-20 z-20 card-elevated px-3.5 py-2.5 flex items-center gap-2.5 shadow-lg"
+            className="absolute -right-6 bottom-20 z-20 card-elevated px-3.5 py-2.5 hidden sm:flex items-center gap-2.5 shadow-lg"
           >
             <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
               <Brain className="text-secondary" size={14} />

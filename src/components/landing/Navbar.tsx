@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/neurocalm-logo.png";
 
@@ -37,15 +38,25 @@ const Navbar = () => {
         </a>
 
         <div className="hidden md:flex items-center gap-7">
-          {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body font-medium"
-            >
-              {l.label}
-            </a>
-          ))}
+          {navLinks.map((l) =>
+            l.isRoute ? (
+              <Link
+                key={l.href}
+                to={l.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body font-medium"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body font-medium"
+              >
+                {l.label}
+              </a>
+            )
+          )}
           <a href={WAITLIST_URL}>
             <Button variant="calm" size="sm">
               Únete a la waitlist
@@ -60,16 +71,27 @@ const Navbar = () => {
 
       {open && (
         <div className="md:hidden bg-card/95 backdrop-blur-xl border-b border-border/50 px-5 pb-5 space-y-3 shadow-[var(--shadow-soft)]">
-          {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="block text-sm text-muted-foreground hover:text-foreground font-body py-1"
-            >
-              {l.label}
-            </a>
-          ))}
+          {navLinks.map((l) =>
+            l.isRoute ? (
+              <Link
+                key={l.href}
+                to={l.href}
+                onClick={() => setOpen(false)}
+                className="block text-sm text-muted-foreground hover:text-foreground font-body py-1"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block text-sm text-muted-foreground hover:text-foreground font-body py-1"
+              >
+                {l.label}
+              </a>
+            )
+          )}
           <a href={WAITLIST_URL}>
             <Button variant="calm" size="sm" className="w-full mt-2">
               Únete a la waitlist

@@ -23,8 +23,8 @@ const features = [
 ];
 
 const chatMessages = [
-  { type: "user" as const, text: "Mi hijo hace berrinches cuando cambiamos la rutina. No sé si insistir o darle espacio." },
-  { type: "bot" as const, text: "Es muy común que los cambios de rutina generen frustración en niños con su perfil. Te sugiero anticipar las transiciones con apoyos visuales y validar su emoción antes de redirigir. ¿Quieres que profundicemos en estrategias específicas? 💚" },
+  { type: "user" as const, text: "Mi hija llora cada vez que le digo que no, aunque sea algo pequeño. Ya no sé si soy muy estricta o muy permisiva." },
+  { type: "bot" as const, text: "Esa reacción intensa ante los límites es muy frecuente a esta edad y no significa que estés fallando. Lo que describes parece más una dificultad para tolerar la frustración que un problema de disciplina. ¿Cuántos años tiene y cómo sueles manejar esos momentos? 💚" },
 ];
 
 const SolutionSection = () => (

@@ -57,7 +57,7 @@ const Footer = () => (
       </div>
 
       <div className="mt-10 pt-6 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p className="font-body text-[11px] text-muted-foreground">© 2025 Calmy. Todos los derechos reservados.</p>
+        <p className="font-body text-[11px] text-muted-foreground">© 2026 Calmy. Todos los derechos reservados.</p>
         <p className="font-body text-[11px] text-muted-foreground">Hecho con 💚 para familias que buscan claridad.</p>
       </div>
     </div>

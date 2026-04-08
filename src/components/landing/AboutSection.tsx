@@ -8,15 +8,15 @@ const founders = [
   {
     photo: founderTech,
     name: "César Goyzueta",
-    title: "Co-Founder, CEO & CTO",
-    role: "Producto, IA y Tecnología",
+    badge: "Co-Fundador · CEO & CTO",
+    subtitle: "Visión estratégica · IA y Tecnología",
     bio: "Construye tecnología con propósito y lidera el desarrollo de Calmy para que la experiencia sea útil, clara y humana.",
   },
   {
     photo: founderPsych,
     name: "Erika Rubio",
-    title: "Co-Founder, CMO & Head of Psychology",
-    role: "Psicología y Contenido Clínico",
+    badge: "Co-Fundadora · CMO & Head of Psychology",
+    subtitle: "Sustento clínico · Marca y crecimiento",
     bio: "Aporta el enfoque psicológico y diseña la base científica y emocional que guía cada respuesta de Calmy.",
   },
 ];
@@ -51,15 +51,17 @@ const AboutSection = () => (
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="card-elevated overflow-hidden hover:shadow-[var(--shadow-hover)] transition-all duration-300"
           >
-            <div className="h-112 overflow-hidden" style={{ height: "28rem" }}>
-              <img src={f.photo} alt={`${f.name} - ${f.role}`} className="w-full h-full object-cover object-top" />
+            <div className="overflow-hidden" style={{ height: "22rem" }}>
+              <img src={f.photo} alt={`${f.name} - ${f.badge}`} className="w-full h-full object-contain" />
             </div>
             <div className="p-6">
-              <span className="font-body text-[11px] font-bold uppercase tracking-wider text-secondary">
-                Cofundador/a · {f.role}
-              </span>
+              <div className="min-h-[2.5rem] flex items-start">
+                <span className="font-body text-[11px] font-bold uppercase tracking-wider text-secondary">
+                  {f.badge}
+                </span>
+              </div>
               <h4 className="mt-1.5 font-display text-lg font-bold text-foreground">{f.name}</h4>
-              <p className="mt-0.5 font-body text-[11px] font-semibold text-muted-foreground/70 uppercase tracking-wider">{f.title}</p>
+              <p className="mt-0.5 font-body text-[11px] font-semibold text-muted-foreground/70 uppercase tracking-wider">{f.subtitle}</p>
               <p className="mt-2 font-body text-sm text-muted-foreground leading-relaxed">{f.bio}</p>
             </div>
           </motion.div>

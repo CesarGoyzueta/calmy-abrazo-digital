@@ -4,8 +4,8 @@ import { Sparkles } from "lucide-react";
 
 const examples = [
   {
-    question: "Mi hijo hace berrinches cuando cambiamos la rutina. No sé si insistir o darle espacio.",
-    answer: "Los cambios de rutina pueden ser especialmente difíciles para niños con su perfil. Te sugiero anticipar las transiciones con apoyos visuales y validar lo que siente antes de redirigir. Eso le da seguridad sin ceder el límite.",
+    question: "Mi hijo de 5 años no quiere ir al colegio y llora cada mañana. Ya no sé qué hacer.",
+    answer: "El rechazo escolar a esa edad suele tener una causa emocional detrás, no es capricho. Antes de insistir, vale la pena explorar si hay algo que le genera ansiedad en el colegio: el salón, un compañero, la separación. ¿Sabes si algo cambió recientemente en su rutina o entorno? 💚",
   },
   {
     question: "No sé si insistir o darle espacio cuando no quiere hablar.",

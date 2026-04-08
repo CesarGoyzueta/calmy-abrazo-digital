@@ -8,15 +8,15 @@ const founders = [
   {
     photo: founderTech,
     name: "César Goyzueta",
-    title: "Co-Founder, CEO & CTO",
-    role: "Producto, IA y Tecnología",
+    badge: "Co-Fundador · CEO & CTO",
+    subtitle: "Visión estratégica · IA y Tecnología",
     bio: "Construye tecnología con propósito y lidera el desarrollo de Calmy para que la experiencia sea útil, clara y humana.",
   },
   {
     photo: founderPsych,
     name: "Erika Rubio",
-    title: "Co-Founder, CMO & Head of Psychology",
-    role: "Psicología y Contenido Clínico",
+    badge: "Co-Fundadora · CMO & Head of Psychology",
+    subtitle: "Sustento clínico · Marca y crecimiento",
     bio: "Aporta el enfoque psicológico y diseña la base científica y emocional que guía cada respuesta de Calmy.",
   },
 ];
@@ -88,21 +88,23 @@ const SobreCalmy = () => (
             transition={{ duration: 0.45, delay: i * 0.1 }}
             className="bg-card rounded-2xl border border-border/60 overflow-hidden shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-hover)] transition-all duration-300"
           >
-            <div className="overflow-hidden" style={{ height: "28rem" }}>
+            <div className="overflow-hidden" style={{ height: "22rem" }}>
               <img
                 src={f.photo}
-                alt={`${f.name} – ${f.role}`}
-                className="w-full h-full object-cover object-top"
+                alt={`${f.name} – ${f.badge}`}
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="p-7">
-              <span className="font-body text-[11px] font-bold uppercase tracking-wider text-secondary">
-                Cofundador/a · {f.role}
-              </span>
+              <div className="min-h-[2.5rem] flex items-start">
+                <span className="font-body text-[11px] font-bold uppercase tracking-wider text-secondary">
+                  {f.badge}
+                </span>
+              </div>
               <h4 className="mt-2 font-display text-lg font-bold text-foreground">
                 {f.name}
               </h4>
-              <p className="mt-0.5 font-body text-[11px] font-semibold text-muted-foreground/70 uppercase tracking-wider">{f.title}</p>
+              <p className="mt-0.5 font-body text-[11px] font-semibold text-muted-foreground/70 uppercase tracking-wider">{f.subtitle}</p>
               <p className="mt-2.5 font-body text-sm text-muted-foreground leading-relaxed">
                 {f.bio}
               </p>
