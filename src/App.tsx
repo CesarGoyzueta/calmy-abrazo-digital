@@ -24,7 +24,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/calmy-abrazo-digital/">
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
