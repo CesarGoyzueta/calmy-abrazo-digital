@@ -45,23 +45,21 @@ const LibroReclamaciones = () => (
         Completa el formulario a continuación. Recibirás un correo de confirmación con tu número de registro. Calmy responderá dentro del plazo legal establecido.
       </p>
 
-      {/* Aquí va el iframe de Google Forms — reemplaza el src con tu enlace */}
-      <div className="not-prose my-8 rounded-2xl overflow-hidden border border-border/40 shadow-sm">
-        <iframe
-          src="https://docs.google.com/forms/d/e/TU_ID_DE_FORMULARIO_AQUI/viewform?embedded=true"
-          width="100%"
-          height="950"
-          frameBorder="0"
-          title="Formulario de Libro de Reclamaciones"
+      <div className="not-prose my-6">
+        <a
+          href="https://forms.gle/8z53XYEbzMfaguXdA"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline font-medium"
         >
-          Cargando formulario...
-        </iframe>
+          Abrir formulario de reclamos
+        </a>
       </div>
 
       <h2>Canal alternativo de contacto</h2>
       <p>
         Si prefieres enviarnos tu reclamo por correo electrónico, escríbenos a{" "}
-        <a href="mailto:hola@neurocalm.app" className="text-primary hover:underline">hola@neurocalm.app</a>{" "}
+        <a href="mailto:neurocalm.calmy@gmail.com" className="text-primary hover:underline">neurocalm.calmy@gmail.com</a>{" "}
         incluyendo la misma información indicada arriba.
       </p>
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/neurocalm-logo.png";
 
-const WAITLIST_URL = "#waitlist";
+const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
 
 const navLinks = [
   { href: "#problema", label: "El desafío" },
