@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const WAITLIST_URL = "#waitlist";
+const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
 
 const CTASection = () => (
   <section className="py-20 md:py-28">

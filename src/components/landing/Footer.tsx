@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/neurocalm-logo.png";
 
-const WAITLIST_URL = "#waitlist";
+const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
 
 const Footer = () => (
   <footer className="py-12 px-5 border-t border-border/40 bg-card/30">
