@@ -48,7 +48,7 @@ const LibroReclamaciones = () => (
       {/* Aquí va el iframe de Google Forms — reemplaza el src con tu enlace */}
       <div className="not-prose my-8 rounded-2xl overflow-hidden border border-border/40 shadow-sm">
         <iframe
-          src="https://forms.gle/8z53XYEbzMfaguXdA"
+          src="https://forms.gle/8z53XYEbzMfaguXdA?embedded=true"
           width="100%"
           height="950"
           frameBorder="0"
