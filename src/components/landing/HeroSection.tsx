@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, UserCheck, MessageCircle, Brain, User, Sparkles, Shield } from "lucide-react";
 
-const WAITLIST_URL = "#waitlist";
+const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
 
 const trustChips = [
   { icon: BookOpen, label: "Base psicológica real" },
