@@ -40,7 +40,7 @@ const ProblemSection = () => (
           <span className="text-primary">y no siempre hay a quién acudir</span>
         </h2>
         <p className="mt-6 section-subtitle max-w-xl mx-auto">
-          Criar con amor no siempre significa saber qué hacer. Y en esos momentos, decidir sin claridad puede sentirse abrumador.
+          Criar con amor no siempre significa tener respuestas. Cuando la duda aparece, necesitas una guía clara para actuar mejor.
         </p>
       </motion.div>
 
