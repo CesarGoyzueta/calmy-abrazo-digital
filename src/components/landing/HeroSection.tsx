@@ -149,14 +149,14 @@ const HeroSection = () => (
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 1.0, ease }}
-            className="absolute -left-6 top-16 z-20 card-elevated px-4 py-3 hidden sm:flex items-center gap-3 shadow-lg"
+            className="absolute -left-6 top-16 z-20 card-elevated px-5 py-3.5 hidden sm:flex items-center gap-3 shadow-lg"
           >
-            <div className="w-9 h-9 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-primary/8 flex items-center justify-center flex-shrink-0">
               <User className="text-primary" size={16} />
             </div>
             <div>
-              <p className="font-display text-xs font-bold text-foreground">Perfil del niño</p>
-              <p className="font-body text-[10px] text-muted-foreground">Contexto personalizado</p>
+              <p className="font-display text-sm font-bold text-foreground">Perfil del niño</p>
+              <p className="font-body text-xs text-muted-foreground">Contexto personalizado</p>
             </div>
           </motion.div>
 
@@ -165,14 +165,14 @@ const HeroSection = () => (
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 1.1, ease }}
-            className="absolute -right-6 bottom-20 z-20 card-elevated px-4 py-3 hidden sm:flex items-center gap-3 shadow-lg"
+            className="absolute -right-6 bottom-20 z-20 card-elevated px-5 py-3.5 hidden sm:flex items-center gap-3 shadow-lg"
           >
-            <div className="w-9 h-9 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center flex-shrink-0">
               <Brain className="text-secondary" size={16} />
             </div>
             <div>
-              <p className="font-display text-xs font-bold text-foreground">Base psicológica</p>
-              <p className="font-body text-[10px] text-muted-foreground">Conocimiento estructurado</p>
+              <p className="font-display text-sm font-bold text-foreground">Base psicológica</p>
+              <p className="font-body text-xs text-muted-foreground">Conocimiento estructurado</p>
             </div>
           </motion.div>
         </motion.div>
