@@ -43,7 +43,7 @@ const SolutionSection = () => (
           <span className="text-secondary">orientación con contexto y sustento</span>
         </h2>
         <p className="mt-6 section-subtitle max-w-xl mx-auto">
-          Calmy combina una base de conocimiento psicológico estructurada, basada en principios reales de acompañamiento emocional, con información relevante sobre tu hijo y su contexto.
+          Una herramienta de orientación que transforma tus dudas en pasos concretos, usando base psicológica y el contexto de tu hijo.
         </p>
         <p className="mt-3 font-body text-xs font-medium text-secondary/80 tracking-wide uppercase">
           ✦ Diseñado con enfoque en evidencia psicológica aplicada al día a día
