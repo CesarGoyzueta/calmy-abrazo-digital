@@ -30,7 +30,7 @@ const HeroSection = () => (
           </h1>
 
           <p className="mt-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
-            Calmy combina conocimiento psicológico con el contexto de tu hijo para darte orientación clara, práctica y humana en los momentos que más lo necesitas.
+            Recibe orientación clara en minutos para saber qué hacer hoy con tu hijo, con base psicológica y pasos prácticos para tu situación.
           </p>
 
           {/* Trust chips */}
@@ -53,7 +53,7 @@ const HeroSection = () => (
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a href={WAITLIST_URL}>
               <Button variant="calm" size="xl" className="shadow-lg">
-                Únete a la lista de espera <ArrowRight className="ml-1" size={18} />
+                Quiero acceso prioritario <ArrowRight className="ml-1" size={18} />
               </Button>
             </a>
             <a href="#como-funciona">
@@ -64,7 +64,10 @@ const HeroSection = () => (
           </div>
 
           <p className="mt-5 font-body text-xs text-muted-foreground flex items-center gap-1.5">
-            <span className="text-sm">🌿</span> Accede antes al lanzamiento y recibe beneficios exclusivos.
+            <span className="text-sm">🌿</span> Lanzamiento: descuento especial durante tus primeros 3 meses.
+          </p>
+          <p className="mt-2 font-body text-[11px] text-muted-foreground/90">
+            Orientación para el día a día. No reemplaza terapia ni diagnóstico clínico.
           </p>
         </motion.div>
 
