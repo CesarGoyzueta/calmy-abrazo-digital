@@ -41,7 +41,7 @@ const HowItWorksSection = () => (
           <span className="text-primary">darte respuestas con sentido</span>
         </h2>
         <p className="mt-6 section-subtitle max-w-xl mx-auto">
-          No es solo preguntar y responder. Es un flujo que transforma tu contexto en orientación personalizada.
+          En menos de un minuto, conviertes tu duda en pasos concretos para actuar con más calma y claridad.
         </p>
       </motion.div>
 
@@ -110,7 +110,7 @@ const HowItWorksSection = () => (
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-10 font-body text-sm text-muted-foreground italic"
         >
-          No es solo responder, es ayudarte a tomar mejores decisiones en el momento.
+          Guía práctica para hoy, sin esperar a la próxima cita.
         </motion.p>
       </div>
     </div>
