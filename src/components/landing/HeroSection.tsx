@@ -81,7 +81,7 @@ const HeroSection = () => (
           </div>
 
           {/* Main chat mockup */}
-          <div className="relative w-[400px] lg:w-[460px] card-elevated p-0 overflow-hidden z-10">
+          <div className="relative w-[400px] lg:w-[440px] card-elevated p-0 overflow-hidden z-10">
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-3 border-b border-border/40 bg-card">
               <div className="flex items-center gap-2.5">
@@ -149,14 +149,14 @@ const HeroSection = () => (
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 1.0, ease }}
-            className="absolute -left-6 top-16 z-20 card-elevated px-3.5 py-2.5 hidden sm:flex items-center gap-2.5 shadow-lg"
+            className="absolute -left-6 top-16 z-20 card-elevated px-4 py-3 hidden sm:flex items-center gap-3 shadow-lg"
           >
-            <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0">
-              <User className="text-primary" size={14} />
+            <div className="w-9 h-9 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0">
+              <User className="text-primary" size={16} />
             </div>
             <div>
-              <p className="font-display text-[11px] font-bold text-foreground">Perfil del niño</p>
-              <p className="font-body text-[9px] text-muted-foreground">Contexto personalizado</p>
+              <p className="font-display text-xs font-bold text-foreground">Perfil del niño</p>
+              <p className="font-body text-[10px] text-muted-foreground">Contexto personalizado</p>
             </div>
           </motion.div>
 
@@ -165,14 +165,14 @@ const HeroSection = () => (
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 1.1, ease }}
-            className="absolute -right-6 bottom-20 z-20 card-elevated px-3.5 py-2.5 hidden sm:flex items-center gap-2.5 shadow-lg"
+            className="absolute -right-6 bottom-20 z-20 card-elevated px-4 py-3 hidden sm:flex items-center gap-3 shadow-lg"
           >
-            <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
-              <Brain className="text-secondary" size={14} />
+            <div className="w-9 h-9 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+              <Brain className="text-secondary" size={16} />
             </div>
             <div>
-              <p className="font-display text-[11px] font-bold text-foreground">Base psicológica</p>
-              <p className="font-body text-[9px] text-muted-foreground">Conocimiento estructurado</p>
+              <p className="font-display text-xs font-bold text-foreground">Base psicológica</p>
+              <p className="font-body text-[10px] text-muted-foreground">Conocimiento estructurado</p>
             </div>
           </motion.div>
         </motion.div>
