@@ -73,7 +73,7 @@ const HeroSection = () => (
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease }}
-          className="relative flex justify-center items-center min-h-[340px] lg:min-h-[480px] mt-10 lg:mt-0"
+          className="relative flex justify-center items-center min-h-[380px] lg:min-h-[540px] mt-10 lg:mt-0"
         >
           {/* Glow */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -81,7 +81,7 @@ const HeroSection = () => (
           </div>
 
           {/* Main chat mockup */}
-          <div className="relative w-[340px] card-elevated p-0 overflow-hidden z-10">
+          <div className="relative w-[380px] lg:w-[420px] card-elevated p-0 overflow-hidden z-10">
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-3 border-b border-border/40 bg-card">
               <div className="flex items-center gap-2.5">
@@ -102,15 +102,15 @@ const HeroSection = () => (
             </div>
 
             {/* Messages */}
-            <div className="px-4 py-4 space-y-3 bg-gradient-to-b from-card to-background/20 min-h-[200px]">
+            <div className="px-5 py-5 space-y-4 bg-gradient-to-b from-card to-background/20 min-h-[250px]">
               <motion.div
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="flex justify-end"
               >
-                <div className="bg-primary/8 rounded-2xl rounded-tr-sm px-3 py-2.5 max-w-[220px]">
-                  <p className="font-body text-[11px] text-foreground leading-relaxed">
+                <div className="bg-primary/8 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[270px]">
+                  <p className="font-body text-[13px] text-foreground leading-relaxed">
                     Mi hijo hace berrinches cuando cambiamos la rutina. No sé si insistir o darle espacio.
                   </p>
                 </div>
@@ -125,8 +125,8 @@ const HeroSection = () => (
                 <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Sparkles className="text-primary-foreground" size={10} />
                 </div>
-                <div className="bg-card border border-border/40 rounded-2xl rounded-tl-sm px-3 py-2.5 max-w-[220px] shadow-sm">
-                  <p className="font-body text-[11px] text-foreground leading-relaxed">
+                <div className="bg-card border border-border/40 rounded-2xl rounded-tl-sm px-4 py-3 max-w-[270px] shadow-sm">
+                  <p className="font-body text-[13px] text-foreground leading-relaxed">
                     Los cambios de rutina pueden ser especialmente difíciles para niños con su perfil. Te sugiero anticipar con apoyos visuales y validar lo que siente antes de redirigir… 💚
                   </p>
                 </div>
@@ -134,10 +134,10 @@ const HeroSection = () => (
             </div>
 
             {/* Input */}
-            <div className="px-4 py-2.5 border-t border-border/30 bg-card">
+            <div className="px-5 py-3 border-t border-border/30 bg-card">
               <div className="flex items-center gap-2 bg-muted/30 rounded-xl px-3 py-1.5">
-                <p className="font-body text-[10px] text-muted-foreground flex-1">Escribe tu consulta…</p>
-                <div className="w-5 h-5 rounded-md bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                <p className="font-body text-xs text-muted-foreground flex-1">Escribe tu consulta…</p>
+                <div className="w-6 h-6 rounded-md bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                   <ArrowRight className="text-primary-foreground" size={10} />
                 </div>
               </div>
