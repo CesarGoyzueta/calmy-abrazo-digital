@@ -5,18 +5,26 @@ import { Sparkles } from "lucide-react";
 const examples = [
   {
     question: "Mi hijo de 5 años no quiere ir al colegio y llora cada mañana. Ya no sé qué hacer.",
+    insight: "Qué detecta Calmy: posible ansiedad de separación o cambio en su rutina.",
+    firstStep: "Primer paso sugerido: explorar qué cambió y validar emoción antes de insistir.",
     answer: "El rechazo escolar a esa edad suele tener una causa emocional detrás, no es capricho. Antes de insistir, vale la pena explorar si hay algo que le genera ansiedad en el colegio: el salón, un compañero, la separación. ¿Sabes si algo cambió recientemente en su rutina o entorno? 💚",
   },
   {
     question: "No sé si insistir o darle espacio cuando no quiere hablar.",
+    insight: "Qué detecta Calmy: necesidad de seguridad emocional antes de abrir conversación.",
+    firstStep: "Primer paso sugerido: acompañar sin presión y ofrecer disponibilidad.",
     answer: "Respetar su tiempo es clave. Puedes hacerle saber que estás ahí sin presionar: 'Cuando quieras hablar, aquí estoy'. Esto le da control y reduce la ansiedad.",
   },
   {
     question: "Siento que estoy agotada y no sé si lo estoy haciendo bien.",
+    insight: "Qué detecta Calmy: sobrecarga parental, no falta de capacidad.",
+    firstStep: "Primer paso sugerido: incorporar una pausa breve de autocuidado hoy.",
     answer: "Sentir agotamiento no significa que lo estés haciendo mal. Es una señal de que necesitas apoyo. Cuidarte a ti misma es parte de cuidar bien a tu hijo.",
   },
   {
     question: "¿Cómo puedo prepararlo mejor para una situación nueva?",
+    insight: "Qué detecta Calmy: incertidumbre anticipatoria frente a cambios.",
+    firstStep: "Primer paso sugerido: anticipar con apoyos visuales y ensayo breve.",
     answer: "Anticipar es una de las mejores herramientas. Puedes usar historias sociales, fotos del lugar o ensayar lo que va a pasar. Esto reduce la incertidumbre y le da más seguridad.",
   },
 ];
@@ -80,6 +88,12 @@ const ExamplesSection = () => {
                 <div>
                   <p className="font-body text-[10px] font-semibold text-secondary uppercase tracking-wider mb-1.5">
                     Ejemplo de respuesta
+                  </p>
+                  <p className="font-body text-[11px] text-muted-foreground mb-1">
+                    {examples[current].insight}
+                  </p>
+                  <p className="font-body text-[11px] text-muted-foreground mb-2.5">
+                    {examples[current].firstStep}
                   </p>
                   <div className="bg-background rounded-2xl rounded-tl-md px-4 py-3 border border-border/40">
                     <p className="font-body text-sm text-foreground leading-relaxed">
