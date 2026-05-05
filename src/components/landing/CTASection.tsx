@@ -19,16 +19,16 @@ const CTASection = () => (
           <span className="text-secondary">claridad y confianza</span>
         </h2>
         <p className="section-subtitle max-w-md mx-auto mb-3">
-          Empieza desde el lanzamiento con una guía clara para tu día a día.
+          Únete hoy y empieza el lanzamiento con acompañamiento claro para tu día a día.
         </p>
         <ul className="mb-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 font-body text-sm text-muted-foreground">
-          <li className="flex items-center gap-1.5"><span className="text-secondary font-bold">✓</span> Acceso antes que nadie</li>
+          <li className="flex items-center gap-1.5"><span className="text-secondary font-bold">✓</span> Acceso prioritario al lanzamiento</li>
           <li className="flex items-center gap-1.5"><span className="text-secondary font-bold">✓</span> Descuento en tus primeros 3 meses</li>
           <li className="flex items-center gap-1.5"><span className="text-secondary font-bold">✓</span> Sin compromiso</li>
         </ul>
         <a href={WAITLIST_URL}>
           <Button variant="calm" size="xl" className="shadow-lg">
-            Quiero probar Calmy <ArrowRight className="ml-1" size={18} />
+            Únete a la lista de espera <ArrowRight className="ml-1" size={18} />
           </Button>
         </a>
       </motion.div>

@@ -13,7 +13,7 @@ const trustChips = [
 const ease = [0.33, 1, 0.68, 1] as const;
 
 const HeroSection = () => (
-  <section className="pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+  <section className="pt-24 pb-12 md:pt-28 md:pb-16 overflow-hidden">
     <div className="section-container">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* Left — copy */}
@@ -30,7 +30,7 @@ const HeroSection = () => (
           </h1>
 
           <p className="mt-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
-            Recibe orientación clara en minutos cuando aparezca una duda con tu hijo, con base psicológica y una guía práctica para actuar hoy.
+            Orientación clara en minutos, con base psicológica y pasos prácticos para actuar hoy.
           </p>
 
           {/* Trust chips */}
@@ -64,7 +64,7 @@ const HeroSection = () => (
           </div>
 
           <p className="mt-5 font-body text-xs text-muted-foreground flex items-center gap-1.5">
-            <span className="text-sm">🌿</span> Lanzamiento: descuento especial durante tus primeros 3 meses.
+            <span className="text-sm">🌿</span> Lanzamiento: 30% OFF en tus primeros 3 meses. Cupos limitados.
           </p>
         </motion.div>
 
