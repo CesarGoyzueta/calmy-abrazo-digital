@@ -23,12 +23,12 @@ const CTASection = () => (
         </p>
         <ul className="mb-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 font-body text-sm text-muted-foreground">
           <li className="flex items-center gap-1.5"><span className="text-secondary font-bold">✓</span> Acceso antes que nadie</li>
-          <li className="flex items-center gap-1.5"><span className="text-secondary font-bold">✓</span> Descuento de lanzamiento por 3 meses</li>
+          <li className="flex items-center gap-1.5"><span className="text-secondary font-bold">✓</span> Descuento en tus primeros 3 meses</li>
           <li className="flex items-center gap-1.5"><span className="text-secondary font-bold">✓</span> Sin compromiso</li>
         </ul>
         <a href={WAITLIST_URL}>
           <Button variant="calm" size="xl" className="shadow-lg">
-            Solicitar acceso anticipado <ArrowRight className="ml-1" size={18} />
+            Quiero probar Calmy <ArrowRight className="ml-1" size={18} />
           </Button>
         </a>
       </motion.div>
