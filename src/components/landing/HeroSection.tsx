@@ -53,7 +53,7 @@ const HeroSection = () => (
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a href={WAITLIST_URL}>
               <Button variant="calm" size="xl" className="shadow-lg">
-                Únete a la lista de espera <ArrowRight className="ml-1" size={18} />
+                Prueba Calmy primero <ArrowRight className="ml-1" size={18} />
               </Button>
             </a>
             <a href="#como-funciona">
