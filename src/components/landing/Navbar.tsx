@@ -59,7 +59,7 @@ const Navbar = () => {
           )}
           <a href={WAITLIST_URL}>
             <Button variant="calm" size="sm">
-              Únete a la waitlist
+              Únete a la lista de espera
             </Button>
           </a>
         </div>
@@ -94,7 +94,7 @@ const Navbar = () => {
           )}
           <a href={WAITLIST_URL}>
             <Button variant="calm" size="sm" className="w-full mt-2">
-              Únete a la waitlist
+              Únete a la lista de espera
             </Button>
           </a>
         </div>

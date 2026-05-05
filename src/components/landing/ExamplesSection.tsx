@@ -43,13 +43,13 @@ const ExamplesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <span className="section-badge mb-4 inline-block">Ejemplos reales</span>
+          <span className="section-badge mb-4 inline-block">Ejemplos de uso</span>
           <h2 className="section-title mt-2">
-            Preguntas reales que podrías{" "}
+            Preguntas frecuentes que podrías{" "}
             <span className="text-secondary">hacerle a Calmy</span>
           </h2>
           <p className="mt-6 section-subtitle max-w-xl mx-auto">
-            Así se siente recibir orientación con contexto, empatía y claridad.
+            Una vista previa del tipo de orientación que recibirás desde el primer día.
           </p>
         </motion.div>
 
