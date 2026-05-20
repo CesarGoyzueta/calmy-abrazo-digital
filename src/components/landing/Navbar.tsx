@@ -37,7 +37,7 @@ const Navbar = () => {
           <img src={logo} alt="NeuroCalm" className="h-7 w-auto" />
           <div className="flex flex-col leading-tight">
             <span className="font-display text-sm font-bold text-foreground tracking-tight">Calmy</span>
-            <span className="font-body text-[10px] text-muted-foreground">por NeuroCalm</span>
+            <span className="font-body text-[11px] text-muted-foreground">por NeuroCalm</span>
           </div>
         </a>
 
