@@ -9,6 +9,8 @@ const Footer = () => (
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         <div>
           <img src={logo} alt="Calmy" className="h-7 mb-3" />
+          <p className="font-body text-xs font-semibold text-foreground/70 mt-0.5">Calmy</p>
+          <p className="font-body text-[10px] text-muted-foreground mb-2">por NeuroCalm</p>
           <p className="font-body text-xs text-muted-foreground max-w-xs">
             Orientación práctica para padres y madres en los momentos difíciles del día a día con sus hijos.
           </p>

@@ -173,12 +173,12 @@ const HeroSection = () => (
             </div>
           </motion.div>
 
-          {/* Floating: Base psicológica — top-right */}
+          {/* Floating: Base psicológica — top-right, inset del borde */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.3, ease }}
-            className="absolute right-0 -top-4 z-20 card-elevated px-3.5 py-2.5 hidden lg:flex items-center gap-2.5 shadow-lg"
+            className="absolute right-2 top-6 z-20 card-elevated px-3.5 py-2.5 hidden lg:flex items-center gap-2.5 shadow-lg"
           >
             <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
               <Brain className="text-secondary" size={14} />
