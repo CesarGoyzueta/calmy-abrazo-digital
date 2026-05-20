@@ -33,8 +33,11 @@ const Navbar = () => {
       }`}
     >
       <div className="section-container h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center">
-          <img src={logo} alt="Calmy" className="h-10" />
+        <a href="#" className="flex items-center gap-2.5">
+          <img src={logo} alt="Calmy por NeuroCalm" className="h-8" />
+          <span className="hidden sm:block font-body text-[10px] text-muted-foreground leading-tight border-l border-border/50 pl-2.5">
+            por<br /><span className="font-semibold text-foreground/70">NeuroCalm</span>
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-7">
