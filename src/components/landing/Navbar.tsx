@@ -34,10 +34,10 @@ const Navbar = () => {
     >
       <div className="section-container h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
-          <img src={isotipo} alt="Calmy" className="h-8 w-auto" />
+          <img src={isotipo} alt="Calmy" className="h-9 w-auto" />
           <div className="flex flex-col leading-tight">
-            <span className="font-display text-sm font-bold text-foreground tracking-tight">Calmy</span>
-            <span className="font-body text-[11px] text-muted-foreground">por NeuroCalm</span>
+            <span className="font-display text-base font-bold text-foreground tracking-tight">Calmy</span>
+            <span className="font-body text-xs text-muted-foreground">por NeuroCalm</span>
           </div>
         </a>
 

@@ -41,9 +41,9 @@ const HeroSection = () => (
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 + i * 0.07 }}
-                className="inline-flex items-center gap-1.5 bg-card border border-border/60 rounded-full px-3.5 py-1.5 font-body text-xs font-medium text-foreground/80 shadow-sm"
+                className="inline-flex items-center gap-1.5 bg-card border border-border/60 rounded-full px-4 py-2 font-body text-sm font-medium text-foreground/80 shadow-sm"
               >
-                <chip.icon size={13} className="text-secondary" />
+                <chip.icon size={15} className="text-secondary" />
                 {chip.label}
               </motion.span>
             ))}
