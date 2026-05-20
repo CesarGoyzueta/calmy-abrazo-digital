@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/neurocalm-logo.png";
+import isotipo from "@/assets/neurocalm-logo (2).png";
 
 const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
 
@@ -8,9 +8,13 @@ const Footer = () => (
     <div className="max-w-6xl mx-auto">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         <div>
-          <img src={logo} alt="Calmy" className="h-7 mb-3" />
-          <p className="font-body text-xs font-semibold text-foreground/70 mt-0.5">Calmy</p>
-          <p className="font-body text-[10px] text-muted-foreground mb-2">por NeuroCalm</p>
+          <div className="flex items-center gap-2 mb-3">
+            <img src={isotipo} alt="Calmy" className="h-8 w-auto" />
+            <div className="flex flex-col leading-tight">
+              <span className="font-display text-sm font-bold text-foreground tracking-tight">Calmy</span>
+              <span className="font-body text-[11px] text-muted-foreground">por NeuroCalm</span>
+            </div>
+          </div>
           <p className="font-body text-xs text-muted-foreground max-w-xs">
             Orientación práctica para padres y madres en los momentos difíciles del día a día con sus hijos.
           </p>

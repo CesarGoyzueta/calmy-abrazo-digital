@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/neurocalm-logo.png";
+import isotipo from "@/assets/neurocalm-logo (2).png";
 
 const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
 
@@ -34,7 +34,7 @@ const Navbar = () => {
     >
       <div className="section-container h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
-          <img src={logo} alt="NeuroCalm" className="h-7 w-auto" />
+          <img src={isotipo} alt="Calmy" className="h-8 w-auto" />
           <div className="flex flex-col leading-tight">
             <span className="font-display text-sm font-bold text-foreground tracking-tight">Calmy</span>
             <span className="font-body text-[11px] text-muted-foreground">por NeuroCalm</span>
