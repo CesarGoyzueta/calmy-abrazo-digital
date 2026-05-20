@@ -10,7 +10,7 @@ const Footer = () => (
         <div>
           <img src={logo} alt="Calmy" className="h-7 mb-3" />
           <p className="font-body text-xs text-muted-foreground max-w-xs">
-            Acompañamiento emocional para padres, con base psicológica y orientación personalizada.
+            Orientación práctica para padres y madres en los momentos difíciles del día a día con sus hijos.
           </p>
         </div>
 
@@ -21,7 +21,7 @@ const Footer = () => (
               <a href="#como-funciona" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
                 Cómo funciona
               </a>
-              <a href={WAITLIST_URL} className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
+              <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer" className="font-body text-xs text-muted-foreground hover:text-foreground transition-colors">
                 Lista de espera
               </a>
             </div>

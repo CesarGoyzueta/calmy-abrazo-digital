@@ -4,20 +4,20 @@ import { Zap, BookOpen, UserCheck, Sparkles } from "lucide-react";
 const features = [
   {
     icon: Zap,
-    title: "Orientación inmediata",
-    desc: "Recibe apoyo cuando surge una duda o un momento difícil, sin esperar a la próxima cita.",
+    title: "Saber qué hacer primero",
+    desc: "Cuando surge una duda o un momento difícil, Calmy te da un primer paso concreto para actuar con más calma, sin esperar a la próxima cita.",
     accent: false,
   },
   {
     icon: BookOpen,
-    title: "Base psicológica sólida",
-    desc: "Las respuestas se construyen sobre conocimiento psicológico estructurado para dar claridad y consistencia.",
+    title: "Respuestas con sustento real",
+    desc: "Cada orientación está construida sobre conocimiento psicológico estructurado. No respuestas genéricas: información que puedes aplicar hoy.",
     accent: true,
   },
   {
     icon: UserCheck,
-    title: "Personalización con contexto",
-    desc: "Calmy considera el perfil del niño, antecedentes y preocupaciones frecuentes para orientar cada respuesta.",
+    title: "Adaptado a tu situación",
+    desc: "Calmy considera la edad, el perfil y las situaciones frecuentes de tu hijo para que la orientación tenga sentido en tu contexto real.",
     accent: false,
   },
 ];
@@ -39,11 +39,11 @@ const SolutionSection = () => (
       >
         <span className="section-badge mb-4 inline-block">La solución</span>
         <h2 className="section-title mt-2">
-          Más que un chatbot:{" "}
-          <span className="text-secondary">orientación con contexto y sustento</span>
+          Primeros pasos claros cuando la crianza{" "}
+          <span className="text-secondary">se vuelve difícil</span>
         </h2>
         <p className="mt-6 section-subtitle max-w-xl mx-auto">
-          Una herramienta de orientación que transforma tus dudas en pasos concretos, usando base psicológica y el contexto de tu hijo.
+          Comparte tu duda, cuéntale sobre tu hijo y Calmy te devuelve orientación breve y accionable para ese momento. También puedes usarla para llegar mejor preparado a una sesión con un profesional.
         </p>
         <p className="mt-3 font-body text-xs font-medium text-secondary/80 tracking-wide uppercase">
           ✦ Diseñado con enfoque en evidencia psicológica aplicada al día a día

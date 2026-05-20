@@ -19,8 +19,8 @@ const steps = [
   {
     icon: Lightbulb,
     step: "03",
-    title: "Recibe orientación personalizada",
-    desc: "Obtén respuestas adaptadas a tu situación, con sugerencias alineadas al perfil de tu hijo y al momento que estás viviendo.",
+    title: "Sabes qué hacer primero",
+    desc: "Recibes orientación breve, adaptada a tu hijo y a ese momento concreto. Un primer paso claro para actuar con más calma.",
     highlight: false,
   },
 ];
@@ -41,7 +41,7 @@ const HowItWorksSection = () => (
           <span className="text-primary">darte respuestas con sentido</span>
         </h2>
         <p className="mt-6 section-subtitle max-w-xl mx-auto">
-          En menos de un minuto, conviertes tu duda en pasos concretos para actuar con más calma y claridad.
+          No es solo preguntar y responder. Es un flujo que transforma tu contexto en orientación personalizada.
         </p>
       </motion.div>
 
@@ -110,7 +110,7 @@ const HowItWorksSection = () => (
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-10 font-body text-sm text-muted-foreground italic"
         >
-          Guía práctica para hoy, sin esperar a la próxima cita.
+          De "no sé qué hacer" a "sé cuál es el primer paso". Eso es lo que busca Calmy.
         </motion.p>
       </div>
     </div>

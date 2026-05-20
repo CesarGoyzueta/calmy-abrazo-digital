@@ -57,9 +57,9 @@ const Navbar = () => {
               </a>
             )
           )}
-          <a href={WAITLIST_URL}>
+          <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer">
             <Button variant="calm" size="sm">
-              Únete a la lista de espera
+              Acceso anticipado
             </Button>
           </a>
         </div>
@@ -92,9 +92,9 @@ const Navbar = () => {
               </a>
             )
           )}
-          <a href={WAITLIST_URL}>
+          <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer">
             <Button variant="calm" size="sm" className="w-full mt-2">
-              Únete a la lista de espera
+              Acceso anticipado
             </Button>
           </a>
         </div>

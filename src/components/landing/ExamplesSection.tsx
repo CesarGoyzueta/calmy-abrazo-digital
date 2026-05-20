@@ -1,35 +1,35 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Sparkles, HelpCircle, Lightbulb, ArrowRight } from "lucide-react";
 
 const examples = [
   {
-    question: "Mi hijo de 5 años no quiere ir al colegio y llora cada mañana. Ya no sé qué hacer.",
-    insight: "Qué detecta Calmy: posible ansiedad de separación o cambio en su rutina.",
-    firstStep: "Primer paso sugerido: explorar qué cambió y validar emoción antes de insistir.",
-    answer: "El rechazo escolar a esa edad suele tener una causa emocional detrás, no es capricho. Antes de insistir, vale la pena explorar si hay algo que le genera ansiedad en el colegio: el salón, un compañero, la separación. ¿Sabes si algo cambió recientemente en su rutina o entorno? 💚",
+    question: "Mi hijo de 5 años llora cada mañana antes de ir al colegio. Ya no sé si insistir o dejarlo en casa.",
+    whatMightBeHappening: "Puede haber ansiedad de separación, dificultad con la rutina o algo específico en el entorno escolar que le genera rechazo.",
+    firstStep: "Explorar qué cambió recientemente y validar su emoción antes de insistir.",
+    response: "Antes de asumir que es capricho, intenta entender qué parte le genera rechazo. Puedes decirle: \"Veo que ir al colegio se está sintiendo difícil. ¿Qué es lo que menos te gusta?\" Luego observa si hay patrones: días, momentos o personas específicas.",
   },
   {
-    question: "No sé si insistir o darle espacio cuando no quiere hablar.",
-    insight: "Qué detecta Calmy: necesidad de seguridad emocional antes de abrir conversación.",
-    firstStep: "Primer paso sugerido: acompañar sin presión y ofrecer disponibilidad.",
-    answer: "Respetar su tiempo es clave. Puedes hacerle saber que estás ahí sin presionar: 'Cuando quieras hablar, aquí estoy'. Esto le da control y reduce la ansiedad.",
+    question: "Mi hija llora cada vez que le digo que no, aunque sea algo pequeño. No sé si soy muy estricta o muy permisiva.",
+    whatMightBeHappening: "A esta edad es frecuente una baja tolerancia a la frustración. No necesariamente refleja un problema de disciplina, sino una habilidad que todavía se está desarrollando.",
+    firstStep: "Nombrar su emoción antes de redirigir: primero valida, luego pones el límite.",
+    response: "Esa reacción intensa ante los límites es muy frecuente y no significa que estés fallando. Antes de cambiar tu respuesta, prueba validar lo que siente: \"Entiendo que te da rabia cuando digo que no. Es normal sentirse así.\" Después mantén el límite con calma.",
   },
   {
-    question: "Siento que estoy agotada y no sé si lo estoy haciendo bien.",
-    insight: "Qué detecta Calmy: sobrecarga parental, no falta de capacidad.",
-    firstStep: "Primer paso sugerido: incorporar una pausa breve de autocuidado hoy.",
-    answer: "Sentir agotamiento no significa que lo estés haciendo mal. Es una señal de que necesitas apoyo. Cuidarte a ti misma es parte de cuidar bien a tu hijo.",
+    question: "¿Cómo puedo preparar a mi hijo para algo nuevo sin que lo pase tan mal?",
+    whatMightBeHappening: "La incertidumbre ante lo desconocido genera ansiedad anticipatoria en muchos niños, especialmente aquellos con más sensibilidad a los cambios.",
+    firstStep: "Anticipar con información concreta antes del evento, no justo antes.",
+    response: "Anticipar es una de las herramientas más efectivas. Puedes usar fotos del lugar, contarle qué va a pasar en orden, o ensayarlo juntos con juego. Cuanto más concreto, mejor. La incertidumbre es lo que más les pesa, no el evento en sí.",
   },
   {
-    question: "¿Cómo puedo prepararlo mejor para una situación nueva?",
-    insight: "Qué detecta Calmy: incertidumbre anticipatoria frente a cambios.",
-    firstStep: "Primer paso sugerido: anticipar con apoyos visuales y ensayo breve.",
-    answer: "Anticipar es una de las mejores herramientas. Puedes usar historias sociales, fotos del lugar o ensayar lo que va a pasar. Esto reduce la incertidumbre y le da más seguridad.",
+    question: "Siento que estoy agotada y que no lo estoy haciendo bien. ¿Es normal?",
+    whatMightBeHappening: "El agotamiento es una señal de que estás dando mucho sin recibir suficiente apoyo. No indica que seas mala madre o padre.",
+    firstStep: "Reconocer que necesitas apoyo es el primer paso, no un signo de debilidad.",
+    response: "Sentirte agotada no significa que lo estés haciendo mal. Muchas veces indica lo contrario: estás invirtiendo mucho. Identificar una sola cosa pequeña que puedas aliviar esta semana, o pedir ayuda en algo concreto, puede marcar una diferencia real.",
   },
 ];
 
-const INTERVAL = 6000;
+const INTERVAL = 7000;
 
 const ExamplesSection = () => {
   const [current, setCurrent] = useState(0);
@@ -41,6 +41,8 @@ const ExamplesSection = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const ex = examples[current];
+
   return (
     <section className="py-20 md:py-28 bg-card/40">
       <div className="section-container">
@@ -51,13 +53,13 @@ const ExamplesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <span className="section-badge mb-4 inline-block">Ejemplos de uso</span>
+          <span className="section-badge mb-4 inline-block">Ejemplos reales</span>
           <h2 className="section-title mt-2">
-            Preguntas frecuentes que podrías{" "}
-            <span className="text-secondary">hacerle a Calmy</span>
+            Mira el tipo de orientación{" "}
+            <span className="text-secondary">que recibirías</span>
           </h2>
           <p className="mt-6 section-subtitle max-w-xl mx-auto">
-            Una vista previa del tipo de orientación que recibirás desde el primer día.
+            Situaciones cotidianas convertidas en primeros pasos concretos.
           </p>
         </motion.div>
 
@@ -69,36 +71,65 @@ const ExamplesSection = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -14 }}
               transition={{ duration: 0.4 }}
-              className="card-elevated p-7 md:p-9"
+              className="card-elevated overflow-hidden"
             >
-              {/* User */}
-              <div className="flex justify-end mb-6">
-                <div className="bg-primary/8 rounded-2xl rounded-tr-md px-4 py-3 max-w-[85%]">
-                  <p className="font-body text-sm text-foreground leading-relaxed">
-                    {examples[current].question}
-                  </p>
+              {/* Pregunta del padre/madre */}
+              <div className="p-6 md:p-7 border-b border-border/40">
+                <div className="flex justify-end">
+                  <div className="bg-primary/8 rounded-2xl rounded-tr-md px-4 py-3 max-w-[90%]">
+                    <p className="font-body text-sm text-foreground leading-relaxed">
+                      {ex.question}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Calmy */}
-              <div className="flex gap-2.5 items-start">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
-                  <Sparkles className="text-primary-foreground" size={13} />
-                </div>
-                <div>
-                  <p className="font-body text-[10px] font-semibold text-secondary uppercase tracking-wider mb-1.5">
-                    Ejemplo de respuesta
-                  </p>
-                  <p className="font-body text-[11px] text-muted-foreground mb-1">
-                    {examples[current].insight}
-                  </p>
-                  <p className="font-body text-[11px] text-muted-foreground mb-2.5">
-                    {examples[current].firstStep}
-                  </p>
-                  <div className="bg-background rounded-2xl rounded-tl-md px-4 py-3 border border-border/40">
-                    <p className="font-body text-sm text-foreground leading-relaxed">
-                      {examples[current].answer}
+              {/* Análisis estructurado */}
+              <div className="p-6 md:p-7 space-y-4">
+                {/* Qué puede estar pasando */}
+                <div className="flex gap-3 items-start">
+                  <div className="w-7 h-7 rounded-lg bg-primary/6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <HelpCircle className="text-primary" size={13} />
+                  </div>
+                  <div>
+                    <p className="font-body text-[10px] font-bold text-primary uppercase tracking-wider mb-1">
+                      Qué puede estar pasando
                     </p>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                      {ex.whatMightBeHappening}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Primer paso */}
+                <div className="flex gap-3 items-start">
+                  <div className="w-7 h-7 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Lightbulb className="text-secondary" size={13} />
+                  </div>
+                  <div>
+                    <p className="font-body text-[10px] font-bold text-secondary uppercase tracking-wider mb-1">
+                      Primer paso
+                    </p>
+                    <p className="font-body text-sm text-foreground font-medium leading-relaxed">
+                      {ex.firstStep}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Respuesta de Calmy */}
+                <div className="flex gap-3 items-start pt-1">
+                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Sparkles className="text-primary-foreground" size={11} />
+                  </div>
+                  <div>
+                    <p className="font-body text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1.5">
+                      Orientación de Calmy
+                    </p>
+                    <div className="bg-background rounded-2xl rounded-tl-md px-4 py-3 border border-border/40">
+                      <p className="font-body text-sm text-foreground leading-relaxed">
+                        {ex.response}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -120,6 +151,10 @@ const ExamplesSection = () => {
               />
             ))}
           </div>
+
+          <p className="text-center mt-5 font-body text-xs text-muted-foreground">
+            Estas son orientaciones de ejemplo. Calmy adapta cada respuesta al contexto real de tu hijo.
+          </p>
         </div>
       </div>
     </section>

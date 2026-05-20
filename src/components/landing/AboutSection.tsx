@@ -9,15 +9,15 @@ const founders = [
     photo: founderTech,
     name: "César Goyzueta",
     badge: "Co-Fundador · CEO & CTO",
-    subtitle: "Visión estratégica · IA y Tecnología",
-    bio: "Construye tecnología con propósito y lidera el desarrollo de Calmy para que la experiencia sea útil, clara y humana.",
+    subtitle: "Visión de producto · IA y Tecnología",
+    bio: "Lidera la visión de producto, IA y tecnología para convertir conocimiento psicológico en una experiencia simple, útil y humana para las familias.",
   },
   {
     photo: founderPsych,
     name: "Erika Rubio",
-    badge: "Co-Fundadora · CMO & Head of Psychology",
-    subtitle: "Sustento clínico · Marca y crecimiento",
-    bio: "Aporta el enfoque psicológico y diseña la base científica y emocional que guía cada respuesta de Calmy.",
+    badge: "Co-Fundadora · Psicología, contenidos y crecimiento",
+    subtitle: "Enfoque psicológico · Contenidos y Marca",
+    bio: "Lidera el enfoque psicológico, la construcción de contenidos y los criterios de orientación que ayudan a que Calmy responda con sensibilidad, claridad y responsabilidad.",
   },
 ];
 

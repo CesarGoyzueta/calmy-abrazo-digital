@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
-import { Check, X, ShieldCheck } from "lucide-react";
+import { Check, X, ShieldCheck, AlertTriangle } from "lucide-react";
 
 const isCalmy = [
-  "Acompañamiento conversacional para padres",
-  "Orientación basada en conocimiento psicológico",
-  "Apoyo claro y personalizado para el día a día",
-  "Una herramienta para organizar dudas y responder mejor",
+  "Una guía para cuando no sabes qué hacer en un momento difícil",
+  "Primeros pasos prácticos para situaciones cotidianas de crianza",
+  "Apoyo útil entre sesiones con un profesional",
+  "Un espacio para ordenar tus dudas y actuar con más calma",
 ];
 
 const isNotCalmy = [
-  "No reemplaza terapia",
-  "No realiza diagnóstico clínico",
-  "No sustituye evaluación profesional",
-  "No reemplaza intervención especializada",
+  "No diagnostica ni evalúa clínicamente",
+  "No reemplaza terapia ni intervención profesional",
+  "No sustituye la atención de un especialista",
+  "No es un servicio de emergencia o crisis de riesgo",
 ];
 
 const TrustSection = () => (
@@ -29,14 +29,11 @@ const TrustSection = () => (
           <ShieldCheck className="text-primary" size={28} />
         </div>
         <h2 className="section-title">
-          Para{" "}
-          <span className="text-primary">acompañarte</span>, no para reemplazar a un profesional
+          Honesto sobre lo que es{" "}
+          <span className="text-primary">y lo que no es</span>
         </h2>
         <p className="mt-6 section-subtitle max-w-xl mx-auto">
-          La transparencia es parte de nuestro compromiso contigo.
-        </p>
-        <p className="mt-3 font-body text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
-          Calmy no reemplaza terapia, pero puede ayudarte a tomar decisiones con más claridad en el día a día.
+          La confianza empieza por ser transparentes. Calmy tiene un alcance claro, y cumplirlo bien es lo que le da valor.
         </p>
       </motion.div>
 
@@ -53,7 +50,7 @@ const TrustSection = () => (
             <div className="w-10 h-10 rounded-xl bg-secondary/8 flex items-center justify-center">
               <Check className="text-secondary" size={18} />
             </div>
-            <h3 className="font-display text-lg font-bold text-foreground">Lo que sí es Calmy</h3>
+            <h3 className="font-display text-lg font-bold text-foreground">Para qué sirve Calmy</h3>
           </div>
           <ul className="space-y-5">
             {isCalmy.map((item) => (
@@ -79,7 +76,7 @@ const TrustSection = () => (
             <div className="w-10 h-10 rounded-xl bg-primary/6 flex items-center justify-center">
               <X className="text-primary" size={18} />
             </div>
-            <h3 className="font-display text-lg font-bold text-foreground">Lo que no es Calmy</h3>
+            <h3 className="font-display text-lg font-bold text-foreground">Para qué no es Calmy</h3>
           </div>
           <ul className="space-y-5">
             {isNotCalmy.map((item) => (
@@ -93,6 +90,20 @@ const TrustSection = () => (
           </ul>
         </motion.div>
       </div>
+
+      {/* Crisis note */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+        className="max-w-4xl mx-auto mt-6 flex items-start gap-3 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-800/30 rounded-2xl px-6 py-4"
+      >
+        <AlertTriangle className="text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" size={16} />
+        <p className="font-body text-sm text-amber-800 dark:text-amber-300 leading-relaxed">
+          En situaciones de riesgo o emergencia, acude a un profesional de salud mental o a los servicios de emergencia de tu país. Calmy es un recurso para el día a día, no para crisis agudas.
+        </p>
+      </motion.div>
     </div>
   </section>
 );
