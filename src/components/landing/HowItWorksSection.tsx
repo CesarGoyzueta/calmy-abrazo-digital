@@ -5,22 +5,22 @@ const steps = [
   {
     icon: UserPlus,
     step: "01",
-    title: "Comparte el contexto de tu hijo",
-    desc: "Edad, necesidades, antecedentes y situaciones que te preocupan. Esto permite que Calmy personalice cada respuesta a tu realidad familiar.",
+    title: "Cuéntale qué está pasando",
+    desc: "Describe la situación, la edad de tu hijo y lo que ya intentaste. Cuanto más concreto, más útil será la respuesta.",
     highlight: false,
   },
   {
     icon: Brain,
     step: "02",
-    title: "Calmy consulta una base psicológica estructurada",
-    desc: "El sistema combina tu consulta con conocimiento psicológico real y confiable para responder con mayor claridad, coherencia y sustento.",
+    title: "Calmy ordena el contexto",
+    desc: "Relaciona tu consulta con información psicológica estructurada para darte una respuesta con sentido, no genérica.",
     highlight: true,
   },
   {
     icon: Lightbulb,
     step: "03",
-    title: "Sabes qué hacer primero",
-    desc: "Recibes orientación breve, adaptada a tu hijo y a ese momento concreto. Un primer paso claro para actuar con más calma.",
+    title: "Recibe un primer paso",
+    desc: "Obtén orientación breve, humana y aplicable para actuar con más calma. Sin esperar a la próxima cita.",
     highlight: false,
   },
 ];
@@ -110,7 +110,7 @@ const HowItWorksSection = () => (
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-10 font-body text-sm text-muted-foreground italic"
         >
-          De "no sé qué hacer" a "sé cuál es el primer paso". Eso es lo que busca Calmy.
+          De "no sé qué hacer" a "sé qué intentar ahora". En tres pasos.
         </motion.p>
       </div>
     </div>

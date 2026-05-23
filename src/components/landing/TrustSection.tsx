@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, X, ShieldCheck, AlertTriangle } from "lucide-react";
+import { Check, X, ShieldCheck, AlertTriangle, Lock } from "lucide-react";
 
 const isCalmy = [
   "Una guía para cuando no sabes qué hacer en un momento difícil",
@@ -102,6 +102,21 @@ const TrustSection = () => (
         <AlertTriangle className="text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" size={16} />
         <p className="font-body text-sm text-amber-800 dark:text-amber-300 leading-relaxed">
           En situaciones de riesgo o emergencia, acude a un profesional de salud mental o a los servicios de emergencia de tu país. Calmy es un recurso para el día a día, no para crisis agudas.
+        </p>
+      </motion.div>
+
+      {/* Privacy note */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.22 }}
+        className="max-w-4xl mx-auto mt-4 flex items-start gap-3 bg-primary/4 border border-primary/10 rounded-2xl px-6 py-4"
+      >
+        <Lock className="text-primary flex-shrink-0 mt-0.5" size={16} />
+        <p className="font-body text-sm text-muted-foreground leading-relaxed">
+          <span className="font-semibold text-foreground">Sabemos que hablar de tu hijo requiere cuidado.</span>{" "}
+          Calmy está pensado para orientar, no para exponer información sensible. Te recomendamos compartir solo lo necesario para describir la situación, sin datos personales identificables.
         </p>
       </motion.div>
     </div>
