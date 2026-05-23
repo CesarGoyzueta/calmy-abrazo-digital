@@ -22,7 +22,7 @@ const founders = [
 ];
 
 const AboutSection = () => (
-  <section id="equipo" className="py-20 md:py-28 bg-card/40">
+  <section id="equipo" className="py-14 md:py-28 bg-card/40">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -51,10 +51,10 @@ const AboutSection = () => (
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="card-elevated overflow-hidden hover:shadow-[var(--shadow-hover)] transition-all duration-300"
           >
-            <div className="overflow-hidden" style={{ height: "22rem" }}>
+            <div className="overflow-hidden" style={{ height: "clamp(14rem, 40vw, 22rem)" }}>
               <img src={f.photo} alt={`${f.name} - ${f.badge}`} className="w-full h-full object-contain" />
             </div>
-            <div className="p-6">
+            <div className="p-5 md:p-6">
               <div className="min-h-[2.5rem] flex items-start">
                 <span className="font-body text-[11px] font-bold uppercase tracking-wider text-secondary">
                   {f.badge}

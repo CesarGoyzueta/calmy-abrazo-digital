@@ -33,7 +33,7 @@ const FAQSection = () => {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-14 md:py-28">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,47 +50,55 @@ const FAQSection = () => {
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-3">
-          {faqs.map((faq, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="bg-card rounded-2xl border border-border/50 overflow-hidden"
-            >
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+          {faqs.map((faq, i) => {
+            const panelId = `faq-panel-${i}`;
+            const isOpen = open === i;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="bg-card rounded-2xl border border-border/50 overflow-hidden"
               >
-                <span className="font-display text-sm font-bold text-foreground leading-snug">
-                  {faq.q}
-                </span>
-                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/6 flex items-center justify-center">
-                  {open === i ? (
-                    <Minus className="text-primary" size={13} />
-                  ) : (
-                    <Plus className="text-primary" size={13} />
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  className="w-full flex items-center justify-between gap-4 px-6 py-4 md:py-5 text-left"
+                >
+                  <span className="font-display text-sm font-bold text-foreground leading-snug">
+                    {faq.q}
+                  </span>
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary/6 flex items-center justify-center">
+                    {isOpen ? (
+                      <Minus className="text-primary" size={13} />
+                    ) : (
+                      <Plus className="text-primary" size={13} />
+                    )}
+                  </span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={panelId}
+                      role="region"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed px-6 pb-5">
+                        {faq.a}
+                      </p>
+                    </motion.div>
                   )}
-                </span>
-              </button>
-              <AnimatePresence initial={false}>
-                {open === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                    className="overflow-hidden"
-                  >
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed px-6 pb-5">
-                      {faq.a}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

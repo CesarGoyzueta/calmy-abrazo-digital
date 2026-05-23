@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
 
 const CTASection = () => (
-  <section className="py-20 md:py-28">
+  <section className="py-14 md:py-28">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

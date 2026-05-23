@@ -16,7 +16,7 @@ const isNotCalmy = [
 ];
 
 const TrustSection = () => (
-  <section id="confianza" className="py-20 md:py-28">
+  <section id="confianza" className="py-14 md:py-28">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ const TrustSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-card rounded-3xl border border-secondary/15 p-9 md:p-10"
+          className="bg-card rounded-3xl border border-secondary/15 p-6 md:p-10"
         >
           <div className="flex items-center gap-3 mb-7">
             <div className="w-10 h-10 rounded-xl bg-secondary/8 flex items-center justify-center">
@@ -52,7 +52,7 @@ const TrustSection = () => (
             </div>
             <h3 className="font-display text-lg font-bold text-foreground">Para qué sirve Calmy</h3>
           </div>
-          <ul className="space-y-5">
+          <ul className="space-y-4">
             {isCalmy.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <div className="w-5 h-5 rounded-full bg-secondary/8 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -70,7 +70,7 @@ const TrustSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="bg-card rounded-3xl border border-primary/10 p-9 md:p-10"
+          className="bg-card rounded-3xl border border-primary/10 p-6 md:p-10"
         >
           <div className="flex items-center gap-3 mb-7">
             <div className="w-10 h-10 rounded-xl bg-primary/6 flex items-center justify-center">
@@ -78,7 +78,7 @@ const TrustSection = () => (
             </div>
             <h3 className="font-display text-lg font-bold text-foreground">Para qué no es Calmy</h3>
           </div>
-          <ul className="space-y-5">
+          <ul className="space-y-4">
             {isNotCalmy.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <div className="w-5 h-5 rounded-full bg-primary/6 flex items-center justify-center flex-shrink-0 mt-0.5">
