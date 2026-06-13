@@ -12,7 +12,7 @@ const CTASection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary/[0.08] via-card to-secondary/[0.09] border border-primary/15 p-8 md:p-12 text-center max-w-4xl mx-auto shadow-[var(--shadow-card)]"
+        className="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary/[0.07] via-card to-[#f8efdf] border border-primary/15 p-8 md:p-12 text-center max-w-4xl mx-auto shadow-[var(--shadow-card)]"
       >
         <h2 className="section-title mb-5">
           Sé de los primeros en{" "}

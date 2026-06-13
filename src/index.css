@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 40 33% 98%;
+    --background: 39 42% 97%;
     --foreground: 215 22% 14%;
 
     --card: 0 0% 100%;
@@ -21,7 +21,7 @@
     --secondary: 172 58% 39%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 180 12% 94%;
+    --muted: 38 18% 93%;
     --muted-foreground: 216 12% 42%;
 
     --accent: 146 18% 66%;
@@ -30,16 +30,17 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 18% 90%;
-    --input: 210 18% 90%;
+    --border: 35 18% 88%;
+    --input: 35 18% 88%;
     --ring: 211 48% 44%;
 
     --radius: 1.125rem;
+    --surface-warm: 39 45% 96%;
 
-    --shadow-soft: 0 1px 2px rgba(22, 34, 49, 0.03), 0 8px 24px -12px rgba(22, 34, 49, 0.12);
-    --shadow-card: 0 2px 6px rgba(22, 34, 49, 0.03), 0 18px 45px -24px rgba(22, 34, 49, 0.22);
-    --shadow-hover: 0 4px 12px rgba(22, 34, 49, 0.05), 0 24px 50px -24px rgba(22, 34, 49, 0.25);
-    --shadow-glow: 0 0 24px rgba(42, 157, 143, 0.25), 0 0 48px rgba(42, 157, 143, 0.1);
+    --shadow-soft: 0 1px 2px rgba(43, 37, 29, 0.03), 0 8px 24px -12px rgba(43, 37, 29, 0.13);
+    --shadow-card: 0 2px 6px rgba(43, 37, 29, 0.03), 0 18px 45px -24px rgba(43, 37, 29, 0.2);
+    --shadow-hover: 0 4px 12px rgba(43, 37, 29, 0.05), 0 24px 50px -24px rgba(43, 37, 29, 0.23);
+    --shadow-glow: 0 0 24px rgba(55, 126, 176, 0.2), 0 0 44px rgba(42, 157, 143, 0.08);
 
     --font-display: 'Outfit', sans-serif;
     --font-body: 'Instrument Sans', sans-serif;
@@ -108,6 +109,23 @@
 
   .section-subtitle {
     @apply font-body text-sm md:text-base text-muted-foreground leading-relaxed;
+  }
+
+  .hero-ambient {
+    background:
+      radial-gradient(circle at 72% 30%, rgba(67, 126, 170, 0.075), transparent 29%),
+      radial-gradient(circle at 18% 18%, rgba(218, 188, 132, 0.16), transparent 33%),
+      linear-gradient(180deg, rgba(255, 252, 246, 0.76), transparent 72%);
+  }
+
+  .brand-gradient-text {
+    background: linear-gradient(100deg, hsl(var(--primary)) 0%, #3d83aa 58%, hsl(var(--secondary)) 100%);
+    background-clip: text;
+    color: transparent;
+  }
+
+  .section-warm {
+    background: linear-gradient(180deg, hsl(var(--surface-warm)) 0%, rgba(255, 255, 255, 0.64) 100%);
   }
 
   .prose-calm {

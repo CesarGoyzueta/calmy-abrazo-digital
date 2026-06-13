@@ -16,7 +16,7 @@ const isNotCalmy = [
 ];
 
 const TrustSection = () => (
-  <section id="confianza" className="py-16 md:py-20 bg-card/45">
+  <section id="confianza" className="py-16 md:py-20 bg-card/55">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

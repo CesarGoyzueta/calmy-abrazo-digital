@@ -26,7 +26,7 @@ const steps = [
 ];
 
 const HowItWorksSection = () => (
-  <section id="como-funciona" className="py-16 md:py-20 bg-card/45">
+  <section id="como-funciona" className="py-16 md:py-20 bg-card/55">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -67,7 +67,7 @@ const HowItWorksSection = () => (
               <div
                 className={`flex-1 p-8 rounded-3xl text-center transition-all duration-300 ${
                   s.highlight
-                    ? "bg-gradient-to-b from-primary/6 via-secondary/5 to-primary/4 border border-secondary/25 shadow-[var(--shadow-card)]"
+                    ? "bg-gradient-to-b from-primary/[0.055] via-[#fbf8f1] to-card border border-secondary/20 shadow-[var(--shadow-card)]"
                     : "card-elevated"
                 }`}
               >

@@ -14,7 +14,7 @@ const ease = [0.33, 1, 0.68, 1] as const;
 
 const HeroSection = () => (
   <section className="relative overflow-hidden pt-28 pb-14 md:pt-[118px] md:pb-16">
-    <div className="absolute inset-x-0 top-0 h-[620px] bg-[radial-gradient(circle_at_70%_35%,rgba(42,157,143,0.08),transparent_32%),radial-gradient(circle_at_25%_25%,rgba(59,123,178,0.06),transparent_30%)] pointer-events-none" />
+    <div className="hero-ambient absolute inset-x-0 top-0 h-[620px] pointer-events-none" />
     <div className="section-container">
       <div className="relative grid lg:grid-cols-[1.08fr_0.92fr] gap-10 lg:gap-16 items-center">
         {/* Left — copy */}
@@ -30,7 +30,7 @@ const HeroSection = () => (
 
           <h1 className="mt-5 max-w-[650px] font-display text-[2.65rem] md:text-[3.4rem] lg:text-[3.65rem] font-extrabold text-foreground leading-[1.02] tracking-[-0.035em]">
             Cuando no sabes qué hacer,{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="brand-gradient-text">
               Calmy te ayuda a dar el primer paso
             </span>
           </h1>
@@ -83,11 +83,11 @@ const HeroSection = () => (
         >
           {/* Glow */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-[430px] h-[430px] rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 blur-3xl" />
+            <div className="w-[430px] h-[430px] rounded-full bg-[radial-gradient(circle,rgba(74,137,180,0.11),rgba(244,227,194,0.16)_48%,transparent_72%)] blur-3xl" />
           </div>
 
           {/* Main chat mockup — wider and taller */}
-          <div className="relative w-full max-w-[470px] card-elevated p-0 overflow-hidden z-10 shadow-[0_24px_70px_-36px_rgba(32,81,95,0.45)]">
+          <div className="relative w-full max-w-[470px] card-elevated p-0 overflow-hidden z-10 shadow-[0_24px_70px_-36px_rgba(61,54,44,0.38)]">
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-3.5 border-b border-border/40 bg-card">
               <div className="flex items-center gap-3">
@@ -108,7 +108,7 @@ const HeroSection = () => (
             </div>
 
             {/* Messages */}
-            <div className="px-5 py-5 space-y-4 bg-gradient-to-b from-card to-secondary/[0.025]">
+            <div className="px-5 py-5 space-y-4 bg-gradient-to-b from-card to-[#fcfaf5]">
               <motion.div
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}

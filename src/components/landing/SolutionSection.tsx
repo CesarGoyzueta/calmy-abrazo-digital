@@ -28,7 +28,7 @@ const chatMessages = [
 ];
 
 const SolutionSection = () => (
-  <section id="solucion" className="py-16 md:py-20 bg-gradient-to-b from-secondary/[0.035] to-card/60">
+  <section id="solucion" className="section-warm py-16 md:py-20">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,7 @@ const SolutionSection = () => (
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.1 }}
               className={`card-elevated-hover p-5 flex items-start gap-3.5 ${
-                f.accent ? "border-secondary/25 ring-1 ring-secondary/10 bg-gradient-to-br from-card to-secondary/[0.03]" : ""
+                f.accent ? "border-secondary/25 ring-1 ring-secondary/10 bg-gradient-to-br from-card to-[#fbf8f1]" : ""
               }`}
             >
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${

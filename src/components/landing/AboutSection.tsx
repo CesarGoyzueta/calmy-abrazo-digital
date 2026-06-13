@@ -22,7 +22,7 @@ const founders = [
 ];
 
 const AboutSection = () => (
-  <section id="equipo" className="py-16 md:py-20 bg-gradient-to-b from-secondary/[0.035] to-card/60">
+  <section id="equipo" className="section-warm py-16 md:py-20">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ const AboutSection = () => (
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="card-elevated overflow-hidden hover:shadow-[var(--shadow-hover)] transition-all duration-300"
           >
-            <div className="overflow-hidden bg-gradient-to-b from-primary/[0.035] to-secondary/[0.035]" style={{ height: "clamp(12rem, 28vw, 18rem)" }}>
+            <div className="overflow-hidden bg-gradient-to-b from-primary/[0.025] to-[#f8f2e7]" style={{ height: "clamp(12rem, 28vw, 18rem)" }}>
               <img src={f.photo} alt={`${f.name} - ${f.badge}`} className="w-full h-full object-contain object-bottom" />
             </div>
             <div className="p-5">

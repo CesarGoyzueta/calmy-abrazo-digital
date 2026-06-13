@@ -44,7 +44,7 @@ const ExamplesSection = () => {
   const ex = examples[current];
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-secondary/[0.035] to-card/55">
+    <section className="section-warm py-16 md:py-20">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
