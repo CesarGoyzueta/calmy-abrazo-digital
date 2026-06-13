@@ -22,26 +22,26 @@ const founders = [
 ];
 
 const AboutSection = () => (
-  <section id="equipo" className="py-14 md:py-28 bg-card/40">
+  <section id="equipo" className="py-16 md:py-20 bg-gradient-to-b from-secondary/[0.035] to-card/60">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-2xl mx-auto mb-14"
+        className="text-center max-w-3xl mx-auto mb-10"
       >
         <span className="section-badge mb-4 inline-block">Nuestro equipo</span>
         <h2 className="section-title mt-2">
           Los rostros detrás de{" "}
           <span className="text-primary">Calmy</span>
         </h2>
-        <p className="mt-5 section-subtitle max-w-lg mx-auto">
+        <p className="mt-4 section-subtitle max-w-xl mx-auto">
           Creamos Calmy porque entendemos lo difícil que puede ser acompañar sin claridad. Combinamos psicología y tecnología para ayudarte en esos momentos reales.
         </p>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+      <div className="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
         {founders.map((f, i) => (
           <motion.div
             key={i}
@@ -51,10 +51,10 @@ const AboutSection = () => (
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="card-elevated overflow-hidden hover:shadow-[var(--shadow-hover)] transition-all duration-300"
           >
-            <div className="overflow-hidden" style={{ height: "clamp(14rem, 40vw, 22rem)" }}>
-              <img src={f.photo} alt={`${f.name} - ${f.badge}`} className="w-full h-full object-contain" />
+            <div className="overflow-hidden bg-gradient-to-b from-primary/[0.035] to-secondary/[0.035]" style={{ height: "clamp(12rem, 28vw, 18rem)" }}>
+              <img src={f.photo} alt={`${f.name} - ${f.badge}`} className="w-full h-full object-contain object-bottom" />
             </div>
-            <div className="p-5 md:p-6">
+            <div className="p-5">
               <div className="min-h-[2.5rem] flex items-start">
                 <span className="font-body text-[11px] font-bold uppercase tracking-wider text-secondary">
                   {f.badge}

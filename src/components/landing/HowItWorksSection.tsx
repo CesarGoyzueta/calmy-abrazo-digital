@@ -26,21 +26,21 @@ const steps = [
 ];
 
 const HowItWorksSection = () => (
-  <section id="como-funciona" className="py-14 md:py-28">
+  <section id="como-funciona" className="py-16 md:py-20 bg-card/45">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-2xl mx-auto mb-16"
+        className="text-center max-w-3xl mx-auto mb-10"
       >
         <span className="section-badge mb-4 inline-block">Cómo funciona</span>
         <h2 className="section-title mt-2">
           Un proceso diseñado para{" "}
           <span className="text-primary">darte respuestas con sentido</span>
         </h2>
-        <p className="mt-6 section-subtitle max-w-xl mx-auto">
+        <p className="mt-4 section-subtitle max-w-xl mx-auto">
           No es solo preguntar y responder. Es un flujo que transforma tu contexto en orientación personalizada.
         </p>
       </motion.div>
@@ -67,7 +67,7 @@ const HowItWorksSection = () => (
               <div
                 className={`flex-1 p-8 rounded-3xl text-center transition-all duration-300 ${
                   s.highlight
-                    ? "bg-gradient-to-b from-primary/6 via-secondary/5 to-primary/4 border-2 border-secondary/20 shadow-[var(--shadow-card)] md:scale-[1.04]"
+                    ? "bg-gradient-to-b from-primary/6 via-secondary/5 to-primary/4 border border-secondary/25 shadow-[var(--shadow-card)]"
                     : "card-elevated"
                 }`}
               >
@@ -82,15 +82,15 @@ const HowItWorksSection = () => (
                 </span>
 
                 <div
-                  className={`w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 ${
+                  className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4 ${
                     s.highlight ? "bg-secondary/12" : "bg-primary/6"
                   }`}
                 >
                   <s.icon className={s.highlight ? "text-secondary" : "text-primary"} size={26} />
                 </div>
 
-                <h3 className="font-display text-base font-bold text-foreground leading-snug mb-3">{s.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                <h3 className="font-display text-sm font-bold text-foreground leading-snug mb-2">{s.title}</h3>
+                <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
 
                 {s.highlight && (
                   <span className="inline-block mt-4 font-body text-[10px] font-bold text-secondary uppercase tracking-wider">

@@ -16,35 +16,35 @@ const isNotCalmy = [
 ];
 
 const TrustSection = () => (
-  <section id="confianza" className="py-14 md:py-28">
+  <section id="confianza" className="py-16 md:py-20 bg-card/45">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-2xl mx-auto mb-16"
+        className="text-center max-w-3xl mx-auto mb-10"
       >
-        <div className="w-14 h-14 rounded-2xl bg-primary/6 flex items-center justify-center mx-auto mb-5">
-          <ShieldCheck className="text-primary" size={28} />
+        <div className="w-11 h-11 rounded-2xl bg-primary/6 flex items-center justify-center mx-auto mb-4">
+          <ShieldCheck className="text-primary" size={22} />
         </div>
         <h2 className="section-title">
           Honesto sobre lo que es{" "}
           <span className="text-primary">y lo que no es</span>
         </h2>
-        <p className="mt-6 section-subtitle max-w-xl mx-auto">
+        <p className="mt-4 section-subtitle max-w-xl mx-auto">
           La confianza empieza por ser transparentes. Calmy tiene un alcance claro, y cumplirlo bien es lo que le da valor.
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
         {/* Lo que sí es */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-card rounded-3xl border border-secondary/15 p-6 md:p-10"
+          className="bg-card rounded-[1.4rem] border border-secondary/15 p-6 md:p-7 shadow-[var(--shadow-soft)]"
         >
           <div className="flex items-center gap-3 mb-7">
             <div className="w-10 h-10 rounded-xl bg-secondary/8 flex items-center justify-center">
@@ -70,7 +70,7 @@ const TrustSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="bg-card rounded-3xl border border-primary/10 p-6 md:p-10"
+          className="bg-card rounded-[1.4rem] border border-primary/10 p-6 md:p-7 shadow-[var(--shadow-soft)]"
         >
           <div className="flex items-center gap-3 mb-7">
             <div className="w-10 h-10 rounded-xl bg-primary/6 flex items-center justify-center">
@@ -97,7 +97,7 @@ const TrustSection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.15 }}
-        className="max-w-4xl mx-auto mt-6 flex items-start gap-3 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-800/30 rounded-2xl px-6 py-4"
+        className="max-w-4xl mx-auto mt-4 flex items-start gap-3 bg-amber-50/70 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-800/30 rounded-2xl px-5 py-3.5"
       >
         <AlertTriangle className="text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" size={16} />
         <p className="font-body text-sm text-amber-800 dark:text-amber-300 leading-relaxed">
@@ -111,7 +111,7 @@ const TrustSection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.22 }}
-        className="max-w-4xl mx-auto mt-4 flex items-start gap-3 bg-primary/4 border border-primary/10 rounded-2xl px-6 py-4"
+        className="max-w-4xl mx-auto mt-3 flex items-start gap-3 bg-primary/4 border border-primary/10 rounded-2xl px-5 py-3.5"
       >
         <Lock className="text-primary flex-shrink-0 mt-0.5" size={16} />
         <p className="font-body text-sm text-muted-foreground leading-relaxed">

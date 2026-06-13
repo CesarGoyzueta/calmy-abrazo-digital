@@ -44,26 +44,26 @@ const ExamplesSection = () => {
   const ex = examples[current];
 
   return (
-    <section className="py-20 md:py-28 bg-card/40">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-secondary/[0.035] to-card/55">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-14"
+          className="text-center max-w-3xl mx-auto mb-10"
         >
           <span className="section-badge mb-4 inline-block">Ejemplos reales</span>
           <h2 className="section-title mt-2">
             Mira el tipo de orientación{" "}
             <span className="text-secondary">que recibirías</span>
           </h2>
-          <p className="mt-6 section-subtitle max-w-xl mx-auto">
+          <p className="mt-4 section-subtitle max-w-xl mx-auto">
             Situaciones cotidianas convertidas en primeros pasos concretos.
           </p>
         </motion.div>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -71,10 +71,10 @@ const ExamplesSection = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -14 }}
               transition={{ duration: 0.4 }}
-              className="card-elevated overflow-hidden"
+              className="card-elevated overflow-hidden md:grid md:grid-cols-[0.85fr_1.15fr]"
             >
               {/* Pregunta del padre/madre */}
-              <div className="p-6 md:p-7 border-b border-border/40">
+              <div className="p-6 border-b md:border-b-0 md:border-r border-border/40 bg-primary/[0.025] flex items-center">
                 <div className="flex justify-end">
                   <div className="bg-primary/8 rounded-2xl rounded-tr-md px-4 py-3 max-w-[90%]">
                     <p className="font-body text-sm text-foreground leading-relaxed">
@@ -85,7 +85,7 @@ const ExamplesSection = () => {
               </div>
 
               {/* Análisis estructurado */}
-              <div className="p-6 md:p-7 space-y-4">
+              <div className="p-6 space-y-4">
                 {/* Qué puede estar pasando */}
                 <div className="flex gap-3 items-start">
                   <div className="w-7 h-7 rounded-lg bg-primary/6 flex items-center justify-center flex-shrink-0 mt-0.5">

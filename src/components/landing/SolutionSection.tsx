@@ -28,21 +28,21 @@ const chatMessages = [
 ];
 
 const SolutionSection = () => (
-  <section id="solucion" className="py-20 md:py-28 bg-card/40">
+  <section id="solucion" className="py-16 md:py-20 bg-gradient-to-b from-secondary/[0.035] to-card/60">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-2xl mx-auto mb-16"
+        className="text-center max-w-3xl mx-auto mb-10"
       >
         <span className="section-badge mb-4 inline-block">La solución</span>
         <h2 className="section-title mt-2">
           Primeros pasos claros cuando la crianza{" "}
           <span className="text-secondary">se vuelve difícil</span>
         </h2>
-        <p className="mt-6 section-subtitle max-w-xl mx-auto">
+        <p className="mt-4 section-subtitle max-w-2xl mx-auto">
           Comparte tu duda, cuéntale sobre tu hijo y Calmy te devuelve orientación breve y accionable para ese momento. También puedes usarla para llegar mejor preparado a una sesión con un profesional.
         </p>
         <p className="mt-3 font-body text-xs font-medium text-secondary/80 tracking-wide uppercase">
@@ -50,14 +50,14 @@ const SolutionSection = () => (
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-10 items-start max-w-5xl mx-auto">
+      <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6 items-stretch max-w-5xl mx-auto">
         {/* Chat mockup */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="card-elevated p-6 md:p-7 order-2 lg:order-1"
+          className="card-elevated p-5 md:p-6 order-2 lg:order-1"
         >
           <div className="flex items-center gap-2.5 mb-5 pb-4 border-b border-border/40">
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-sm">
@@ -93,7 +93,7 @@ const SolutionSection = () => (
         </motion.div>
 
         {/* Feature cards */}
-        <div className="flex flex-col gap-4 order-1 lg:order-2">
+        <div className="flex flex-col gap-3 order-1 lg:order-2">
           {features.map((f, i) => (
             <motion.div
               key={f.title}
@@ -101,18 +101,18 @@ const SolutionSection = () => (
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.1 }}
-              className={`card-elevated-hover p-6 flex items-start gap-4 ${
+              className={`card-elevated-hover p-5 flex items-start gap-3.5 ${
                 f.accent ? "border-secondary/25 ring-1 ring-secondary/10 bg-gradient-to-br from-card to-secondary/[0.03]" : ""
               }`}
             >
-              <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
                 f.accent ? "bg-secondary/12" : "bg-secondary/8"
               }`}>
                 <f.icon className="text-secondary" size={20} />
               </div>
               <div>
-                <h3 className="font-display text-base font-bold text-foreground mb-1">{f.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                <h3 className="font-display text-sm font-bold text-foreground mb-1">{f.title}</h3>
+                <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
                 {f.accent && (
                   <span className="inline-block mt-2 font-body text-[10px] font-bold text-secondary uppercase tracking-wider">
                     ✦ Diferencial clave

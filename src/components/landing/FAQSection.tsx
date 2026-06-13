@@ -33,14 +33,14 @@ const FAQSection = () => {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-14 md:py-28">
+    <section className="py-16 md:py-20">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-14"
+          className="text-center max-w-3xl mx-auto mb-10"
         >
           <span className="section-badge mb-4 inline-block">Preguntas frecuentes</span>
           <h2 className="section-title mt-2">
@@ -49,7 +49,7 @@ const FAQSection = () => {
           </h2>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto space-y-3">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-3 items-start">
           {faqs.map((faq, i) => {
             const panelId = `faq-panel-${i}`;
             const isOpen = open === i;
@@ -60,7 +60,7 @@ const FAQSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="bg-card rounded-2xl border border-border/50 overflow-hidden"
+                className="bg-card rounded-2xl border border-border/70 overflow-hidden shadow-[var(--shadow-soft)]"
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}

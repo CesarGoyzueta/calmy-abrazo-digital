@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, UserCheck, MessageCircle, Brain, User, Sparkles, Shield } from "lucide-react";
+import { ArrowRight, BookOpen, UserCheck, MessageCircle, Brain, User, Sparkles, Shield, Sprout, Play } from "lucide-react";
 
 const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
 
@@ -13,35 +13,41 @@ const trustChips = [
 const ease = [0.33, 1, 0.68, 1] as const;
 
 const HeroSection = () => (
-  <section className="pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+  <section className="relative overflow-hidden pt-28 pb-14 md:pt-[118px] md:pb-16">
+    <div className="absolute inset-x-0 top-0 h-[620px] bg-[radial-gradient(circle_at_70%_35%,rgba(42,157,143,0.08),transparent_32%),radial-gradient(circle_at_25%_25%,rgba(59,123,178,0.06),transparent_30%)] pointer-events-none" />
     <div className="section-container">
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative grid lg:grid-cols-[1.08fr_0.92fr] gap-10 lg:gap-16 items-center">
         {/* Left — copy */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease }}
         >
-          <h1 className="font-display text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold text-foreground leading-[1.1] tracking-tight">
+          <span className="inline-flex items-center gap-2 rounded-full bg-secondary/[0.09] px-3.5 py-2 font-body text-xs font-semibold text-secondary">
+            <Sprout size={14} />
+            Orientación práctica para padres y madres
+          </span>
+
+          <h1 className="mt-5 max-w-[650px] font-display text-[2.65rem] md:text-[3.4rem] lg:text-[3.65rem] font-extrabold text-foreground leading-[1.02] tracking-[-0.035em]">
             Cuando no sabes qué hacer,{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Calmy te ayuda a dar el primer paso
             </span>
           </h1>
 
-          <p className="mt-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
+          <p className="mt-5 font-body text-base text-muted-foreground leading-relaxed max-w-[580px]">
             Orientación práctica para padres y madres. Calmy transforma tus dudas del día a día en primeros pasos claros, con base psicológica y el contexto de tu hijo.
           </p>
 
           {/* Trust chips */}
-          <div className="mt-7 flex flex-wrap gap-2.5">
+          <div className="mt-5 flex flex-wrap gap-2">
             {trustChips.map((chip, i) => (
               <motion.span
                 key={chip.label}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 + i * 0.07 }}
-                className="inline-flex items-center gap-1.5 bg-card border border-border/60 rounded-full px-4 py-2 font-body text-sm font-medium text-foreground/80 shadow-sm"
+                className="inline-flex items-center gap-1.5 bg-card/90 border border-border/70 rounded-full px-3.5 py-2 font-body text-xs font-semibold text-foreground/75 shadow-[var(--shadow-soft)]"
               >
                 <chip.icon size={15} className="text-secondary" />
                 {chip.label}
@@ -50,15 +56,15 @@ const HeroSection = () => (
           </div>
 
           {/* CTAs */}
-          <div className="mt-9 flex flex-wrap items-center gap-3">
+          <div className="mt-7 flex flex-wrap items-center gap-3">
             <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer">
-              <Button variant="calm" size="xl" className="shadow-lg">
+              <Button variant="calm" size="xl">
                 Quiero acceso anticipado <ArrowRight className="ml-1" size={18} />
               </Button>
             </a>
             <a href="#como-funciona">
               <Button variant="calm-outline" size="lg">
-                Ver cómo funciona
+                Ver cómo funciona <Play className="ml-1 fill-current" size={13} />
               </Button>
             </a>
           </div>
@@ -73,15 +79,15 @@ const HeroSection = () => (
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease }}
-          className="relative flex justify-center items-center min-h-[420px] lg:min-h-[520px] mt-10 lg:mt-0"
+          className="relative flex justify-center items-center min-h-[400px] lg:min-h-[455px] mt-8 lg:mt-0"
         >
           {/* Glow */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-[380px] h-[380px] rounded-full bg-gradient-to-br from-primary/5 to-secondary/5 blur-3xl" />
+            <div className="w-[430px] h-[430px] rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 blur-3xl" />
           </div>
 
           {/* Main chat mockup — wider and taller */}
-          <div className="relative w-full max-w-[440px] card-elevated p-0 overflow-hidden z-10">
+          <div className="relative w-full max-w-[470px] card-elevated p-0 overflow-hidden z-10 shadow-[0_24px_70px_-36px_rgba(32,81,95,0.45)]">
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-3.5 border-b border-border/40 bg-card">
               <div className="flex items-center gap-3">
@@ -102,7 +108,7 @@ const HeroSection = () => (
             </div>
 
             {/* Messages */}
-            <div className="px-5 py-5 space-y-4 bg-gradient-to-b from-card to-background/20">
+            <div className="px-5 py-5 space-y-4 bg-gradient-to-b from-card to-secondary/[0.025]">
               <motion.div
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -162,7 +168,7 @@ const HeroSection = () => (
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.2, ease }}
-            className="absolute left-0 -bottom-4 z-20 card-elevated px-3.5 py-2.5 hidden lg:flex items-center gap-2.5 shadow-lg"
+            className="absolute left-0 -bottom-1 z-20 card-elevated px-3.5 py-2.5 hidden lg:flex items-center gap-2.5 shadow-lg"
           >
             <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0">
               <User className="text-primary" size={14} />
@@ -178,7 +184,7 @@ const HeroSection = () => (
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.3, ease }}
-            className="absolute right-2 top-6 z-20 card-elevated px-3.5 py-2.5 hidden lg:flex items-center gap-2.5 shadow-lg"
+            className="absolute -right-2 top-0 z-20 card-elevated px-3.5 py-2.5 hidden lg:flex items-center gap-2.5 shadow-lg"
           >
             <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
               <Brain className="text-secondary" size={14} />

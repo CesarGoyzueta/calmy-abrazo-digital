@@ -4,7 +4,7 @@ import isotipo from "@/assets/neurocalm-logo (2).png";
 const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
 
 const Footer = () => (
-  <footer className="py-12 px-5 border-t border-border/40 bg-card/30">
+  <footer className="py-10 px-5 border-t border-border/50 bg-card/65">
     <div className="max-w-6xl mx-auto">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         <div>

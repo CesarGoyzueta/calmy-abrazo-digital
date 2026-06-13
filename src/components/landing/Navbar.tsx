@@ -26,28 +26,28 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
         scrolled
-          ? "bg-card/90 backdrop-blur-xl shadow-[var(--shadow-soft)] border-b border-border/40"
-          : "bg-transparent"
+          ? "bg-card/90 backdrop-blur-xl shadow-[var(--shadow-soft)] border-border/60"
+          : "bg-card/75 backdrop-blur-md border-border/35"
       }`}
     >
-      <div className="section-container h-16 flex items-center justify-between">
+      <div className="section-container h-[68px] flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
           <img src={isotipo} alt="Calmy" className="h-9 w-auto" />
           <div className="flex flex-col leading-tight">
-            <span className="font-display text-base font-bold text-foreground tracking-tight">Calmy</span>
+            <span className="font-display text-[17px] font-bold text-foreground tracking-tight">Calmy</span>
             <span className="font-body text-xs text-muted-foreground">por NeuroCalm</span>
           </div>
         </a>
 
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) =>
             l.isRoute ? (
               <Link
                 key={l.href}
                 to={l.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body font-medium"
+                className="text-[13px] text-muted-foreground hover:text-foreground transition-colors font-body font-semibold"
               >
                 {l.label}
               </Link>
@@ -55,7 +55,7 @@ const Navbar = () => {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body font-medium"
+                className="text-[13px] text-muted-foreground hover:text-foreground transition-colors font-body font-semibold"
               >
                 {l.label}
               </a>

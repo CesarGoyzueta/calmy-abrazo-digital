@@ -30,26 +30,26 @@ const cases = [
 ];
 
 const UseCasesSection = () => (
-  <section className="py-14 md:py-28">
+  <section className="py-16 md:py-20">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-2xl mx-auto mb-10 md:mb-14"
+        className="text-center max-w-3xl mx-auto mb-10"
       >
         <span className="section-badge mb-4 inline-block">Para tu día a día</span>
         <h2 className="section-title mt-2">
           Situaciones en las que{" "}
           <span className="text-primary">Calmy puede ayudarte</span>
         </h2>
-        <p className="mt-4 section-subtitle max-w-lg mx-auto">
+        <p className="mt-4 section-subtitle max-w-xl mx-auto">
           No para todo, sino para los momentos donde más necesitas saber qué intentar.
         </p>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 mx-auto">
         {cases.map((c, i) => (
           <motion.div
             key={c.title}
@@ -57,16 +57,16 @@ const UseCasesSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: i * 0.08 }}
-            className="card-elevated-hover p-5 md:p-7 flex items-start gap-3 md:gap-4"
+            className="card-elevated-hover p-5 flex flex-col items-start gap-3"
           >
-            <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-secondary/8 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <div className="w-9 h-9 rounded-xl bg-secondary/8 flex items-center justify-center flex-shrink-0">
               <c.icon className="text-secondary" size={17} />
             </div>
             <div>
               <h3 className="font-display text-sm font-bold text-foreground mb-1 leading-snug">
                 {c.title}
               </h3>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed">
+              <p className="font-body text-xs text-muted-foreground leading-relaxed">
                 {c.desc}
               </p>
             </div>

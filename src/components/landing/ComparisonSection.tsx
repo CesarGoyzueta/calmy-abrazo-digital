@@ -16,14 +16,14 @@ const withCalmy = [
 ];
 
 const ComparisonSection = () => (
-  <section className="py-14 md:py-28 bg-card/40">
+  <section className="py-16 md:py-20">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-2xl mx-auto mb-10 md:mb-14"
+        className="text-center max-w-3xl mx-auto mb-10"
       >
         <span className="section-badge mb-4 inline-block">El día a día</span>
         <h2 className="section-title mt-2">
@@ -35,14 +35,14 @@ const ComparisonSection = () => (
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
         {/* Sin Calmy */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-card rounded-3xl border border-border/50 p-6 md:p-9"
+          className="bg-card rounded-[1.4rem] border border-border/70 p-6 md:p-7 shadow-[var(--shadow-soft)]"
         >
           <p className="font-display text-sm font-bold text-muted-foreground uppercase tracking-widest mb-6">
             Sin Calmy
@@ -67,7 +67,7 @@ const ComparisonSection = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.06 }}
-          className="bg-gradient-to-b from-secondary/5 to-card rounded-3xl border border-secondary/20 p-6 md:p-9"
+          className="bg-gradient-to-b from-secondary/[0.07] to-card rounded-[1.4rem] border border-secondary/25 p-6 md:p-7 shadow-[var(--shadow-soft)]"
         >
           <p className="font-display text-sm font-bold text-secondary uppercase tracking-widest mb-6">
             Con Calmy

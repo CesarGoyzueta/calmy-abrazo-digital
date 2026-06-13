@@ -10,9 +10,9 @@ const MidCTASection = () => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
-    className="section-container py-2"
+    className="section-container py-4"
   >
-    <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 bg-gradient-to-r from-primary/6 via-secondary/5 to-primary/6 border border-primary/12 rounded-2xl px-7 py-5">
+    <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 bg-gradient-to-r from-primary/[0.07] via-secondary/[0.07] to-primary/[0.07] border border-primary/15 rounded-[1.4rem] px-7 py-6 shadow-[var(--shadow-soft)]">
       <p className="font-display text-sm font-bold text-foreground text-center sm:text-left leading-snug">
         ¿Quieres probar Calmy cuando abramos la primera versión?
       </p>
