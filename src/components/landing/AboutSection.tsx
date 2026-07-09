@@ -15,8 +15,8 @@ const founders = [
   {
     photo: founderPsych,
     name: "Erika Rubio",
-    badge: "Co-Fundadora · Psicología, contenidos y crecimiento",
-    subtitle: "Enfoque psicológico · Contenidos y Marca",
+    badge: "Co-Fundadora · CMO & Head of Psychology",
+    subtitle: "Sustento clínico · Marca y Crecimiento",
     bio: "Lidera el enfoque psicológico, la construcción de contenidos y los criterios de orientación que ayudan a que Calmy responda con sensibilidad, claridad y responsabilidad.",
   },
 ];
