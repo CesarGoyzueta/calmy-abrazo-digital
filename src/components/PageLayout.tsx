@@ -27,7 +27,7 @@ const PageLayout = ({ children }: Props) => (
 
     <footer className="py-8 border-t border-border/40">
       <div className="section-container text-center">
-        <p className="font-body text-[11px] text-muted-foreground">© 2025 Calmy. Todos los derechos reservados.</p>
+        <p className="font-body text-[11px] text-muted-foreground">© 2026 Calmy. Todos los derechos reservados.</p>
       </div>
     </footer>
   </div>

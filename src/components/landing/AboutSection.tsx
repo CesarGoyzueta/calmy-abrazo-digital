@@ -2,86 +2,73 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import founderTech from "@/assets/founder-tech.jpeg";
-import founderPsych from "@/assets/founder-psych.png";
+import founderPsych from "@/assets/founder-psych.webp";
 
 const founders = [
   {
-    photo: founderTech,
-    name: "César Goyzueta",
-    badge: "Co-Fundador · CEO & CTO",
-    subtitle: "Visión de producto · IA y Tecnología",
-    bio: "Lidera la visión de producto, IA y tecnología para convertir conocimiento psicológico en una experiencia simple, útil y humana para las familias.",
-  },
-  {
     photo: founderPsych,
     name: "Erika Rubio",
-    badge: "Co-Fundadora · CMO & Head of Psychology",
-    subtitle: "Sustento clínico · Marca y Crecimiento",
-    bio: "Lidera el enfoque psicológico, la construcción de contenidos y los criterios de orientación que ayudan a que Calmy responda con sensibilidad, claridad y responsabilidad.",
+    role: "Psicóloga y responsable del enfoque psicológico de Calmy",
+    bio: "Lidera la construcción de contenidos y los criterios de orientación para que la experiencia sea sensible, clara y responsable.",
+  },
+  {
+    photo: founderTech,
+    name: "César Goyzueta",
+    role: "Cofundador y responsable de producto y tecnología",
+    bio: "Diseña la experiencia y la arquitectura que convertirán el contexto familiar en una orientación práctica y comprensible.",
   },
 ];
 
 const AboutSection = () => (
-  <section id="equipo" className="section-warm py-16 md:py-20">
+  <section id="equipo" className="border-b border-border/60 bg-[hsl(var(--surface-warm))] py-12 md:py-16">
     <div className="section-container">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center max-w-3xl mx-auto mb-10"
+        transition={{ duration: 0.5 }}
+        className="mb-8 max-w-3xl"
       >
-        <span className="section-badge mb-4 inline-block">Nuestro equipo</span>
-        <h2 className="section-title mt-2">
-          Los rostros detrás de{" "}
-          <span className="text-primary">Calmy</span>
-        </h2>
-        <p className="mt-4 section-subtitle max-w-xl mx-auto">
-          Creamos Calmy porque entendemos lo difícil que puede ser acompañar sin claridad. Combinamos psicología y tecnología para ayudarte en esos momentos reales.
+        <span className="section-badge">Responsables de Calmy</span>
+        <h2 className="section-title mt-4">Psicología y tecnología con responsabilidades visibles</h2>
+        <p className="mt-4 section-subtitle">
+          El piloto se construye con liderazgo psicológico y una implementación tecnológica orientada a límites claros.
         </p>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
-        {founders.map((f, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
+      <div className="grid gap-4 lg:grid-cols-2">
+        {founders.map((founder, index) => (
+          <motion.article
+            key={founder.name}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="card-elevated overflow-hidden hover:shadow-[var(--shadow-hover)] transition-all duration-300"
+            transition={{ duration: 0.45, delay: index * 0.07 }}
+            className="grid overflow-hidden rounded-lg border border-border bg-card sm:grid-cols-[190px_1fr]"
           >
-            <div className="overflow-hidden bg-gradient-to-b from-primary/[0.025] to-[#f8f2e7]" style={{ height: "clamp(12rem, 28vw, 18rem)" }}>
-              <img src={f.photo} alt={`${f.name} - ${f.badge}`} className="w-full h-full object-contain object-bottom" />
+            <div className="h-56 bg-muted sm:h-full">
+              <img
+                src={founder.photo}
+                alt={founder.name}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-contain object-bottom"
+              />
             </div>
-            <div className="p-5">
-              <div className="min-h-[2.5rem] flex items-start">
-                <span className="font-body text-[11px] font-bold uppercase tracking-wider text-secondary">
-                  {f.badge}
-                </span>
-              </div>
-              <h4 className="mt-1.5 font-display text-lg font-bold text-foreground">{f.name}</h4>
-              <p className="mt-0.5 font-body text-[11px] font-semibold text-muted-foreground/70 uppercase tracking-wider">{f.subtitle}</p>
-              <p className="mt-2 font-body text-sm text-muted-foreground leading-relaxed">{f.bio}</p>
+            <div className="p-6">
+              <h3 className="font-display text-xl font-bold text-foreground">{founder.name}</h3>
+              <p className="mt-2 font-body text-sm font-semibold leading-relaxed text-secondary">{founder.role}</p>
+              <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">{founder.bio}</p>
             </div>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="text-center mt-8"
-      >
-        <Link
-          to="/sobre-calmy"
-          className="inline-flex items-center gap-1.5 font-body text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-        >
-          Conoce más sobre Calmy <ArrowRight size={14} />
+      <div className="mt-7">
+        <Link to="/sobre-calmy" className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:underline">
+          Conoce el proyecto y su visión <ArrowRight size={15} />
         </Link>
-      </motion.div>
+      </div>
     </div>
   </section>
 );

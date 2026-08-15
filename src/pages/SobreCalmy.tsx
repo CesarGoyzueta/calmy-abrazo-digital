@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 import { BookOpen, Brain, ShieldCheck } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import founderTech from "@/assets/founder-tech.jpeg";
-import founderPsych from "@/assets/founder-psych.png";
+import founderPsych from "@/assets/founder-psych.webp";
 
 const founders = [
   {
-    photo: founderTech,
-    name: "César Goyzueta",
-    badge: "Co-Fundador · CEO & CTO",
-    subtitle: "Visión estratégica · IA y Tecnología",
-    bio: "Construye tecnología con propósito y lidera el desarrollo de Calmy para que la experiencia sea útil, clara y humana.",
-  },
-  {
     photo: founderPsych,
     name: "Erika Rubio",
-    badge: "Co-Fundadora · CMO & Head of Psychology",
-    subtitle: "Sustento clínico · Marca y crecimiento",
-    bio: "Aporta el enfoque psicológico y diseña la base científica y emocional que guía cada respuesta de Calmy.",
+    badge: "Psicóloga y responsable del enfoque psicológico",
+    subtitle: "Contenidos y criterios de orientación",
+    bio: "Lidera la construcción de contenidos y los criterios de orientación para que la experiencia sea sensible, clara y responsable.",
+  },
+  {
+    photo: founderTech,
+    name: "César Goyzueta",
+    badge: "Cofundador y responsable de producto y tecnología",
+    subtitle: "Producto y arquitectura tecnológica",
+    bio: "Diseña la experiencia y la arquitectura que convertirán el contexto familiar en una orientación práctica y comprensible.",
   },
 ];
 
@@ -62,7 +62,7 @@ const SobreCalmy = () => (
         Por qué existe Calmy
       </h1>
       <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-        Calmy nace de una necesidad real: la de padres que buscan orientación clara para acompañar a sus hijos y muchas veces no la encuentran en el momento en que más la necesitan.
+        Calmy nace para madres, padres y cuidadores de niños con diagnóstico profesional de TEA o TDAH que buscan orientación clara y contextual en momentos cotidianos.
       </p>
       <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mt-4">
         Criar con amor no siempre significa saber qué hacer. El día a día trae dudas, momentos difíciles e incertidumbre. Calmy nace para estar ahí en esos momentos, con acompañamiento más claro, humano y útil.
@@ -92,6 +92,8 @@ const SobreCalmy = () => (
               <img
                 src={f.photo}
                 alt={`${f.name} – ${f.badge}`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -121,10 +123,10 @@ const SobreCalmy = () => (
       </h2>
       <div className="space-y-4 max-w-2xl">
         <p className="font-body text-base text-muted-foreground leading-relaxed">
-          Calmy es un asistente conversacional diseñado para acompañar emocionalmente a padres en su día a día.
+          Calmy será un asistente conversacional diseñado para orientar a familias de niños con diagnóstico profesional de TEA o TDAH en su día a día.
         </p>
         <p className="font-body text-base text-muted-foreground leading-relaxed">
-          Combina una base de conocimiento psicológico estructurada con el contexto del niño y su entorno para ofrecer orientación más clara, práctica y humana.
+          Combinará conocimiento psicológico estructurado con el contexto que la familia decida compartir para ofrecer orientación más clara, práctica y humana.
         </p>
         <p className="font-body text-base text-muted-foreground leading-relaxed">
           No busca reemplazar a ningún profesional. Busca acompañar cuando más lo necesitas: en la duda cotidiana, en la incertidumbre y en esos momentos en que no sabes cómo actuar.

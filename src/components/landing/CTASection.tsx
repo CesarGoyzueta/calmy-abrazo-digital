@@ -1,41 +1,60 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Check, MessageCircle } from "lucide-react";
+import FounderGroupLink from "@/components/landing/FounderGroupLink";
 
-const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
+const benefits = [
+  "Conversar con el equipo durante el piloto",
+  "Ayudar a priorizar situaciones reales",
+  "Recibir acceso anticipado a la primera versión",
+  "Participar de forma voluntaria y sin compromiso",
+];
 
 const CTASection = () => (
-  <section className="py-16 md:py-20">
+  <section className="bg-foreground py-12 text-primary-foreground md:py-16">
     <div className="section-container">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary/[0.07] via-card to-[#f8efdf] border border-primary/15 p-8 md:p-12 text-center max-w-4xl mx-auto shadow-[var(--shadow-card)]"
-      >
-        <h2 className="section-title mb-5">
-          Sé de los primeros en{" "}
-          <span className="text-secondary">probar Calmy</span>
-        </h2>
-        <p className="section-subtitle max-w-lg mx-auto mb-7">
-          Únete a la lista de espera y recibe acceso anticipado cuando abramos la primera versión.
-        </p>
-        <ul className="mb-7 grid sm:grid-cols-2 gap-x-8 gap-y-2.5 max-w-2xl mx-auto text-left font-body text-sm text-muted-foreground">
-          <li className="flex items-center gap-2"><span className="text-secondary font-bold">✓</span> Acceso prioritario al lanzamiento</li>
-          <li className="flex items-center gap-2"><span className="text-secondary font-bold">✓</span> Precio especial de lanzamiento</li>
-          <li className="flex items-center gap-2"><span className="text-secondary font-bold">✓</span> Invitación a probar nuevas funciones antes que el público general</li>
-          <li className="flex items-center gap-2"><span className="text-secondary font-bold">✓</span> Sin compromiso</li>
-        </ul>
-        <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer">
-          <Button variant="calm" size="xl" className="shadow-lg">
-            Quiero acceso anticipado <ArrowRight className="ml-1" size={18} />
-          </Button>
-        </a>
-        <p className="mt-5 font-body text-xs text-muted-foreground">
-          Te avisamos cuando Calmy esté listo. Solo necesitas tu correo.
-        </p>
-      </motion.div>
+      <div className="grid items-center gap-8 lg:grid-cols-[1fr_0.9fr] lg:gap-14">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="font-body text-sm font-bold text-secondary">Grupo conversacional del piloto</p>
+          <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold leading-tight text-white md:text-4xl">
+            Construyamos una orientación que sirva en momentos reales
+          </h2>
+          <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/72">
+            Queremos aprender con madres, padres y cuidadores de niños con diagnóstico profesional de TEA o TDAH.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.08 }}
+        >
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {benefits.map((benefit) => (
+              <li key={benefit} className="flex items-start gap-2.5 font-body text-sm leading-relaxed text-white/78">
+                <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
+                  <Check size={12} />
+                </span>
+                {benefit}
+              </li>
+            ))}
+          </ul>
+
+          <FounderGroupLink size="xl" className="mt-7 w-full bg-secondary text-white hover:bg-secondary/90 sm:w-auto">
+            <MessageCircle size={18} />
+            Unirme al grupo de WhatsApp
+          </FounderGroupLink>
+
+          <p className="mt-4 font-body text-xs leading-relaxed text-white/58">
+            Al unirte, tu nombre, foto de perfil o número podrían ser visibles para otros integrantes según la configuración de WhatsApp. Puedes salir cuando quieras.
+          </p>
+        </motion.div>
+      </div>
     </div>
   </section>
 );

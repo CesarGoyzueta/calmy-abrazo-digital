@@ -2,104 +2,96 @@ import PageLayout from "@/components/PageLayout";
 
 const Privacidad = () => (
   <PageLayout>
-    <span className="section-badge mb-4 inline-block">Legal</span>
-    <h1 className="font-display text-3xl md:text-4xl font-extrabold text-foreground leading-tight mt-2 mb-8">
+    <span className="section-badge">Legal</span>
+    <h1 className="mt-4 mb-8 font-display text-3xl font-extrabold leading-tight text-foreground md:text-4xl">
       Política de Privacidad
     </h1>
 
     <div className="prose-calm">
-      <p className="text-muted-foreground font-semibold">Última actualización: abril 2026</p>
+      <p className="font-semibold text-muted-foreground">Última actualización: agosto de 2026</p>
 
-      <h2>1. Responsable del tratamiento</h2>
+      <h2>1. Responsable</h2>
       <p>
-        El responsable del tratamiento de tus datos personales es <strong>NeuroCalm</strong>,
-        con domicilio en Lima, Perú. Puedes contactarnos en{" "}
-        <a href="mailto:hola@neurocalm.app" className="text-primary hover:underline">hola@neurocalm.app</a>.
+        El responsable de los datos que compartas directamente con <strong>NeuroCalm</strong> es NeuroCalm,
+        con domicilio en Lima, Perú. Puedes escribirnos a{" "}
+        <a href="mailto:hola@neurocalm.app">hola@neurocalm.app</a>.
       </p>
 
-      <h2>2. Datos que recopilamos</h2>
+      <h2>2. Alcance de esta etapa</h2>
       <p>
-        En esta etapa, Calmy se encuentra en fase de pre-lanzamiento. Los únicos datos que recopilamos
-        son los que proporcionas voluntariamente al registrarte en nuestra lista de espera:
+        Calmy se encuentra en fase de pre-lanzamiento. Esta web no contiene un formulario comercial ni
+        solicita tu correo para una lista de espera. Su finalidad es informar sobre el piloto y, cuando
+        el enlace esté disponible, permitirte abrir un grupo conversacional de WhatsApp.
       </p>
+      <p>
+        Al pulsar ese enlace abandonas neurocalm.work y pasas a un servicio operado por WhatsApp. El uso
+        de esa plataforma también está sujeto a la{" "}
+        <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+          política de privacidad de WhatsApp
+        </a>.
+      </p>
+
+      <h2>3. Información que podrías compartir</h2>
+      <p>Si decides entrar al grupo del piloto, podrías compartir voluntariamente:</p>
       <ul>
-        <li><strong>Correo electrónico:</strong> para notificarte cuando el servicio esté disponible y enviarte información relevante sobre Calmy.</li>
-        <li><strong>Datos técnicos básicos:</strong> dirección IP y tipo de navegador, recopilados automáticamente al visitar el sitio.</li>
+        <li>El nombre y la información de perfil configurados en tu cuenta de WhatsApp.</li>
+        <li>Mensajes, preguntas y comentarios que publiques en el grupo.</li>
+        <li>Feedback sobre la utilidad y claridad de la propuesta de Calmy.</li>
       </ul>
       <p>
-        No recopilamos datos sensibles, datos de menores ni información financiera en esta etapa.
+        No solicitaremos nombre completo, fotografías, centro escolar, dirección ni documentos del niño.
+        Te pedimos describir únicamente el contexto necesario y evitar información que permita identificarlo.
       </p>
 
-      <h2>3. Base legal del tratamiento</h2>
-      <p>
-        El tratamiento de tu correo electrónico se basa en el <strong>consentimiento expreso</strong> que
-        otorgas al registrarte en la lista de espera, conforme al Art. 13° de la Ley N° 29733 — Ley de
-        Protección de Datos Personales. Puedes revocar tu consentimiento en cualquier momento
-        escribiéndonos a{" "}
-        <a href="mailto:hola@neurocalm.app" className="text-primary hover:underline">hola@neurocalm.app</a>.
-      </p>
-
-      <h2>4. Finalidad del tratamiento</h2>
-      <p>Utilizamos tu correo electrónico exclusivamente para:</p>
+      <h2>4. Finalidad</h2>
+      <p>La información compartida directamente con NeuroCalm podrá utilizarse para:</p>
       <ul>
-        <li>Notificarte cuando Calmy esté disponible.</li>
-        <li>Enviarte información sobre el lanzamiento y novedades del producto.</li>
+        <li>Organizar la participación voluntaria en el piloto.</li>
+        <li>Comprender qué situaciones y orientaciones resultan más útiles para las familias.</li>
+        <li>Comunicar avances, convocatorias y condiciones del piloto.</li>
+        <li>Moderar el espacio y mantener un entorno respetuoso.</li>
       </ul>
+
+      <h2>5. Visibilidad dentro de WhatsApp</h2>
       <p>
-        No utilizamos tus datos para ninguna otra finalidad sin informarte previamente y obtener tu
-        consentimiento.
+        En un grupo conversacional, tu nombre, foto de perfil o número podrían ser visibles para otros
+        integrantes según la configuración y las funciones vigentes de WhatsApp. No compartas información
+        que no quieras hacer visible a los participantes.
       </p>
 
-      <h2>5. Transferencia de datos a terceros</h2>
+      <h2>6. Conservación y eliminación</h2>
       <p>
-        No vendemos, alquilamos ni cedemos tus datos personales a terceros. El almacenamiento del correo
-        electrónico se realiza a través de herramientas de gestión de lista de espera que operan bajo
-        sus propias políticas de privacidad. Cuando integremos proveedores externos, actualizaremos
-        esta sección con el detalle correspondiente.
-      </p>
-
-      <h2>6. Conservación de datos</h2>
-      <p>
-        Conservamos tu correo electrónico mientras Calmy esté en fase de pre-lanzamiento o hasta que
-        solicites su eliminación. Una vez lanzado el servicio, te informaremos sobre la nueva política
-        de retención de datos.
+        Puedes salir del grupo cuando quieras y solicitar la eliminación de la información que NeuroCalm
+        mantenga bajo su control escribiendo a{" "}
+        <a href="mailto:hola@neurocalm.app">hola@neurocalm.app</a>. Las copias de mensajes que permanezcan
+        en WhatsApp o en los dispositivos de otros participantes están sujetas al funcionamiento de esa
+        plataforma y pueden quedar fuera del control directo de NeuroCalm.
       </p>
 
       <h2>7. Seguridad</h2>
       <p>
-        Implementamos medidas razonables para proteger tu información contra acceso no autorizado,
-        pérdida o alteración, acordes al volumen y naturaleza de los datos tratados en esta etapa.
+        Aplicaremos medidas razonables para limitar el acceso a la información del piloto y moderar el
+        grupo. Ningún canal digital elimina por completo el riesgo, por lo que recomendamos compartir solo
+        lo estrictamente necesario.
       </p>
 
-      <h2>8. Tus derechos ARCO</h2>
+      <h2>8. Tus derechos</h2>
       <p>
-        Conforme al Art. 19° de la Ley N° 29733, tienes derecho a:
-      </p>
-      <ul>
-        <li><strong>Acceso:</strong> saber qué datos tuyos tenemos y con qué finalidad.</li>
-        <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos.</li>
-        <li><strong>Cancelación:</strong> solicitar la eliminación de tus datos.</li>
-        <li><strong>Oposición:</strong> oponerte al tratamiento de tus datos.</li>
-      </ul>
-      <p>
-        Para ejercer cualquiera de estos derechos, escríbenos a{" "}
-        <a href="mailto:hola@neurocalm.app" className="text-primary hover:underline">hola@neurocalm.app</a>{" "}
-        indicando tu nombre y el derecho que deseas ejercer. Responderemos en un plazo máximo de{" "}
-        <strong>20 días hábiles</strong> conforme a la ley.
+        Puedes solicitar acceso, rectificación, cancelación u oposición respecto de los datos personales
+        que NeuroCalm controle. Para ejercer estos derechos, escríbenos a{" "}
+        <a href="mailto:hola@neurocalm.app">hola@neurocalm.app</a>.
       </p>
 
-      <h2>9. Autoridad de supervisión</h2>
+      <h2>9. Información de menores</h2>
       <p>
-        Si consideras que el tratamiento de tus datos no cumple con la normativa vigente, tienes derecho a
-        presentar una reclamación ante la{" "}
-        <strong>Autoridad de Protección de Datos Personales (APDP)</strong> del Ministerio de Justicia y
-        Derechos Humanos del Perú, a través de <strong>www.minjus.gob.pe</strong>.
+        El grupo está dirigido a adultos responsables. No está diseñado para que niños o adolescentes
+        participen ni compartan datos directamente. Evita publicar información identificable del menor.
       </p>
 
       <h2>10. Actualizaciones</h2>
       <p>
-        Esta política evolucionará cuando Calmy lance su servicio completo. Te notificaremos sobre
-        cambios significativos mediante correo electrónico con al menos 15 días de anticipación.
+        Esta política se actualizará cuando cambien el piloto, los canales de participación o el
+        funcionamiento de Calmy. La versión vigente estará publicada en esta página.
       </p>
     </div>
   </PageLayout>

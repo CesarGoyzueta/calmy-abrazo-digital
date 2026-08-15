@@ -1,126 +1,111 @@
 import { motion } from "framer-motion";
-import { Zap, BookOpen, UserCheck, Sparkles } from "lucide-react";
+import { CircleHelp, Compass, MessageCircle, Stethoscope } from "lucide-react";
 
-const features = [
+const orientationBlocks = [
   {
-    icon: Zap,
-    title: "Saber qué hacer primero",
-    desc: "Cuando surge una duda o un momento difícil, Calmy te da un primer paso concreto para actuar con más calma, sin esperar a la próxima cita.",
-    accent: false,
+    icon: CircleHelp,
+    label: "Qué podría influir",
+    text: "El cambio reciente de rutina puede estar aumentando la carga de anticipación y frustración.",
   },
   {
-    icon: BookOpen,
-    title: "Respuestas con sustento real",
-    desc: "Cada orientación está construida sobre conocimiento psicológico estructurado. No respuestas genéricas: información que puedes aplicar hoy.",
-    accent: true,
+    icon: Compass,
+    label: "Primer paso",
+    text: "Anticipa una sola transición con una señal visual y mantén una frase breve y estable.",
   },
   {
-    icon: UserCheck,
-    title: "Adaptado a tu situación",
-    desc: "Calmy considera la edad, el perfil y las situaciones frecuentes de tu hijo para que la orientación tenga sentido en tu contexto real.",
-    accent: false,
+    icon: Stethoscope,
+    label: "Cuándo consultar",
+    text: "Si el cambio es intenso, persistente o afecta sueño, alimentación o colegio, coméntalo con su profesional.",
   },
-];
-
-const chatMessages = [
-  { type: "user" as const, text: "Mi hija llora cada vez que le digo que no, aunque sea algo pequeño. Ya no sé si soy muy estricta o muy permisiva." },
-  { type: "bot" as const, text: "Esa reacción intensa ante los límites es muy frecuente a esta edad y no significa que estés fallando. Lo que describes parece más una dificultad para tolerar la frustración que un problema de disciplina. ¿Cuántos años tiene y cómo sueles manejar esos momentos? 💚" },
 ];
 
 const SolutionSection = () => (
-  <section id="solucion" className="section-warm py-16 md:py-20">
+  <section id="solucion" className="border-b border-border/60 bg-[hsl(var(--surface-warm))] py-12 md:py-16">
     <div className="section-container">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center max-w-3xl mx-auto mb-10"
+        transition={{ duration: 0.5 }}
+        className="mb-8 max-w-3xl"
       >
-        <span className="section-badge mb-4 inline-block">La solución</span>
-        <h2 className="section-title mt-2">
-          Primeros pasos claros cuando la crianza{" "}
-          <span className="text-secondary">se vuelve difícil</span>
+        <span className="section-badge">Una orientación de ejemplo</span>
+        <h2 className="section-title mt-4">
+          Primero comprende el momento. Después elige el siguiente paso.
         </h2>
-        <p className="mt-4 section-subtitle max-w-2xl mx-auto">
-          Comparte tu duda, cuéntale sobre tu hijo y Calmy te devuelve orientación breve y accionable para ese momento. También puedes usarla para llegar mejor preparado a una sesión con un profesional.
-        </p>
-        <p className="mt-3 font-body text-xs font-medium text-secondary/80 tracking-wide uppercase">
-          ✦ Diseñado con enfoque en evidencia psicológica aplicada al día a día
+        <p className="mt-4 section-subtitle">
+          Así se verá una conversación del piloto: Calmy pedirá contexto antes de orientar y mostrará los límites de su respuesta.
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6 items-stretch max-w-5xl mx-auto">
-        {/* Chat mockup */}
+      <div className="grid items-stretch gap-6 lg:grid-cols-[1.08fr_0.92fr]">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="card-elevated p-5 md:p-6 order-2 lg:order-1"
+          transition={{ duration: 0.45 }}
+          className="overflow-hidden rounded-lg border border-border bg-card shadow-[var(--shadow-card)]"
         >
-          <div className="flex items-center gap-2.5 mb-5 pb-4 border-b border-border/40">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-sm">
-              <Sparkles className="text-primary-foreground" size={13} />
+          <div className="flex items-center gap-3 border-b border-border px-5 py-4">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <MessageCircle size={16} />
             </div>
             <div>
-              <span className="font-display text-sm font-bold text-foreground">Calmy</span>
-              <p className="font-body text-[10px] text-muted-foreground">Ejemplo de conversación</p>
+              <p className="font-display text-sm font-bold text-foreground">Conversación ilustrativa</p>
+              <p className="font-body text-xs text-muted-foreground">Perfil: 7 años · diagnóstico profesional de TDAH</p>
             </div>
-            <span className="ml-auto w-2 h-2 rounded-full bg-secondary animate-pulse" />
           </div>
 
-          <div className="space-y-4">
-            {chatMessages.map((msg, i) =>
-              msg.type === "user" ? (
-                <div key={i} className="flex justify-end">
-                  <div className="bg-primary/8 rounded-2xl rounded-tr-md px-4 py-3 max-w-[85%]">
-                    <p className="font-body text-[13px] text-foreground leading-relaxed">{msg.text}</p>
-                  </div>
-                </div>
-              ) : (
-                <div key={i} className="flex gap-2.5 items-start">
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-primary-foreground text-[10px] font-bold font-display">C</span>
-                  </div>
-                  <div className="bg-background rounded-2xl rounded-tl-md px-4 py-3 border border-border/40 max-w-[90%]">
-                    <p className="font-body text-[13px] text-foreground leading-relaxed">{msg.text}</p>
-                  </div>
-                </div>
-              )
-            )}
+          <div className="space-y-4 bg-[#fbfcfd] p-5 md:p-6">
+            <div className="flex justify-end">
+              <div className="max-w-[86%] rounded-lg bg-primary/10 px-4 py-3">
+                <p className="font-body text-sm leading-relaxed text-foreground">
+                  Mi hija llora cuando termina el tiempo de pantalla. Ya no sé si soy muy estricta o si debería darle más tiempo.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-2.5">
+              <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-secondary font-display text-[11px] font-bold text-secondary-foreground">C</div>
+              <div className="max-w-[88%] rounded-lg border border-border bg-card px-4 py-3">
+                <p className="font-body text-sm leading-relaxed text-foreground">
+                  Que le cueste detener una actividad atractiva no significa que estés fallando. ¿Desde cuándo ocurre y cómo le avisas que el tiempo está por terminar?
+                </p>
+              </div>
+            </div>
+
+            <div className="flex justify-end">
+              <div className="max-w-[82%] rounded-lg bg-primary/10 px-4 py-3">
+                <p className="font-body text-sm leading-relaxed text-foreground">
+                  Empezó al cambiar el horario del colegio. Normalmente le aviso justo cuando debe apagarla.
+                </p>
+              </div>
+            </div>
           </div>
         </motion.div>
 
-        {/* Feature cards */}
-        <div className="flex flex-col gap-3 order-1 lg:order-2">
-          {features.map((f, i) => (
-            <motion.div
-              key={f.title}
-              initial={{ opacity: 0, x: 20 }}
+        <div className="grid gap-3">
+          {orientationBlocks.map((block, index) => (
+            <motion.article
+              key={block.label}
+              initial={{ opacity: 0, x: 14 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: i * 0.1 }}
-              className={`card-elevated-hover p-5 flex items-start gap-3.5 ${
-                f.accent ? "border-secondary/25 ring-1 ring-secondary/10 bg-gradient-to-br from-card to-[#fbf8f1]" : ""
-              }`}
+              transition={{ duration: 0.4, delay: index * 0.07 }}
+              className="flex items-start gap-4 rounded-lg border border-border bg-card p-5"
             >
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                f.accent ? "bg-secondary/12" : "bg-secondary/8"
-              }`}>
-                <f.icon className="text-secondary" size={20} />
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
+                <block.icon size={19} />
               </div>
               <div>
-                <h3 className="font-display text-sm font-bold text-foreground mb-1">{f.title}</h3>
-                <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-                {f.accent && (
-                  <span className="inline-block mt-2 font-body text-[10px] font-bold text-secondary uppercase tracking-wider">
-                    ✦ Diferencial clave
-                  </span>
-                )}
+                <h3 className="font-display text-sm font-bold text-foreground">{block.label}</h3>
+                <p className="mt-1.5 font-body text-sm leading-relaxed text-muted-foreground">{block.text}</p>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
+          <p className="border-l-2 border-primary px-4 py-2 font-body text-xs leading-relaxed text-muted-foreground">
+            El ejemplo es informativo. Una orientación real dependerá del perfil y de la conversación; no constituye diagnóstico ni indicación terapéutica.
+          </p>
         </div>
       </div>
     </div>

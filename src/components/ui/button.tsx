@@ -9,13 +9,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 rounded-2xl",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-2xl",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-2xl",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-2xl",
-        ghost: "hover:bg-accent hover:text-accent-foreground rounded-2xl",
+        default: "rounded-lg bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive: "rounded-lg bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline: "rounded-lg border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary: "rounded-lg bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "rounded-lg hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        calm: "bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-full shadow-[0_10px_24px_-12px_rgba(42,117,170,0.8)] hover:shadow-[var(--shadow-glow)] hover:-translate-y-0.5",
+        calm: "rounded-full bg-secondary text-secondary-foreground shadow-[0_10px_24px_-12px_rgba(32,125,116,0.62)] hover:bg-secondary/90 hover:-translate-y-0.5",
         "calm-outline": "border border-primary/20 bg-card/70 text-primary hover:bg-primary/5 rounded-full",
       },
       size: {

@@ -1,199 +1,125 @@
 import { motion } from "framer-motion";
+import { ArrowRight, BookOpen, MessageCircle, Play, ShieldCheck, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, UserCheck, MessageCircle, Brain, User, Sparkles, Shield, Sprout, Play } from "lucide-react";
+import FounderGroupLink from "@/components/landing/FounderGroupLink";
 
-const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
-
-const trustChips = [
-  { icon: BookOpen, label: "Base psicológica real" },
-  { icon: UserCheck, label: "Contexto de tu hijo" },
-  { icon: MessageCircle, label: "Primeros pasos concretos" },
+const trustItems = [
+  { icon: BookOpen, label: "Criterios psicológicos" },
+  { icon: UserCheck, label: "Contexto familiar" },
+  { icon: ShieldCheck, label: "Límites claros" },
 ];
 
 const ease = [0.33, 1, 0.68, 1] as const;
 
 const HeroSection = () => (
-  <section className="relative overflow-hidden pt-28 pb-14 md:pt-[118px] md:pb-16">
-    <div className="hero-ambient absolute inset-x-0 top-0 h-[620px] pointer-events-none" />
+  <section className="relative overflow-hidden border-b border-border/60 bg-[hsl(var(--surface-warm))] pt-24 pb-12 md:pt-28 md:pb-14">
     <div className="section-container">
-      <div className="relative grid lg:grid-cols-[1.08fr_0.92fr] gap-10 lg:gap-16 items-center">
-        {/* Left — copy */}
+      <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease }}
+          transition={{ duration: 0.65, ease }}
         >
-          <span className="inline-flex items-center gap-2 rounded-full bg-secondary/[0.09] px-3.5 py-2 font-body text-xs font-semibold text-secondary">
-            <Sprout size={14} />
-            Orientación práctica para padres y madres
+          <span className="section-badge normal-case">
+            Para familias de niños con diagnóstico profesional de TEA o TDAH
           </span>
 
-          <h1 className="mt-5 max-w-[650px] font-display text-[2.65rem] md:text-[3.4rem] lg:text-[3.65rem] font-extrabold text-foreground leading-[1.02] tracking-[-0.035em]">
-            Cuando no sabes qué hacer,{" "}
-            <span className="brand-gradient-text">
-              Calmy te ayuda a dar el primer paso
-            </span>
+          <h1 className="mt-5 max-w-[650px] font-display text-[2.55rem] font-extrabold leading-[1.04] text-foreground md:text-[3.35rem] lg:text-[3.7rem]">
+            ¿Qué necesita mi hijo <span className="text-primary">en este momento?</span>
           </h1>
 
-          <p className="mt-5 font-body text-base text-muted-foreground leading-relaxed max-w-[580px]">
-            Orientación práctica para padres y madres. Calmy transforma tus dudas del día a día en primeros pasos claros, con base psicológica y el contexto de tu hijo.
+          <p className="mt-5 max-w-[620px] font-body text-base leading-relaxed text-muted-foreground md:text-lg">
+            Cuando se desborda, quizá no es oposición. Quizá es sobrecarga. En el piloto, Calmy te ayudará a ordenar el contexto y elegir qué intentar primero.
           </p>
 
-          {/* Trust chips */}
+          <p className="mt-3 font-body text-sm font-semibold text-foreground">
+            No diagnostica ni reemplaza la atención profesional.
+          </p>
+
           <div className="mt-5 flex flex-wrap gap-2">
-            {trustChips.map((chip, i) => (
+            {trustItems.map((item, index) => (
               <motion.span
-                key={chip.label}
-                initial={{ opacity: 0, y: 10 }}
+                key={item.label}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.3 + i * 0.07 }}
-                className="inline-flex items-center gap-1.5 bg-card/90 border border-border/70 rounded-full px-3.5 py-2 font-body text-xs font-semibold text-foreground/75 shadow-[var(--shadow-soft)]"
+                transition={{ duration: 0.35, delay: 0.25 + index * 0.06 }}
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-2 font-body text-xs font-semibold text-foreground/80"
               >
-                <chip.icon size={15} className="text-secondary" />
-                {chip.label}
+                <item.icon size={15} className="text-secondary" />
+                {item.label}
               </motion.span>
             ))}
           </div>
 
-          {/* CTAs */}
-          <div className="mt-7 flex flex-wrap items-center gap-3">
-            <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer">
-              <Button variant="calm" size="xl">
-                Quiero acceso anticipado <ArrowRight className="ml-1" size={18} />
-              </Button>
-            </a>
-            <a href="#como-funciona">
-              <Button variant="calm-outline" size="lg">
-                Ver cómo funciona <Play className="ml-1 fill-current" size={13} />
-              </Button>
-            </a>
+          <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+            <FounderGroupLink size="xl" className="w-full sm:w-auto">
+              Unirme al grupo de WhatsApp <ArrowRight size={18} />
+            </FounderGroupLink>
+            <Button asChild variant="calm-outline" size="lg" className="w-full sm:w-auto">
+              <a href="#como-funciona">
+                Ver cómo funcionará <Play className="fill-current" size={13} />
+              </a>
+            </Button>
           </div>
 
-          <p className="mt-5 font-body text-xs text-muted-foreground flex items-center gap-1.5">
-            <span className="text-sm">🌿</span> Acceso prioritario · Precio especial de lanzamiento · Sin compromiso.
+          <p className="mt-4 max-w-[650px] font-body text-xs leading-relaxed text-muted-foreground">
+            Grupo conversacional del piloto · Participación voluntaria · Puedes salir cuando quieras. Al unirte, tu nombre, foto de perfil o número podrían ser visibles para otros integrantes según la configuración de WhatsApp.
           </p>
         </motion.div>
 
-        {/* Right — product mockup */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease }}
-          className="relative flex justify-center items-center min-h-[400px] lg:min-h-[455px] mt-8 lg:mt-0"
+          transition={{ duration: 0.75, delay: 0.15, ease }}
+          className="mx-auto w-full max-w-[560px]"
         >
-          {/* Glow */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-[430px] h-[430px] rounded-full bg-[radial-gradient(circle,rgba(74,137,180,0.11),rgba(244,227,194,0.16)_48%,transparent_72%)] blur-3xl" />
-          </div>
-
-          {/* Main chat mockup — wider and taller */}
-          <div className="relative w-full max-w-[470px] card-elevated p-0 overflow-hidden z-10 shadow-[0_24px_70px_-36px_rgba(61,54,44,0.38)]">
-            {/* Header */}
-            <div className="flex items-center justify-between px-5 py-3.5 border-b border-border/40 bg-card">
+          <div className="overflow-hidden rounded-lg border border-border bg-card shadow-[var(--shadow-card)]">
+            <div className="flex items-center justify-between border-b border-border/60 px-5 py-4">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-sm">
-                  <span className="text-primary-foreground text-xs font-bold font-display">C</span>
-                </div>
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary font-display text-xs font-bold text-primary-foreground">C</div>
                 <div>
-                  <p className="font-display text-sm font-bold text-foreground leading-tight">Calmy</p>
-                  <div className="flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                    <p className="font-body text-xs text-secondary font-medium">Orientación activa</p>
-                  </div>
+                  <p className="font-display text-sm font-bold text-foreground">Calmy</p>
+                  <p className="font-body text-xs text-secondary">Orientación para este momento</p>
                 </div>
               </div>
-              <div className="w-7 h-7 rounded-lg bg-muted/40 flex items-center justify-center">
-                <Shield className="text-muted-foreground" size={14} />
+              <ShieldCheck className="text-muted-foreground" size={18} />
+            </div>
+
+            <div className="space-y-4 bg-[#fbfcfd] px-5 py-6 md:px-6">
+              <div className="flex justify-end">
+                <div className="max-w-[82%] rounded-lg bg-primary/10 px-4 py-3">
+                  <p className="font-body text-[13px] leading-relaxed text-foreground">
+                    Mi hijo tiene TEA y se desborda cuando cambiamos la rutina. No sé si insistir o darle espacio.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5">
+                <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
+                  <MessageCircle size={13} />
+                </div>
+                <div className="max-w-[86%] rounded-lg border border-border bg-card px-4 py-3">
+                  <p className="font-body text-[13px] leading-relaxed text-foreground">
+                    Un cambio inesperado puede generar sobrecarga. ¿Qué edad tiene y qué suele ayudarle cuando anticipan una transición?
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-l-2 border-secondary bg-secondary/5 px-4 py-3">
+                <p className="font-body text-xs font-bold text-secondary">Siguiente paso</p>
+                <p className="mt-1 font-body text-[13px] leading-relaxed text-foreground">
+                  Anticipa el cambio con una señal visual breve y valida su reacción antes de redirigir.
+                </p>
               </div>
             </div>
 
-            {/* Messages */}
-            <div className="px-5 py-5 space-y-4 bg-gradient-to-b from-card to-[#fcfaf5]">
-              <motion.div
-                initial={{ opacity: 0, x: 12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="flex justify-end"
-              >
-                <div className="bg-primary/8 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[78%]">
-                  <p className="font-body text-[13px] text-foreground leading-relaxed">
-                    Mi hijo hace berrinches cuando cambiamos la rutina. No sé si insistir o darle espacio.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.9 }}
-                className="flex gap-2.5 items-start"
-              >
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Sparkles className="text-primary-foreground" size={12} />
-                </div>
-                <div className="bg-card border border-border/40 rounded-2xl rounded-tl-sm px-4 py-3 max-w-[78%] shadow-sm">
-                  <p className="font-body text-[13px] text-foreground leading-relaxed">
-                    Los cambios de rutina suelen ser difíciles para niños con su perfil. Te sugiero anticiparlos con apoyos visuales y validar lo que siente antes de redirigir. 💚
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Primer paso pill */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 1.3 }}
-                className="flex justify-center"
-              >
-                <span className="inline-flex items-center gap-1.5 bg-secondary/10 border border-secondary/20 rounded-full px-3 py-1.5 font-body text-xs font-semibold text-secondary">
-                  <Sparkles size={11} />
-                  Primer paso: avísale antes con un pictograma o imagen
-                </span>
-              </motion.div>
-            </div>
-
-            {/* Input */}
-            <div className="px-5 py-3 border-t border-border/30 bg-card">
-              <div className="flex items-center gap-2 bg-muted/30 rounded-xl px-3.5 py-2">
-                <p className="font-body text-xs text-muted-foreground flex-1">Escribe tu consulta…</p>
-                <div className="w-6 h-6 rounded-md bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                  <ArrowRight className="text-primary-foreground" size={12} />
-                </div>
+            <div className="flex items-center gap-2 border-t border-border/60 bg-card px-5 py-3">
+              <p className="flex-1 font-body text-xs text-muted-foreground">Escribe una situación cotidiana...</p>
+              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                <ArrowRight size={13} />
               </div>
             </div>
           </div>
-
-          {/* Floating: Perfil del niño — bottom-left */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.2, ease }}
-            className="absolute left-0 -bottom-1 z-20 card-elevated px-3.5 py-2.5 hidden lg:flex items-center gap-2.5 shadow-lg"
-          >
-            <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0">
-              <User className="text-primary" size={14} />
-            </div>
-            <div>
-              <p className="font-display text-xs font-bold text-foreground">Perfil del niño</p>
-              <p className="font-body text-[11px] text-muted-foreground">Contexto personalizado</p>
-            </div>
-          </motion.div>
-
-          {/* Floating: Base psicológica — top-right, inset del borde */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.3, ease }}
-            className="absolute -right-2 top-0 z-20 card-elevated px-3.5 py-2.5 hidden lg:flex items-center gap-2.5 shadow-lg"
-          >
-            <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
-              <Brain className="text-secondary" size={14} />
-            </div>
-            <div>
-              <p className="font-display text-xs font-bold text-foreground">Base psicológica</p>
-              <p className="font-body text-[11px] text-muted-foreground">Conocimiento estructurado</p>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </div>

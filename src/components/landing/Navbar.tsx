@@ -1,17 +1,15 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, MessageCircle, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import FounderGroupLink from "@/components/landing/FounderGroupLink";
 import isotipo from "@/assets/neurocalm-logo (2).png";
-
-const WAITLIST_URL = "https://forms.gle/BfZHorebqUUiXFJp8";
 
 const navLinks = [
   { href: "#problema", label: "El desafío" },
-  { href: "#solucion", label: "Solución" },
-  { href: "#como-funciona", label: "Cómo funciona" },
-  { href: "#confianza", label: "Transparencia" },
-  { href: "/sobre-calmy", label: "Quiénes somos", isRoute: true },
+  { href: "#solucion", label: "Ejemplo" },
+  { href: "#como-funciona", label: "Cómo funcionará" },
+  { href: "#confianza", label: "Alcance" },
+  { href: "#equipo", label: "Equipo" },
 ];
 
 const Navbar = () => {
@@ -26,81 +24,70 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
-        scrolled
-          ? "bg-card/90 backdrop-blur-xl shadow-[var(--shadow-soft)] border-border/60"
-          : "bg-card/75 backdrop-blur-md border-border/35"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+        scrolled ? "border-border bg-card/95 shadow-[var(--shadow-soft)] backdrop-blur-xl" : "border-border/60 bg-card/90 backdrop-blur-md"
       }`}
     >
-      <div className="section-container h-[68px] flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
+      <div className="section-container flex h-[68px] items-center justify-between">
+        <a href="#" className="flex items-center gap-2" aria-label="Volver al inicio">
           <img src={isotipo} alt="Calmy" className="h-9 w-auto" />
           <div className="flex flex-col leading-tight">
-            <span className="font-display text-[17px] font-bold text-foreground tracking-tight">Calmy</span>
+            <span className="font-display text-[17px] font-bold text-foreground">Calmy</span>
             <span className="font-body text-xs text-muted-foreground">por NeuroCalm</span>
           </div>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((l) =>
-            l.isRoute ? (
-              <Link
-                key={l.href}
-                to={l.href}
-                className="text-[13px] text-muted-foreground hover:text-foreground transition-colors font-body font-semibold"
-              >
-                {l.label}
-              </Link>
-            ) : (
-              <a
-                key={l.href}
-                href={l.href}
-                className="text-[13px] text-muted-foreground hover:text-foreground transition-colors font-body font-semibold"
-              >
-                {l.label}
-              </a>
-            )
-          )}
-          <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="calm" size="sm">
-              Acceso anticipado
-            </Button>
-          </a>
+        <div className="hidden items-center gap-7 md:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="font-body text-[13px] font-semibold text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {link.label}
+            </a>
+          ))}
+          <FounderGroupLink size="sm">
+            <MessageCircle size={15} />
+            Grupo de WhatsApp
+          </FounderGroupLink>
         </div>
 
-        <button onClick={() => setOpen(!open)} className="md:hidden text-foreground">
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          className="rounded-lg p-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+        >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-card/95 backdrop-blur-xl border-b border-border/50 px-5 pb-5 space-y-3 shadow-[var(--shadow-soft)]">
-          {navLinks.map((l) =>
-            l.isRoute ? (
-              <Link
-                key={l.href}
-                to={l.href}
-                onClick={() => setOpen(false)}
-                className="block text-sm text-muted-foreground hover:text-foreground font-body py-1"
-              >
-                {l.label}
-              </Link>
-            ) : (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="block text-sm text-muted-foreground hover:text-foreground font-body py-1"
-              >
-                {l.label}
-              </a>
-            )
-          )}
-          <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="calm" size="sm" className="w-full mt-2">
-              Acceso anticipado
-            </Button>
-          </a>
+        <div id="mobile-navigation" className="space-y-3 border-b border-border bg-card px-5 pb-5 shadow-[var(--shadow-soft)] md:hidden">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="block py-1 font-body text-sm text-muted-foreground hover:text-foreground"
+            >
+              {link.label}
+            </a>
+          ))}
+          <Link
+            to="/sobre-calmy"
+            onClick={() => setOpen(false)}
+            className="block py-1 font-body text-sm text-muted-foreground hover:text-foreground"
+          >
+            Sobre Calmy
+          </Link>
+          <FounderGroupLink size="sm" className="mt-2 w-full">
+            <MessageCircle size={15} />
+            Unirme al grupo de WhatsApp
+          </FounderGroupLink>
         </div>
       )}
     </nav>
