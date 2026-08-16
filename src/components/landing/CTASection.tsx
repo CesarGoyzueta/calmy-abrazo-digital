@@ -3,10 +3,10 @@ import { Check, MessageCircle } from "lucide-react";
 import FounderGroupLink from "@/components/landing/FounderGroupLink";
 
 const benefits = [
-  "Conversar con el equipo durante el piloto",
-  "Ayudar a priorizar situaciones reales",
-  "Recibir acceso anticipado a la primera versión",
-  "Participar de forma voluntaria y sin compromiso",
+  "Conversar con el equipo fundador",
+  "Influir en las prioridades del piloto",
+  "Conocer oportunidades de prueba temprana",
+  "Participar o salir cuando quieras",
 ];
 
 const CTASection = () => (
@@ -19,12 +19,12 @@ const CTASection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="font-body text-sm font-bold text-secondary">Grupo conversacional del piloto</p>
+          <p className="font-body text-sm font-bold text-secondary">Tu experiencia puede darle dirección al piloto</p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold leading-tight text-white md:text-4xl">
-            Construyamos una orientación que sirva en momentos reales
+            Ayúdanos a construir Calmy con situaciones reales, no con suposiciones
           </h2>
           <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/72">
-            Queremos aprender con madres, padres y cuidadores de niños con diagnóstico profesional de TEA o TDAH.
+            Buscamos madres, padres y cuidadores de niños con diagnóstico profesional de TEA o TDAH que quieran conocer el proyecto y compartir feedback voluntariamente.
           </p>
         </motion.div>
 
@@ -51,7 +51,7 @@ const CTASection = () => (
           </FounderGroupLink>
 
           <p className="mt-4 font-body text-xs leading-relaxed text-white/58">
-            Al unirte, tu nombre, foto de perfil o número podrían ser visibles para otros integrantes según la configuración de WhatsApp. Puedes salir cuando quieras.
+            El grupo es para cocrear el piloto; no ofrece atención clínica ni individual. Tu nombre, foto de perfil o número podrían ser visibles para otros integrantes según la configuración de WhatsApp.
           </p>
         </motion.div>
       </div>

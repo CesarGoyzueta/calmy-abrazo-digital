@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "¿Qué ocurrirá al unirme al grupo de WhatsApp?",
-    a: "Entrarás en un grupo conversacional del piloto para conocer avances y compartir feedback de forma voluntaria. Según la configuración de WhatsApp, tu nombre, foto de perfil o número podrían ser visibles para otros integrantes. Puedes salir cuando quieras.",
+    a: "Entrarás en un grupo de cocreación para conocer avances, conversar con el equipo y compartir feedback de forma voluntaria. No es un espacio de atención clínica ni individual. Según la configuración de WhatsApp, tu nombre, foto de perfil o número podrían ser visibles para otros integrantes. Puedes leer sin participar y salir cuando quieras.",
   },
 ];
 

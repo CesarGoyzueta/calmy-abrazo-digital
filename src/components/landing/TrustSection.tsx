@@ -16,7 +16,7 @@ const isNotCalmy = [
 ];
 
 const TrustSection = () => (
-  <section id="confianza" className="border-b border-border/60 bg-card py-12 md:py-16">
+  <section id="confianza" className="border-b border-border/60 bg-[hsl(var(--surface-mint))] py-12 md:py-16">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 16 }}

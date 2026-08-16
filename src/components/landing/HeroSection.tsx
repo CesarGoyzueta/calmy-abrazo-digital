@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, MessageCircle, Play, ShieldCheck, UserCheck } from "lucide-react";
+import { ArrowRight, CircleHelp, MessageCircle, Play, ShieldCheck, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FounderGroupLink from "@/components/landing/FounderGroupLink";
 
 const trustItems = [
-  { icon: BookOpen, label: "Criterios psicológicos" },
-  { icon: UserCheck, label: "Contexto familiar" },
-  { icon: ShieldCheck, label: "Límites claros" },
+  { icon: CircleHelp, label: "Pregunta antes de orientar" },
+  { icon: UserCheck, label: "Usa el contexto que decides compartir" },
+  { icon: ShieldCheck, label: "Señala cuándo consultar" },
 ];
 
 const ease = [0.33, 1, 0.68, 1] as const;
 
 const HeroSection = () => (
-  <section className="relative overflow-hidden border-b border-border/60 bg-[hsl(var(--surface-warm))] pt-24 pb-12 md:pt-28 md:pb-14">
+  <section className="relative overflow-hidden border-b border-border/60 bg-[hsl(var(--surface-blue))] pt-24 pb-12 md:pt-28 md:pb-14">
     <div className="section-container">
       <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14">
         <motion.div
@@ -29,7 +29,7 @@ const HeroSection = () => (
           </h1>
 
           <p className="mt-5 max-w-[620px] font-body text-base leading-relaxed text-muted-foreground md:text-lg">
-            Cuando se desborda, quizá no es oposición. Quizá es sobrecarga. En el piloto, Calmy te ayudará a ordenar el contexto y elegir qué intentar primero.
+            Cuando se desborda, quizá no es oposición. Quizá es sobrecarga. En el piloto, Calmy preguntará antes de orientar para ayudarte a leer el contexto y elegir qué intentar primero.
           </p>
 
           <p className="mt-3 font-body text-sm font-semibold text-foreground">
@@ -63,7 +63,7 @@ const HeroSection = () => (
           </div>
 
           <p className="mt-4 max-w-[650px] font-body text-xs leading-relaxed text-muted-foreground">
-            Grupo conversacional del piloto · Participación voluntaria · Puedes salir cuando quieras. Al unirte, tu nombre, foto de perfil o número podrían ser visibles para otros integrantes según la configuración de WhatsApp.
+            Grupo de cocreación del piloto · Conversa con el equipo · Participación voluntaria. Al unirte, tu nombre, foto de perfil o número podrían ser visibles para otros integrantes según la configuración de WhatsApp.
           </p>
         </motion.div>
 

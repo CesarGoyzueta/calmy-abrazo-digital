@@ -20,7 +20,7 @@ const founders = [
 ];
 
 const AboutSection = () => (
-  <section id="equipo" className="border-b border-border/60 bg-[hsl(var(--surface-warm))] py-12 md:py-16">
+  <section id="equipo" className="border-b border-border/60 bg-card py-12 md:py-16">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -65,7 +65,7 @@ const AboutSection = () => (
       </div>
 
       <div className="mt-7">
-        <Link to="/sobre-calmy" className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary hover:underline">
+        <Link to="/sobre-calmy" className="inline-flex min-h-11 items-center gap-2 font-body text-sm font-semibold text-primary hover:underline">
           Conoce el proyecto y su visión <ArrowRight size={15} />
         </Link>
       </div>

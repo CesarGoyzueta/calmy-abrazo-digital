@@ -5,10 +5,10 @@ import FounderGroupLink from "@/components/landing/FounderGroupLink";
 import isotipo from "@/assets/neurocalm-logo (2).png";
 
 const navLinks = [
-  { href: "#problema", label: "El desafío" },
-  { href: "#solucion", label: "Ejemplo" },
+  { href: "#momentos", label: "Momentos" },
+  { href: "#ejemplos", label: "Conversaciones" },
   { href: "#como-funciona", label: "Cómo funcionará" },
-  { href: "#confianza", label: "Alcance" },
+  { href: "#grupo", label: "El grupo" },
   { href: "#equipo", label: "Equipo" },
 ];
 
@@ -29,7 +29,7 @@ const Navbar = () => {
       }`}
     >
       <div className="section-container flex h-[68px] items-center justify-between">
-        <a href="#" className="flex items-center gap-2" aria-label="Volver al inicio">
+        <a href="#" className="flex min-h-11 items-center gap-2" aria-label="Volver al inicio">
           <img src={isotipo} alt="Calmy" className="h-9 w-auto" />
           <div className="flex flex-col leading-tight">
             <span className="font-display text-[17px] font-bold text-foreground">Calmy</span>
@@ -59,7 +59,7 @@ const Navbar = () => {
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
           aria-controls="mobile-navigation"
-          className="rounded-lg p-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -72,7 +72,7 @@ const Navbar = () => {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block py-1 font-body text-sm text-muted-foreground hover:text-foreground"
+              className="flex min-h-11 items-center font-body text-sm text-muted-foreground hover:text-foreground"
             >
               {link.label}
             </a>
@@ -80,11 +80,11 @@ const Navbar = () => {
           <Link
             to="/sobre-calmy"
             onClick={() => setOpen(false)}
-            className="block py-1 font-body text-sm text-muted-foreground hover:text-foreground"
+            className="flex min-h-11 items-center font-body text-sm text-muted-foreground hover:text-foreground"
           >
             Sobre Calmy
           </Link>
-          <FounderGroupLink size="sm" className="mt-2 w-full">
+          <FounderGroupLink size="sm" className="mt-2 min-h-11 w-full">
             <MessageCircle size={15} />
             Unirme al grupo de WhatsApp
           </FounderGroupLink>

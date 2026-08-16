@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import FounderGroupLink from "@/components/landing/FounderGroupLink";
+import { TIKTOK_URL } from "@/config/socialLinks";
 import isotipo from "@/assets/neurocalm-logo (2).png";
+
+const footerLinkClass = "flex min-h-11 items-center font-body text-xs text-muted-foreground hover:text-foreground md:min-h-0";
 
 const Footer = () => (
   <footer className="border-t border-border bg-card py-10">
@@ -22,9 +25,9 @@ const Footer = () => (
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
           <div>
             <p className="mb-3 font-display text-xs font-bold text-foreground">Producto</p>
-            <div className="flex flex-col items-start gap-2">
-              <a href="#como-funciona" className="font-body text-xs text-muted-foreground hover:text-foreground">Cómo funcionará</a>
-              <FounderGroupLink variant="link" className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground">
+            <div className="flex flex-col items-start md:gap-2">
+              <a href="#como-funciona" className={footerLinkClass}>Cómo funcionará</a>
+              <FounderGroupLink variant="link" className="h-auto min-h-11 p-0 text-xs text-muted-foreground hover:text-foreground md:min-h-0">
                 Grupo de WhatsApp
               </FounderGroupLink>
             </div>
@@ -32,18 +35,19 @@ const Footer = () => (
 
           <div>
             <p className="mb-3 font-display text-xs font-bold text-foreground">Empresa</p>
-            <div className="flex flex-col gap-2">
-              <Link to="/sobre-calmy" className="font-body text-xs text-muted-foreground hover:text-foreground">Sobre Calmy</Link>
-              <a href="mailto:hola@neurocalm.app" className="font-body text-xs text-muted-foreground hover:text-foreground">Contacto</a>
+            <div className="flex flex-col md:gap-2">
+              <Link to="/sobre-calmy" className={footerLinkClass}>Sobre Calmy</Link>
+              <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" className={footerLinkClass}>TikTok</a>
+              <a href="mailto:hola@neurocalm.app" className={footerLinkClass}>Contacto</a>
             </div>
           </div>
 
           <div>
             <p className="mb-3 font-display text-xs font-bold text-foreground">Legal</p>
-            <div className="flex flex-col gap-2">
-              <Link to="/privacidad" className="font-body text-xs text-muted-foreground hover:text-foreground">Privacidad</Link>
-              <Link to="/terminos" className="font-body text-xs text-muted-foreground hover:text-foreground">Términos</Link>
-              <Link to="/libro-reclamaciones" className="font-body text-xs text-muted-foreground hover:text-foreground">Libro de reclamaciones</Link>
+            <div className="flex flex-col md:gap-2">
+              <Link to="/privacidad" className={footerLinkClass}>Privacidad</Link>
+              <Link to="/terminos" className={footerLinkClass}>Términos</Link>
+              <Link to="/libro-reclamaciones" className={footerLinkClass}>Libro de reclamaciones</Link>
             </div>
           </div>
         </div>

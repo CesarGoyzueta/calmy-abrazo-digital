@@ -1,64 +1,66 @@
 import { motion } from "framer-motion";
-import { CloudRain, HelpCircle, Clock, HeartCrack } from "lucide-react";
+import { Flame, RefreshCw, Scale, School } from "lucide-react";
 
-const problems = [
+const moments = [
   {
-    icon: CloudRain,
-    title: "Cuando se desborda",
-    description: "Puede haber sobrecarga, frustración o una necesidad que todavía no logra expresar.",
+    icon: Flame,
+    title: "Desbordes",
+    description: "Cuando la intensidad sube y no está claro qué puede estar comunicando.",
+    iconClass: "bg-primary/10 text-primary",
   },
   {
-    icon: HelpCircle,
-    title: "Señales difíciles de leer",
-    description: "No siempre es fácil identificar qué cambió, qué lo activó o qué necesita.",
+    icon: RefreshCw,
+    title: "Rutinas",
+    description: "Cuando una transición o un cambio inesperado altera todo el momento.",
+    iconClass: "bg-secondary/10 text-secondary",
   },
   {
-    icon: Clock,
-    title: "Dudas entre sesiones",
-    description: "Las preguntas aparecen en casa, en el colegio y durante las transiciones.",
+    icon: Scale,
+    title: "Límites",
+    description: "Cuando sostener un no activa frustración, culpa o dudas sobre cómo responder.",
+    iconClass: "bg-coral/10 text-coral",
   },
   {
-    icon: HeartCrack,
-    title: "Cansancio sin claridad",
-    description: "Sentirte confundido no significa que estés fallando. Acompañar también requiere apoyo.",
+    icon: School,
+    title: "Colegio",
+    description: "Cuando las señales aparecen al salir, hacer tareas o prepararse para volver.",
+    iconClass: "bg-amber-100 text-amber-700",
   },
 ];
 
 const ProblemSection = () => (
-  <section id="problema" className="border-b border-border/60 bg-card py-12 md:py-16">
+  <section id="momentos" className="border-b border-border/60 bg-card py-10 md:py-12">
     <div className="section-container">
-      <div className="grid items-start gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-12">
+      <div className="grid items-start gap-7 lg:grid-cols-[0.68fr_1.32fr] lg:gap-10">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.45 }}
         >
-          <span className="section-badge">El desafío cotidiano</span>
-          <h2 className="section-title mt-4">
-            Antes de decidir qué hacer, ayuda entender qué está pasando
-          </h2>
+          <span className="section-badge">Momentos cotidianos</span>
+          <h2 className="section-title mt-4">La duda aparece antes de tener toda la información</h2>
           <p className="mt-4 section-subtitle">
-            En familias de niños con TEA o TDAH, una conducta visible puede comunicar sobrecarga, emoción, necesidad o contexto.
+            Calmy se enfocará en situaciones donde comprender el contexto puede ayudar a elegir un primer paso.
           </p>
         </motion.div>
 
         <div className="grid gap-3 sm:grid-cols-2">
-          {problems.map((problem, index) => (
+          {moments.map((moment, index) => (
             <motion.article
-              key={problem.title}
-              initial={{ opacity: 0, y: 14 }}
+              key={moment.title}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.06 }}
-              className="flex min-h-[132px] items-start gap-4 rounded-lg border border-border bg-background p-5"
+              transition={{ duration: 0.35, delay: index * 0.05 }}
+              className="flex min-h-[112px] items-start gap-4 rounded-lg border border-border bg-background p-4"
             >
-              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary/8 text-primary">
-                <problem.icon size={19} />
+              <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg ${moment.iconClass}`}>
+                <moment.icon size={19} />
               </div>
               <div>
-                <h3 className="font-display text-base font-bold text-foreground">{problem.title}</h3>
-                <p className="mt-1.5 font-body text-sm leading-relaxed text-muted-foreground">{problem.description}</p>
+                <h3 className="font-display text-base font-bold text-foreground">{moment.title}</h3>
+                <p className="mt-1 font-body text-sm leading-relaxed text-muted-foreground">{moment.description}</p>
               </div>
             </motion.article>
           ))}

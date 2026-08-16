@@ -2,12 +2,13 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import ProblemSection from "@/components/landing/ProblemSection";
 import SolutionSection from "@/components/landing/SolutionSection";
-import UseCasesSection from "@/components/landing/UseCasesSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
+import FounderGroupSection from "@/components/landing/FounderGroupSection";
 import TrustSection from "@/components/landing/TrustSection";
 import FAQSection from "@/components/landing/FAQSection";
 import AboutSection from "@/components/landing/AboutSection";
 import CTASection from "@/components/landing/CTASection";
+import TikTokSection from "@/components/landing/TikTokSection";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => (
@@ -17,11 +18,12 @@ const Index = () => (
     <ProblemSection />
     <SolutionSection />
     <HowItWorksSection />
-    <UseCasesSection />
-    <TrustSection />
+    <FounderGroupSection />
     <AboutSection />
+    <TrustSection />
     <FAQSection />
     <CTASection />
+    <TikTokSection />
     <Footer />
   </div>
 );
