@@ -37,12 +37,12 @@ const Navbar = () => {
           </div>
         </a>
 
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="font-body text-[13px] font-semibold text-muted-foreground transition-colors hover:text-foreground"
+              className="flex min-h-11 items-center font-body text-[13px] font-semibold text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </a>
@@ -59,14 +59,14 @@ const Navbar = () => {
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
           aria-controls="mobile-navigation"
-          className="flex h-11 w-11 items-center justify-center rounded-lg text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:hidden"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {open && (
-        <div id="mobile-navigation" className="space-y-3 border-b border-border bg-card px-5 pb-5 shadow-[var(--shadow-soft)] md:hidden">
+        <div id="mobile-navigation" className="space-y-3 border-b border-border bg-card px-5 pb-5 shadow-[var(--shadow-soft)] lg:hidden">
           {navLinks.map((link) => (
             <a
               key={link.href}

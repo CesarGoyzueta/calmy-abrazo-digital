@@ -61,7 +61,7 @@ const HowItWorksSection = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.06 }}
-              className="rounded-lg border border-border bg-background p-5"
+              className="rounded-lg border border-border/70 bg-card p-5 shadow-[var(--shadow-soft)]"
             >
               <div className="flex items-center justify-between">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/8 text-primary">

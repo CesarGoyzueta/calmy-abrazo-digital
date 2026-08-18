@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import type { ReactNode } from "react";
 import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
@@ -21,10 +21,36 @@ describe("Calmy landing", () => {
       level: 1,
       name: "¿Qué necesita mi hijo en este momento?",
     })).toBeInTheDocument();
-    expect(screen.getByText("Pregunta antes de orientar")).toBeInTheDocument();
-    expect(screen.getByText("Usa el contexto que decides compartir")).toBeInTheDocument();
-    expect(screen.getByText("Señala cuándo consultar")).toBeInTheDocument();
+    const trustBand = screen.getByRole("region", { name: "Diferencias de Calmy" });
+    expect(within(trustBand).getByText("Pregunta antes de orientar")).toBeInTheDocument();
+    expect(within(trustBand).getByText("Usa el contexto que decides compartir")).toBeInTheDocument();
+    expect(within(trustBand).getByText("No reemplaza al profesional")).toBeInTheDocument();
+    expect(within(trustBand).getByText("Cuida la información que compartes")).toBeInTheDocument();
     expect(screen.getByText("No diagnostica ni reemplaza la atención profesional.")).toBeInTheDocument();
+  });
+
+  it("uses responsive family photography and an honest product preview", () => {
+    renderWithRouter(<Index />);
+
+    const familyPhotos = screen.getAllByRole("img", {
+      name: "Madre acompañando a su hijo mientras dibujan juntos en casa",
+    });
+    const familyPhoto = familyPhotos[0];
+    expect(familyPhotos).toHaveLength(2);
+    expect(familyPhoto.getAttribute("src")).toContain("hero-family-photo-chat-desktop");
+    expect(familyPhoto).toHaveAttribute("width", "2048");
+    expect(familyPhoto).toHaveAttribute("height", "1152");
+    expect(familyPhoto).toHaveAttribute("fetchpriority", "high");
+
+    const mobileSource = document.querySelector('source[media="(max-width: 767px)"]');
+    expect(mobileSource).toHaveAttribute("srcset", expect.stringContaining("hero-family-photo-mobile"));
+    expect(screen.getByText("Así preguntará Calmy")).toBeInTheDocument();
+    expect(screen.getByText("Ejemplo ilustrativo")).toBeInTheDocument();
+    expect(screen.getByText("Calmy pregunta antes")).toBeInTheDocument();
+    expect(screen.getByText("Cuándo consultar", { selector: "p" })).toBeInTheDocument();
+    expect(screen.queryByText(/\+2\.500 familias/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/orientación basada en evidencia/i)).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /iniciar sesión/i })).not.toBeInTheDocument();
   });
 
   it("keeps WhatsApp calls to action disabled until the real invite URL exists", () => {

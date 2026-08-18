@@ -29,7 +29,7 @@ const moments = [
 ];
 
 const ProblemSection = () => (
-  <section id="momentos" className="border-b border-border/60 bg-card py-10 md:py-12">
+  <section id="momentos" className="border-b border-border/60 bg-[hsl(var(--surface-warm))] py-10 md:py-12">
     <div className="section-container">
       <div className="grid items-start gap-7 lg:grid-cols-[0.68fr_1.32fr] lg:gap-10">
         <motion.div
@@ -53,7 +53,7 @@ const ProblemSection = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.05 }}
-              className="flex min-h-[112px] items-start gap-4 rounded-lg border border-border bg-background p-4"
+              className="flex min-h-[112px] items-start gap-4 rounded-lg border border-border/70 bg-card p-4 shadow-[var(--shadow-soft)]"
             >
               <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg ${moment.iconClass}`}>
                 <moment.icon size={19} />

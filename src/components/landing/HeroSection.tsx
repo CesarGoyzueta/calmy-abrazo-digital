@@ -1,127 +1,170 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CircleHelp, MessageCircle, Play, ShieldCheck, UserCheck } from "lucide-react";
+import { ArrowRight, CircleHelp, Compass, MessageCircle, Play, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FounderGroupLink from "@/components/landing/FounderGroupLink";
+import heroDesktop from "@/assets/hero-family-photo-desktop.jpg";
+import heroChatDesktop from "@/assets/hero-family-photo-chat-desktop.jpg";
+import heroMobile from "@/assets/hero-family-photo-mobile.jpg";
+import { cn } from "@/lib/utils";
 
-const trustItems = [
-  { icon: CircleHelp, label: "Pregunta antes de orientar" },
-  { icon: UserCheck, label: "Usa el contexto que decides compartir" },
-  { icon: ShieldCheck, label: "Señala cuándo consultar" },
+const responseSignals = [
+  {
+    icon: CircleHelp,
+    title: "Qué podría influir",
+    text: "La transición puede necesitar anticipación.",
+    iconClass: "bg-primary/10 text-primary",
+    rowClass: "bg-primary/[0.045]",
+  },
+  {
+    icon: MessageCircle,
+    title: "Calmy pregunta antes",
+    text: "¿Cómo le avisas que el tiempo está por terminar?",
+    iconClass: "bg-primary/10 text-primary",
+    rowClass: "bg-[hsl(var(--surface-blue))]",
+  },
+  {
+    icon: Compass,
+    title: "Primer paso",
+    text: "Avísale cinco minutos antes y ofrece una opción de cierre.",
+    iconClass: "bg-secondary/10 text-secondary",
+    rowClass: "bg-secondary/[0.045]",
+  },
+  {
+    icon: Stethoscope,
+    title: "Cuándo consultar",
+    text: "Si ocurre en más contextos, aumenta o hay riesgo físico.",
+    iconClass: "bg-coral/10 text-coral",
+    rowClass: "bg-coral/[0.045]",
+  },
 ];
+
+const HeroResponsePreview = ({ className }: { className?: string }) => (
+  <aside
+    aria-label="Ejemplo de conversación de Calmy"
+    className={cn(
+      "overflow-hidden rounded-lg border border-white/90 bg-card/95 shadow-[0_18px_44px_-24px_hsl(var(--foreground)/0.32)] backdrop-blur-sm",
+      className,
+    )}
+  >
+    <div className="flex items-center justify-between border-b border-border/50 px-4 py-3 xl:px-3.5 xl:py-2.5">
+      <div className="flex items-center gap-2.5">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground xl:h-8 xl:w-8">
+          <MessageCircle size={16} />
+        </div>
+        <div>
+          <p className="font-display text-base font-bold text-foreground xl:text-[15px]">Así preguntará Calmy</p>
+          <p className="font-body text-xs text-muted-foreground">Ejemplo ilustrativo</p>
+        </div>
+      </div>
+      <span className="rounded-full bg-secondary/10 px-2.5 py-1 font-body text-xs font-bold text-secondary xl:px-2 xl:py-0.5">
+        Piloto
+      </span>
+    </div>
+
+    <div className="p-3.5 xl:p-3">
+      <div className="rounded-lg bg-primary/[0.08] px-3.5 py-3 xl:px-3 xl:py-2.5">
+        <p className="font-body text-xs font-bold uppercase text-primary">Tu situación</p>
+        <p className="mt-1 font-body text-sm leading-relaxed text-foreground">
+          “Se frustra y grita cuando toca dejar la tablet.”
+        </p>
+      </div>
+
+      <div className="mt-2.5 grid gap-1.5 sm:grid-cols-2 xl:mt-2 xl:grid-cols-1 xl:gap-1">
+        {responseSignals.map((signal) => (
+          <div
+            key={signal.title}
+            className={cn("flex items-start gap-3 rounded-lg px-2.5 py-2.5 xl:gap-2.5 xl:px-2.5 xl:py-2", signal.rowClass)}
+          >
+            <div className={cn("flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg xl:h-7 xl:w-7", signal.iconClass)}>
+              <signal.icon size={16} />
+            </div>
+            <div>
+              <p className="font-display text-sm font-bold leading-tight text-foreground">{signal.title}</p>
+              <p className="mt-1 font-body text-sm leading-snug text-muted-foreground">{signal.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </aside>
+);
 
 const ease = [0.33, 1, 0.68, 1] as const;
 
 const HeroSection = () => (
-  <section className="relative overflow-hidden border-b border-border/60 bg-[hsl(var(--surface-blue))] pt-24 pb-12 md:pt-28 md:pb-14">
-    <div className="section-container">
-      <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease }}
-        >
-          <span className="section-badge normal-case">
-            Para familias de niños con diagnóstico profesional de TEA o TDAH
-          </span>
+  <section className="relative isolate overflow-hidden border-b border-border/60 bg-background pt-[68px] xl:min-h-[720px]">
+    <div className="section-container relative xl:min-h-[652px]">
+      <picture className="absolute right-0 top-6 hidden h-[570px] w-[60%] overflow-hidden rounded-lg xl:block">
+        <img
+          src={heroChatDesktop}
+          alt="Madre acompañando a su hijo mientras dibujan juntos en casa"
+          width={2048}
+          height={1152}
+          {...({ fetchpriority: "high" } as Record<string, string>)}
+          decoding="async"
+          className="h-full w-full object-cover object-left"
+        />
+      </picture>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65, ease }}
+        className="max-w-[660px] pb-6 pt-8 sm:pb-8 sm:pt-12 xl:max-w-[540px] xl:pb-0 xl:pt-12"
+      >
+        <span className="section-badge normal-case shadow-[var(--shadow-soft)]">
+          Para familias de niños con diagnóstico profesional de TEA o TDAH
+        </span>
 
-          <h1 className="mt-5 max-w-[650px] font-display text-[2.55rem] font-extrabold leading-[1.04] text-foreground md:text-[3.35rem] lg:text-[3.7rem]">
-            ¿Qué necesita mi hijo <span className="text-primary">en este momento?</span>
-          </h1>
+        <h1 className="mt-4 max-w-[620px] font-display text-[2.4rem] font-extrabold leading-[1.04] text-foreground sm:mt-5 md:text-[3.35rem] xl:text-[3.1rem]">
+          ¿Qué necesita mi hijo <span className="text-primary">en este momento?</span>
+        </h1>
 
-          <p className="mt-5 max-w-[620px] font-body text-base leading-relaxed text-muted-foreground md:text-lg">
-            Cuando se desborda, quizá no es oposición. Quizá es sobrecarga. En el piloto, Calmy preguntará antes de orientar para ayudarte a leer el contexto y elegir qué intentar primero.
-          </p>
+        <p className="mt-4 max-w-[660px] font-body text-base leading-relaxed text-muted-foreground sm:mt-5 md:text-lg xl:max-w-[520px] xl:text-foreground/72">
+          Cuando se desborda, quizá no es oposición. Quizá es sobrecarga. En el piloto, Calmy preguntará antes de orientar para ayudarte a leer el contexto y elegir qué intentar primero.
+        </p>
 
-          <p className="mt-3 font-body text-sm font-semibold text-foreground">
-            No diagnostica ni reemplaza la atención profesional.
-          </p>
+        <p className="mt-2.5 font-body text-sm font-semibold text-foreground sm:mt-3">
+          No diagnostica ni reemplaza la atención profesional.
+        </p>
 
-          <div className="mt-5 flex flex-wrap gap-2">
-            {trustItems.map((item, index) => (
-              <motion.span
-                key={item.label}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.35, delay: 0.25 + index * 0.06 }}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-2 font-body text-xs font-semibold text-foreground/80"
-              >
-                <item.icon size={15} className="text-secondary" />
-                {item.label}
-              </motion.span>
-            ))}
-          </div>
+        <div className="mt-5 flex flex-col items-stretch gap-2.5 sm:mt-7 sm:flex-row sm:items-center sm:gap-3">
+          <FounderGroupLink size="xl" className="w-full sm:w-auto">
+            Unirme al grupo de WhatsApp <ArrowRight size={18} />
+          </FounderGroupLink>
+          <Button asChild variant="calm-outline" size="lg" className="w-full bg-card/85 sm:w-auto">
+            <a href="#ejemplos">
+              Ver un ejemplo <Play className="fill-current" size={13} />
+            </a>
+          </Button>
+        </div>
 
-          <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
-            <FounderGroupLink size="xl" className="w-full sm:w-auto">
-              Unirme al grupo de WhatsApp <ArrowRight size={18} />
-            </FounderGroupLink>
-            <Button asChild variant="calm-outline" size="lg" className="w-full sm:w-auto">
-              <a href="#como-funciona">
-                Ver cómo funcionará <Play className="fill-current" size={13} />
-              </a>
-            </Button>
-          </div>
+        <p className="mt-3 max-w-[620px] font-body text-xs leading-relaxed text-muted-foreground sm:mt-4 xl:max-w-[500px] xl:text-foreground/58">
+          Grupo de cocreación del piloto · Participación voluntaria · Puedes salir cuando quieras. Tu nombre, foto de perfil o número podrían ser visibles según la configuración de WhatsApp.
+        </p>
+      </motion.div>
 
-          <p className="mt-4 max-w-[650px] font-body text-xs leading-relaxed text-muted-foreground">
-            Grupo de cocreación del piloto · Conversa con el equipo · Participación voluntaria. Al unirte, tu nombre, foto de perfil o número podrían ser visibles para otros integrantes según la configuración de WhatsApp.
-          </p>
-        </motion.div>
+      <picture className="-mx-5 block aspect-[4/3] overflow-hidden sm:-mx-8 sm:aspect-[16/10] lg:-mx-10 lg:aspect-[16/9] xl:hidden">
+        <source media="(max-width: 767px)" srcSet={heroMobile} />
+        <img
+          src={heroDesktop}
+          alt="Madre acompañando a su hijo mientras dibujan juntos en casa"
+          width={1672}
+          height={941}
+          loading="eager"
+          decoding="async"
+          className="h-full w-full object-cover object-[center_62%]"
+        />
+      </picture>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.15, ease }}
-          className="mx-auto w-full max-w-[560px]"
-        >
-          <div className="overflow-hidden rounded-lg border border-border bg-card shadow-[var(--shadow-card)]">
-            <div className="flex items-center justify-between border-b border-border/60 px-5 py-4">
-              <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary font-display text-xs font-bold text-primary-foreground">C</div>
-                <div>
-                  <p className="font-display text-sm font-bold text-foreground">Calmy</p>
-                  <p className="font-body text-xs text-secondary">Orientación para este momento</p>
-                </div>
-              </div>
-              <ShieldCheck className="text-muted-foreground" size={18} />
-            </div>
-
-            <div className="space-y-4 bg-[#fbfcfd] px-5 py-6 md:px-6">
-              <div className="flex justify-end">
-                <div className="max-w-[82%] rounded-lg bg-primary/10 px-4 py-3">
-                  <p className="font-body text-[13px] leading-relaxed text-foreground">
-                    Mi hijo tiene TEA y se desborda cuando cambiamos la rutina. No sé si insistir o darle espacio.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-2.5">
-                <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
-                  <MessageCircle size={13} />
-                </div>
-                <div className="max-w-[86%] rounded-lg border border-border bg-card px-4 py-3">
-                  <p className="font-body text-[13px] leading-relaxed text-foreground">
-                    Un cambio inesperado puede generar sobrecarga. ¿Qué edad tiene y qué suele ayudarle cuando anticipan una transición?
-                  </p>
-                </div>
-              </div>
-
-              <div className="border-l-2 border-secondary bg-secondary/5 px-4 py-3">
-                <p className="font-body text-xs font-bold text-secondary">Siguiente paso</p>
-                <p className="mt-1 font-body text-[13px] leading-relaxed text-foreground">
-                  Anticipa el cambio con una señal visual breve y valida su reacción antes de redirigir.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2 border-t border-border/60 bg-card px-5 py-3">
-              <p className="flex-1 font-body text-xs text-muted-foreground">Escribe una situación cotidiana...</p>
-              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                <ArrowRight size={13} />
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
+      <motion.div
+        id="hero-demo"
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.15, ease }}
+        className="relative z-10 mb-8 sm:mx-auto sm:max-w-3xl xl:absolute xl:right-10 xl:top-[72px] xl:mb-0 xl:w-[312px]"
+      >
+        <HeroResponsePreview />
+      </motion.div>
     </div>
   </section>
 );

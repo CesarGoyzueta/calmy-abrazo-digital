@@ -20,7 +20,7 @@ const founders = [
 ];
 
 const AboutSection = () => (
-  <section id="equipo" className="border-b border-border/60 bg-card py-12 md:py-16">
+  <section id="equipo" className="border-b border-border/60 bg-[hsl(var(--surface-warm))] py-12 md:py-16">
     <div className="section-container">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -44,7 +44,7 @@ const AboutSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: index * 0.07 }}
-            className="grid overflow-hidden rounded-lg border border-border bg-card sm:grid-cols-[190px_1fr]"
+            className="grid overflow-hidden rounded-lg border border-border/70 bg-card shadow-[var(--shadow-soft)] sm:grid-cols-[190px_1fr]"
           >
             <div className="h-56 bg-muted sm:h-full">
               <img

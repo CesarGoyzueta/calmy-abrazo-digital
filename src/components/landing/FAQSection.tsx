@@ -58,7 +58,7 @@ const FAQSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: index * 0.04 }}
-                className="overflow-hidden rounded-lg border border-border bg-background"
+                className="overflow-hidden rounded-lg border border-border/70 bg-card shadow-[var(--shadow-soft)]"
               >
                 <button
                   type="button"

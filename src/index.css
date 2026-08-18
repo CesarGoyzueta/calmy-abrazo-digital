@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --background: 210 25% 98%;
-    --foreground: 215 22% 14%;
+    --foreground: 216 31% 14%;
 
     --card: 0 0% 100%;
     --card-foreground: 210 11% 15%;
@@ -13,14 +13,14 @@
     --popover: 0 0% 100%;
     --popover-foreground: 210 11% 15%;
 
-    --primary: 211 48% 44%;
+    --primary: 209 61% 42%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 172 58% 39%;
+    --secondary: 174 55% 38%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 205 18% 93%;
-    --muted-foreground: 216 12% 42%;
+    --muted: 210 22% 94%;
+    --muted-foreground: 216 13% 41%;
 
     --accent: 146 18% 66%;
     --accent-foreground: 210 11% 15%;
@@ -28,19 +28,19 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 16% 88%;
-    --input: 210 16% 88%;
-    --ring: 211 48% 44%;
+    --border: 211 19% 87%;
+    --input: 211 19% 87%;
+    --ring: 209 61% 42%;
 
     --radius: 0.5rem;
-    --surface-blue: 208 38% 96%;
-    --surface-mint: 166 27% 96%;
-    --surface-warm: 20 38% 97%;
+    --surface-blue: 210 52% 97%;
+    --surface-mint: 169 31% 96%;
+    --surface-warm: 32 32% 97%;
     --coral: 14 64% 58%;
     --coral-foreground: 0 0% 100%;
 
-    --shadow-soft: 0 1px 2px rgba(43, 37, 29, 0.03), 0 8px 24px -12px rgba(43, 37, 29, 0.13);
-    --shadow-card: 0 2px 6px rgba(43, 37, 29, 0.03), 0 18px 45px -24px rgba(43, 37, 29, 0.2);
+    --shadow-soft: 0 1px 2px rgba(43, 37, 29, 0.03), 0 8px 24px -14px rgba(43, 37, 29, 0.12);
+    --shadow-card: 0 2px 6px rgba(43, 37, 29, 0.03), 0 18px 45px -26px rgba(43, 37, 29, 0.18);
     --shadow-hover: 0 4px 12px rgba(43, 37, 29, 0.05), 0 24px 50px -24px rgba(43, 37, 29, 0.23);
     --shadow-glow: 0 0 24px rgba(55, 126, 176, 0.2), 0 0 44px rgba(42, 157, 143, 0.08);
 

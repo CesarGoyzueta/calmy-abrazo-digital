@@ -64,7 +64,7 @@ const FounderGroupSection = () => (
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.06 }}
-              className="grid gap-3 rounded-lg border border-border bg-card p-5 sm:grid-cols-[48px_1fr] sm:items-start"
+              className="grid gap-3 rounded-lg border border-border/70 bg-card p-5 shadow-[var(--shadow-soft)] sm:grid-cols-[48px_1fr] sm:items-start"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-secondary/10 font-display text-sm font-bold text-secondary">
                 {item.step}
