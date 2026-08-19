@@ -6,7 +6,7 @@ const groupSteps = [
   {
     step: "01",
     title: "Conoce el propósito y los acuerdos",
-    text: "Al entrar encontrarás el objetivo del piloto, las pautas de participación y recordatorios para cuidar la privacidad familiar.",
+    text: "Al entrar conocerás el objetivo de Calmy, las pautas de participación y recordatorios para cuidar la privacidad familiar.",
   },
   {
     step: "02",
@@ -30,8 +30,8 @@ const FounderGroupSection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="section-badge">Grupo de cocreación</span>
-          <h2 className="section-title mt-4">Qué encontrarás en el grupo del piloto</h2>
+          <span className="section-badge">Grupo fundador</span>
+          <h2 className="section-title mt-4">Qué encontrarás en el grupo fundador</h2>
           <p className="mt-4 section-subtitle">
             Un espacio para conversar con el equipo fundador y ayudar a que Calmy responda a momentos reales, no a suposiciones.
           </p>

@@ -5,7 +5,7 @@ import { Minus, Plus } from "lucide-react";
 const faqs = [
   {
     q: "¿Necesito un diagnóstico profesional para usar Calmy?",
-    a: "Sí. El piloto estará dirigido a madres, padres y cuidadores de niños con diagnóstico de TEA o TDAH emitido por un psicólogo o especialista calificado. Calmy no confirma diagnósticos. Si todavía están en proceso de evaluación, lo adecuado es continuar con un profesional.",
+    a: "Sí. La primera versión de Calmy estará dirigida a madres, padres y cuidadores de niños con diagnóstico de TEA o TDAH emitido por un psicólogo o especialista calificado. Calmy no confirma diagnósticos. Si todavía están en proceso de evaluación, lo adecuado es continuar con un profesional.",
   },
   {
     q: "¿Calmy reemplaza a un psicólogo o terapeuta?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "¿Qué ocurrirá al unirme al grupo de WhatsApp?",
-    a: "Entrarás en un grupo de cocreación para conocer avances, conversar con el equipo y compartir feedback de forma voluntaria. No es un espacio de atención clínica ni individual. Según la configuración de WhatsApp, tu nombre, foto de perfil o número podrían ser visibles para otros integrantes. Puedes leer sin participar y salir cuando quieras.",
+    a: "Calmy está en una fase inicial de cocreación. Entrarás en el grupo fundador para conocer avances, conversar con el equipo y compartir feedback de forma voluntaria. No es un espacio de atención clínica ni individual. Según la configuración de WhatsApp, tu nombre, foto de perfil o número podrían ser visibles para otros integrantes. Puedes leer sin participar y salir cuando quieras.",
   },
 ];
 

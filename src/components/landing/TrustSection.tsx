@@ -30,7 +30,7 @@ const TrustSection = () => (
           La confianza empieza por explicar qué hará Calmy y dónde se detendrá
         </h2>
         <p className="mt-4 section-subtitle">
-          El piloto combinará contexto familiar, criterios psicológicos organizados y límites de seguridad. No presentará una orientación como evaluación clínica.
+          Calmy combinará contexto familiar, criterios psicológicos organizados y límites de seguridad. No presentará una orientación como evaluación clínica.
         </p>
       </motion.div>
 

@@ -18,17 +18,16 @@ const Terminos = () => (
 
       <h2>2. Objeto y estado actual</h2>
       <p>
-        Calmy está en fase de pre-lanzamiento. Esta web informa sobre la visión del producto y permite,
-        cuando el enlace esté disponible, acceder voluntariamente a un grupo conversacional de WhatsApp
-        relacionado con el piloto. La web no incluye actualmente un formulario comercial ni una lista de
-        espera por correo.
+        Calmy está en una fase inicial de cocreación. Esta web informa sobre la visión del producto y
+        permite, cuando el enlace esté disponible, acceder voluntariamente al grupo fundador de Calmy en
+        WhatsApp. La web no incluye actualmente un formulario comercial ni una lista de espera por correo.
       </p>
 
-      <h2>3. Audiencia del piloto</h2>
+      <h2>3. Audiencia de la fase inicial</h2>
       <p>
-        El piloto estará dirigido a madres, padres y cuidadores de niños con diagnóstico de TEA o TDAH
-        emitido por un psicólogo o especialista calificado. Calmy no confirma diagnósticos. Si el niño
-        todavía está en evaluación, corresponde continuar ese proceso con un profesional.
+        La primera versión de Calmy estará dirigida a madres, padres y cuidadores de niños con diagnóstico
+        de TEA o TDAH emitido por un psicólogo o especialista calificado. Calmy no confirma diagnósticos. Si
+        el niño todavía está en evaluación, corresponde continuar ese proceso con un profesional.
       </p>
 
       <h2>4. Naturaleza de Calmy</h2>
@@ -84,7 +83,7 @@ const Terminos = () => (
 
       <h2>10. Cambios y contacto</h2>
       <p>
-        Estos términos podrán actualizarse conforme evolucione el piloto. La versión vigente estará
+        Estos términos podrán actualizarse conforme evolucione esta fase inicial. La versión vigente estará
         publicada en esta página. Para consultas escribe a{" "}
         <a href="mailto:hola@neurocalm.app">hola@neurocalm.app</a>.
       </p>

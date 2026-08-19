@@ -32,7 +32,7 @@ const AboutSection = () => (
         <span className="section-badge">Responsables de Calmy</span>
         <h2 className="section-title mt-4">Psicología y tecnología con responsabilidades visibles</h2>
         <p className="mt-4 section-subtitle">
-          El piloto se construye con liderazgo psicológico y una implementación tecnológica orientada a límites claros.
+          Calmy se construye con liderazgo psicológico y una implementación tecnológica orientada a límites claros.
         </p>
       </motion.div>
 

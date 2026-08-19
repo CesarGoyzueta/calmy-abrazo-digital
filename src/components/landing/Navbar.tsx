@@ -5,21 +5,54 @@ import FounderGroupLink from "@/components/landing/FounderGroupLink";
 import isotipo from "@/assets/neurocalm-logo (2).png";
 
 const navLinks = [
-  { href: "#momentos", label: "Momentos" },
-  { href: "#ejemplos", label: "Conversaciones" },
-  { href: "#como-funciona", label: "Cómo funcionará" },
-  { href: "#grupo", label: "El grupo" },
-  { href: "#equipo", label: "Equipo" },
+  { href: "#momentos", id: "momentos", label: "Momentos" },
+  { href: "#ejemplos", id: "ejemplos", label: "Conversaciones" },
+  { href: "#como-funciona", id: "como-funciona", label: "Cómo funcionará" },
+  { href: "#grupo", id: "grupo", label: "El grupo" },
+  { href: "#equipo", id: "equipo", label: "Equipo" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return undefined;
+
+    const sections = navLinks
+      .map((link) => document.getElementById(link.id))
+      .filter((section): section is HTMLElement => section !== null);
+
+    if (sections.length === 0) return undefined;
+
+    const observer = new IntersectionObserver((entries) => {
+      const visibleSection = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (visibleSection) {
+        setActiveSection(visibleSection.target.id);
+        return;
+      }
+
+      setActiveSection((current) => (
+        entries.some((entry) => entry.target.id === current && !entry.isIntersecting) ? null : current
+      ));
+    }, {
+      rootMargin: "-30% 0px -58% 0px",
+      threshold: [0.05, 0.3, 0.6],
+    });
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -29,7 +62,12 @@ const Navbar = () => {
       }`}
     >
       <div className="section-container flex h-[68px] items-center justify-between">
-        <a href="#" className="flex min-h-11 items-center gap-2" aria-label="Volver al inicio">
+        <a
+          href="#"
+          onClick={() => setActiveSection(null)}
+          className="flex min-h-11 items-center gap-2"
+          aria-label="Volver al inicio"
+        >
           <img src={isotipo} alt="Calmy" className="h-9 w-auto" />
           <div className="flex flex-col leading-tight">
             <span className="font-display text-[17px] font-bold text-foreground">Calmy</span>
@@ -38,15 +76,29 @@ const Navbar = () => {
         </a>
 
         <div className="hidden items-center gap-7 lg:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="flex min-h-11 items-center font-body text-[13px] font-semibold text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "location" : undefined}
+                onClick={() => setActiveSection(link.id)}
+                className={`relative flex min-h-11 items-center font-body text-[13px] font-semibold transition-colors ${
+                  isActive ? "text-secondary" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {link.label}
+                <span
+                  aria-hidden="true"
+                  className={`absolute inset-x-1 bottom-0.5 h-0.5 origin-center rounded-full bg-secondary transition-transform duration-300 ${
+                    isActive ? "scale-x-100" : "scale-x-0"
+                  }`}
+                />
+              </a>
+            );
+          })}
           <FounderGroupLink size="sm">
             <MessageCircle size={15} />
             Grupo de WhatsApp
@@ -67,16 +119,28 @@ const Navbar = () => {
 
       {open && (
         <div id="mobile-navigation" className="space-y-3 border-b border-border bg-card px-5 pb-5 shadow-[var(--shadow-soft)] lg:hidden">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="flex min-h-11 items-center font-body text-sm text-muted-foreground hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "location" : undefined}
+                onClick={() => {
+                  setActiveSection(link.id);
+                  setOpen(false);
+                }}
+                className={`flex min-h-11 items-center border-l-2 pl-3 font-body text-sm transition-colors ${
+                  isActive
+                    ? "border-secondary font-semibold text-secondary"
+                    : "border-transparent text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
           <Link
             to="/sobre-calmy"
             onClick={() => setOpen(false)}

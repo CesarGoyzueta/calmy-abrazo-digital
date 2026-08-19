@@ -19,9 +19,9 @@ const Privacidad = () => (
 
       <h2>2. Alcance de esta etapa</h2>
       <p>
-        Calmy se encuentra en fase de pre-lanzamiento. Esta web no contiene un formulario comercial ni
-        solicita tu correo para una lista de espera. Su finalidad es informar sobre el piloto y, cuando
-        el enlace esté disponible, permitirte abrir un grupo conversacional de WhatsApp.
+        Calmy se encuentra en una fase inicial de cocreación. Esta web no contiene un formulario comercial
+        ni solicita tu correo para una lista de espera. Su finalidad es informar sobre esta etapa y, cuando
+        el enlace esté disponible, permitirte abrir el grupo fundador de Calmy en WhatsApp.
       </p>
       <p>
         Al pulsar ese enlace abandonas neurocalm.work y pasas a un servicio operado por WhatsApp. El uso
@@ -32,7 +32,7 @@ const Privacidad = () => (
       </p>
 
       <h2>3. Información que podrías compartir</h2>
-      <p>Si decides entrar al grupo del piloto, podrías compartir voluntariamente:</p>
+      <p>Si decides entrar al grupo fundador de Calmy, podrías compartir voluntariamente:</p>
       <ul>
         <li>El nombre y la información de perfil configurados en tu cuenta de WhatsApp.</li>
         <li>Mensajes, preguntas y comentarios que publiques en el grupo.</li>
@@ -46,9 +46,9 @@ const Privacidad = () => (
       <h2>4. Finalidad</h2>
       <p>La información compartida directamente con NeuroCalm podrá utilizarse para:</p>
       <ul>
-        <li>Organizar la participación voluntaria en el piloto.</li>
+        <li>Organizar la participación voluntaria en el grupo fundador.</li>
         <li>Comprender qué situaciones y orientaciones resultan más útiles para las familias.</li>
-        <li>Comunicar avances, convocatorias y condiciones del piloto.</li>
+        <li>Comunicar avances, convocatorias y condiciones de esta fase inicial.</li>
         <li>Moderar el espacio y mantener un entorno respetuoso.</li>
       </ul>
 
@@ -70,9 +70,9 @@ const Privacidad = () => (
 
       <h2>7. Seguridad</h2>
       <p>
-        Aplicaremos medidas razonables para limitar el acceso a la información del piloto y moderar el
-        grupo. Ningún canal digital elimina por completo el riesgo, por lo que recomendamos compartir solo
-        lo estrictamente necesario.
+        Aplicaremos medidas razonables para limitar el acceso a la información compartida durante esta fase
+        inicial y moderar el grupo. Ningún canal digital elimina por completo el riesgo, por lo que
+        recomendamos compartir solo lo estrictamente necesario.
       </p>
 
       <h2>8. Tus derechos</h2>
@@ -90,8 +90,8 @@ const Privacidad = () => (
 
       <h2>10. Actualizaciones</h2>
       <p>
-        Esta política se actualizará cuando cambien el piloto, los canales de participación o el
-        funcionamiento de Calmy. La versión vigente estará publicada en esta página.
+        Esta política se actualizará cuando cambien la fase de desarrollo, los canales de participación o
+        el funcionamiento de Calmy. La versión vigente estará publicada en esta página.
       </p>
     </div>
   </PageLayout>

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { CircleHelp, Compass, MessageCircle, Stethoscope } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -98,14 +99,18 @@ const insightBlocks = [
   { key: "whenToConsult", icon: Stethoscope, label: "Cuándo consultar" },
 ] as const;
 
-const SolutionSection = () => (
-  <section id="ejemplos" className="border-b border-border/60 bg-[hsl(var(--surface-mint))] py-12 md:py-16">
+const SolutionSection = () => {
+  const [activeChatId, setActiveChatId] = useState(chatExamples[0].id);
+  const prefersReducedMotion = useReducedMotion();
+
+  return (
+    <section id="ejemplos" className="border-b border-border/60 bg-[hsl(var(--surface-mint))] py-12 md:py-16">
     <div className="section-container">
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
+        initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: prefersReducedMotion ? 0 : 0.5 }}
         className="mb-7 max-w-3xl"
       >
         <span className="section-badge">Así preguntará antes de orientar</span>
@@ -115,7 +120,7 @@ const SolutionSection = () => (
         </p>
       </motion.div>
 
-      <Tabs defaultValue={chatExamples[0].id} className="w-full">
+      <Tabs value={activeChatId} onValueChange={setActiveChatId} className="w-full">
         <div className="-mx-5 overflow-x-auto px-5 pb-1 md:mx-0 md:px-0">
           <TabsList className="h-auto min-w-max justify-start gap-2 rounded-none bg-transparent p-0" aria-label="Ejemplos de conversaciones">
             {chatExamples.map((example) => (
@@ -132,7 +137,12 @@ const SolutionSection = () => (
 
         {chatExamples.map((example) => (
           <TabsContent key={example.id} value={example.id} className="mt-5">
-            <div className="grid items-stretch gap-5 lg:grid-cols-[1.08fr_0.92fr]">
+            <motion.div
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: prefersReducedMotion ? 0 : 0.22 }}
+              className="grid items-stretch gap-5 lg:grid-cols-[1.08fr_0.92fr]"
+            >
               <div className="overflow-hidden rounded-lg border border-border bg-card shadow-[var(--shadow-card)]">
                 <div className="flex items-center gap-3 border-b border-border px-5 py-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -146,7 +156,16 @@ const SolutionSection = () => (
 
                 <div className="min-h-[350px] space-y-4 bg-[#fbfcfd] p-5 md:p-6">
                   {example.messages.map((message, index) => (
-                    <div key={`${example.id}-${index}`} className={message.role === "caregiver" ? "flex justify-end" : "flex items-start gap-2.5"}>
+                    <motion.div
+                      key={`${example.id}-${index}`}
+                      initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: prefersReducedMotion ? 0 : 0.28,
+                        delay: prefersReducedMotion ? 0 : 0.05 + index * 0.07,
+                      }}
+                      className={message.role === "caregiver" ? "flex justify-end" : "flex items-start gap-2.5"}
+                    >
                       {message.role === "calmy" && (
                         <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-secondary font-display text-[11px] font-bold text-secondary-foreground">
                           C
@@ -159,7 +178,7 @@ const SolutionSection = () => (
                       >
                         <p className="font-body text-sm leading-relaxed text-foreground">{message.text}</p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -168,9 +187,12 @@ const SolutionSection = () => (
                 {insightBlocks.map((block, index) => (
                   <motion.article
                     key={`${example.id}-${block.key}`}
-                    initial={{ opacity: 0, x: 10 }}
+                    initial={prefersReducedMotion ? false : { opacity: 0, x: 10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    transition={{
+                      duration: prefersReducedMotion ? 0 : 0.3,
+                      delay: prefersReducedMotion ? 0 : 0.16 + index * 0.06,
+                    }}
                     className="flex items-start gap-4 rounded-lg border border-border bg-card p-5"
                   >
                     <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg ${index === 1 ? "bg-secondary/10 text-secondary" : index === 2 ? "bg-coral/10 text-coral" : "bg-primary/10 text-primary"}`}>
@@ -183,15 +205,16 @@ const SolutionSection = () => (
                   </motion.article>
                 ))}
                 <p className="border-l-2 border-primary px-4 py-2 font-body text-xs leading-relaxed text-muted-foreground">
-                  La orientación real dependerá de lo que la familia decida compartir y de los límites de seguridad del piloto.
+                  La orientación real dependerá de lo que la familia decida compartir y de los límites de seguridad definidos para Calmy.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </TabsContent>
         ))}
       </Tabs>
     </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default SolutionSection;

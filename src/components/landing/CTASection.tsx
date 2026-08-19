@@ -4,7 +4,7 @@ import FounderGroupLink from "@/components/landing/FounderGroupLink";
 
 const benefits = [
   "Conversar con el equipo fundador",
-  "Influir en las prioridades del piloto",
+  "Influir en las prioridades de la primera versión",
   "Conocer oportunidades de prueba temprana",
   "Participar o salir cuando quieras",
 ];
@@ -19,12 +19,12 @@ const CTASection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="font-body text-sm font-bold text-secondary">Tu experiencia puede darle dirección al piloto</p>
+          <p className="font-body text-sm font-bold text-secondary">Grupo fundador de Calmy</p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold leading-tight text-white md:text-4xl">
-            Ayúdanos a construir Calmy con situaciones reales, no con suposiciones
+            Ayuda a construir Calmy desde el inicio
           </h2>
           <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-white/72">
-            Buscamos madres, padres y cuidadores de niños con diagnóstico profesional de TEA o TDAH que quieran conocer el proyecto y compartir feedback voluntariamente.
+            Buscamos madres, padres y cuidadores de niños con diagnóstico profesional de TEA o TDAH que quieran aportar situaciones reales y compartir feedback voluntariamente.
           </p>
         </motion.div>
 
@@ -51,7 +51,7 @@ const CTASection = () => (
           </FounderGroupLink>
 
           <p className="mt-4 font-body text-xs leading-relaxed text-white/58">
-            El grupo es para cocrear el piloto; no ofrece atención clínica ni individual. Tu nombre, foto de perfil o número podrían ser visibles para otros integrantes según la configuración de WhatsApp.
+            El grupo es para cocrear la primera versión de Calmy; no ofrece atención clínica ni individual. Tu nombre, foto de perfil o número podrían ser visibles para otros integrantes según la configuración de WhatsApp.
           </p>
         </motion.div>
       </div>
