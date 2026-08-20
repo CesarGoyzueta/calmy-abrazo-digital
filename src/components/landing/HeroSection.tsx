@@ -165,7 +165,7 @@ const HeroSection = () => {
         </p>
       </motion.div>
 
-      <picture className="-mx-5 block aspect-[4/3] overflow-hidden sm:-mx-8 sm:aspect-[16/10] lg:-mx-10 lg:aspect-[16/9] xl:absolute xl:right-0 xl:top-6 xl:mx-0 xl:h-[570px] xl:w-[57%] xl:aspect-auto xl:rounded-lg">
+      <picture className="-mx-5 block aspect-[4/3] overflow-hidden sm:-mx-8 sm:aspect-[16/10] lg:-mx-10 lg:aspect-[16/9] xl:absolute xl:right-0 xl:top-6 xl:mx-0 xl:h-[550px] xl:w-[57%] xl:aspect-auto xl:rounded-lg">
         <source media="(min-width: 1280px)" srcSet={heroDesktop} />
         <source media="(min-width: 768px)" srcSet={heroTablet} />
         <img
@@ -176,7 +176,7 @@ const HeroSection = () => {
           loading="eager"
           {...({ fetchpriority: "high" } as Record<string, string>)}
           decoding="async"
-          className="h-full w-full object-cover object-center xl:object-[55%_center]"
+          className="h-full w-full object-cover object-center xl:object-[50%_center]"
         />
       </picture>
 
