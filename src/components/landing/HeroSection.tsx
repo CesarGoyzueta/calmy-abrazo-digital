@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, CircleHelp, Compass, MessageCircle, Play, Stethoscope } from "lucide-react";
+import { ArrowRight, CircleHelp, Compass, Info, MessageCircle, Play, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FounderGroupLink from "@/components/landing/FounderGroupLink";
 import heroDesktop from "@/assets/hero-family-clean-desktop.jpg";
@@ -137,8 +137,8 @@ const HeroSection = () => {
           Para familias de niños con diagnóstico profesional de TEA o TDAH
         </span>
 
-        <h1 className="mt-4 max-w-[620px] font-display text-[2.4rem] font-extrabold leading-[1.04] text-foreground sm:mt-5 md:text-[3.35rem] xl:max-w-[500px] xl:text-[3.1rem]">
-          ¿Qué necesita mi hijo <span className="text-primary">en este momento?</span>
+        <h1 className="mt-4 max-w-[620px] font-display text-[2.4rem] font-extrabold leading-[1.04] text-foreground sm:mt-5 md:text-[3.35rem] xl:max-w-[530px] xl:text-[3.15rem]">
+          ¿Qué necesita mi hijo <span className="text-primary xl:block">en este momento?</span>
         </h1>
 
         <p className="mt-4 max-w-[660px] font-body text-base leading-relaxed text-muted-foreground sm:mt-5 md:text-lg xl:max-w-[480px] xl:text-foreground/72">
@@ -160,9 +160,12 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        <p className="mt-3 max-w-[620px] font-body text-sm leading-relaxed text-muted-foreground sm:mt-4 xl:max-w-[480px] xl:text-foreground/72">
-          Grupo fundador de Calmy · Cocreación voluntaria · Puedes salir cuando quieras. Tu nombre, foto de perfil o número podrían ser visibles según la configuración de WhatsApp.
-        </p>
+        <div className="mt-3 flex max-w-[620px] items-start gap-2 font-body text-sm leading-relaxed text-muted-foreground sm:mt-4 xl:max-w-[500px] xl:text-foreground/72">
+          <Info className="mt-0.5 flex-shrink-0 text-primary" size={16} aria-hidden="true" />
+          <p>
+            Grupo fundador · Participación voluntaria. WhatsApp puede mostrar tu nombre, foto o número.
+          </p>
+        </div>
       </motion.div>
 
       <picture className="-mx-5 block aspect-[4/3] overflow-hidden sm:-mx-8 sm:aspect-[16/10] lg:-mx-10 lg:aspect-[16/9] xl:absolute xl:right-0 xl:top-6 xl:mx-0 xl:h-[430px] xl:w-[57%] xl:aspect-auto xl:rounded-lg">
@@ -176,7 +179,7 @@ const HeroSection = () => {
           loading="eager"
           {...({ fetchpriority: "high" } as Record<string, string>)}
           decoding="async"
-          className="h-full w-full object-cover object-center xl:origin-[48%_52%] xl:scale-[1.07] xl:object-[50%_center]"
+          className="h-full w-full object-cover object-center xl:origin-[48%_52%] xl:scale-[1.12] xl:object-[50%_center]"
         />
       </picture>
 

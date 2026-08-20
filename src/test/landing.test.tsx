@@ -60,7 +60,7 @@ describe("Calmy landing", () => {
     expect(screen.queryByText(/orientación basada en evidencia/i)).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /iniciar sesión/i })).not.toBeInTheDocument();
     expect(screen.queryByText(/piloto/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/Grupo fundador de Calmy · Cocreación voluntaria/i)).toBeInTheDocument();
+    expect(screen.getByText(/Grupo fundador · Participación voluntaria/i)).toBeInTheDocument();
   });
 
   it("activates every WhatsApp call to action with the founder group URL", () => {
