@@ -176,13 +176,13 @@ const HeroSection = () => {
           loading="eager"
           {...({ fetchpriority: "high" } as Record<string, string>)}
           decoding="async"
-          className="h-full w-full object-cover object-center xl:object-left"
+          className="h-full w-full object-cover object-center xl:object-[75%_center]"
         />
       </picture>
 
       <div
         id="hero-demo"
-        className="relative z-10 mb-8 sm:mx-auto sm:max-w-3xl xl:absolute xl:right-10 xl:top-[72px] xl:mb-0 xl:w-[312px]"
+        className="relative z-10 mb-8 sm:mx-auto sm:max-w-3xl xl:absolute xl:right-4 xl:top-[78px] xl:mb-0 xl:w-[296px]"
       >
         <HeroResponsePreview />
       </div>

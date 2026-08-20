@@ -105,6 +105,13 @@ describe("Calmy landing", () => {
     expect(screen.getByText(/El grupo no ofrece atención clínica ni atención individual/i)).toBeInTheDocument();
   });
 
+  it("preserves the founders' executive roles", () => {
+    renderWithRouter(<Index />);
+
+    expect(screen.getByText("Co-Fundadora · CMO & Head of Psychology")).toBeInTheDocument();
+    expect(screen.getByText("Co-Fundador · CEO & CTO")).toBeInTheDocument();
+  });
+
   it("links to the official Calmy TikTok profile as a secondary action", () => {
     renderWithRouter(<Index />);
 

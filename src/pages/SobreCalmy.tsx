@@ -8,15 +8,15 @@ const founders = [
   {
     photo: founderPsych,
     name: "Erika Rubio",
-    badge: "Psicóloga y responsable del enfoque psicológico",
-    subtitle: "Contenidos y criterios de orientación",
+    badge: "Co-Fundadora · CMO & Head of Psychology",
+    subtitle: "Psicología · Contenidos y crecimiento",
     bio: "Lidera la construcción de contenidos y los criterios de orientación para que la experiencia sea sensible, clara y responsable.",
   },
   {
     photo: founderTech,
     name: "César Goyzueta",
-    badge: "Cofundador y responsable de producto y tecnología",
-    subtitle: "Producto y arquitectura tecnológica",
+    badge: "Co-Fundador · CEO & CTO",
+    subtitle: "Visión de producto · IA y tecnología",
     bio: "Diseña la experiencia y la arquitectura que convertirán el contexto familiar en una orientación práctica y comprensible.",
   },
 ];

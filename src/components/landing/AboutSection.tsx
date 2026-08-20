@@ -8,13 +8,13 @@ const founders = [
   {
     photo: founderPsych,
     name: "Erika Rubio",
-    role: "Psicóloga y responsable del enfoque psicológico de Calmy",
+    role: "Co-Fundadora · CMO & Head of Psychology",
     bio: "Lidera la construcción de contenidos y los criterios de orientación para que la experiencia sea sensible, clara y responsable.",
   },
   {
     photo: founderTech,
     name: "César Goyzueta",
-    role: "Cofundador y responsable de producto y tecnología",
+    role: "Co-Fundador · CEO & CTO",
     bio: "Diseña la experiencia y la arquitectura que convertirán el contexto familiar en una orientación práctica y comprensible.",
   },
 ];
