@@ -36,11 +36,11 @@ const TrustHighlightsBand = () => (
       {highlights.map((highlight, index) => (
         <article
           key={highlight.title}
-          className={`flex min-h-[128px] items-start gap-3.5 py-5 sm:px-5 xl:min-h-[138px] xl:px-6 ${
+          className={`flex min-h-[128px] items-start gap-3.5 py-5 sm:px-5 xl:min-h-[118px] xl:px-5 xl:py-4 ${
             index > 0 ? "border-t border-border/60 sm:border-t-0" : ""
           } ${index % 2 === 1 ? "sm:border-l sm:border-border/60" : ""} ${index > 1 ? "sm:border-t sm:border-border/60 xl:border-t-0" : ""} ${index > 0 ? "xl:border-l xl:border-border/60" : ""}`}
         >
-          <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg ${highlight.iconClass}`}>
+          <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg xl:h-9 xl:w-9 ${highlight.iconClass}`}>
             <highlight.icon size={19} />
           </div>
           <div>
