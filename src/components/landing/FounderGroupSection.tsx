@@ -51,7 +51,7 @@ const FounderGroupSection = () => (
             <ArrowRight size={18} />
           </FounderGroupLink>
 
-          <p className="mt-3 font-body text-xs leading-relaxed text-muted-foreground">
+          <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
             Puedes leer sin compartir, participar cuando quieras y salir en cualquier momento. El grupo no ofrece atención clínica ni atención individual.
           </p>
         </motion.div>

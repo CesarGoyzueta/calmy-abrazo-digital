@@ -204,7 +204,7 @@ const SolutionSection = () => {
                     </div>
                   </motion.article>
                 ))}
-                <p className="border-l-2 border-primary px-4 py-2 font-body text-xs leading-relaxed text-muted-foreground">
+                <p className="border-l-2 border-primary px-4 py-2 font-body text-sm leading-relaxed text-muted-foreground">
                   La orientación real dependerá de lo que la familia decida compartir y de los límites de seguridad definidos para Calmy.
                 </p>
               </div>

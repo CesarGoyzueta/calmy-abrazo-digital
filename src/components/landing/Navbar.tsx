@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, MessageCircle, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import FounderGroupLink from "@/components/landing/FounderGroupLink";
@@ -16,6 +16,29 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Con el menú abierto: cerrar con Escape, no dejar que el fondo se desplace
+  // y devolver el foco al botón al cerrar.
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -85,7 +108,7 @@ const Navbar = () => {
                 href={link.href}
                 aria-current={isActive ? "location" : undefined}
                 onClick={() => setActiveSection(link.id)}
-                className={`relative flex min-h-11 items-center font-body text-[13px] font-semibold transition-colors ${
+                className={`relative flex min-h-11 items-center rounded-sm font-body text-[13px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                   isActive ? "text-secondary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -107,6 +130,7 @@ const Navbar = () => {
 
         <button
           type="button"
+          ref={menuButtonRef}
           onClick={() => setOpen(!open)}
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
@@ -118,7 +142,10 @@ const Navbar = () => {
       </div>
 
       {open && (
-        <div id="mobile-navigation" className="space-y-3 border-b border-border bg-card px-5 pb-5 shadow-[var(--shadow-soft)] lg:hidden">
+        <div
+          id="mobile-navigation"
+          className="max-h-[calc(100dvh-68px)] space-y-3 overflow-y-auto border-b border-border bg-card px-5 pb-5 shadow-[var(--shadow-soft)] lg:hidden"
+        >
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
 

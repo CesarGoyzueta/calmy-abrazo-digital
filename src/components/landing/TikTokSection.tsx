@@ -11,7 +11,7 @@ const TikTokSection = () => (
           <Music2 size={20} />
         </div>
         <div>
-          <p className="font-display text-xl font-bold text-foreground">Conoce Calmy en contenido breve</p>
+          <h2 className="font-display text-xl font-bold text-foreground">Conoce Calmy en contenido breve</h2>
           <p className="mt-1 max-w-2xl font-body text-sm leading-relaxed text-muted-foreground">
             Compartimos ideas para comprender antes de actuar y avances del proyecto.
           </p>
@@ -22,7 +22,10 @@ const TikTokSection = () => (
         href={TIKTOK_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className={cn(buttonVariants({ variant: "calm-outline", size: "lg" }), "w-full bg-card md:w-auto")}
+        className={cn(
+          buttonVariants({ variant: "calm-outline", size: "lg" }),
+          "h-auto w-full whitespace-normal py-3 text-center bg-card md:w-auto",
+        )}
       >
         Seguir a @neurocalmy.calm en TikTok
         <ExternalLink size={16} />

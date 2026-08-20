@@ -150,7 +150,7 @@ const HeroSection = () => {
         </p>
 
         <div className="mt-5 flex flex-col items-stretch gap-2.5 sm:mt-7 sm:flex-row sm:items-center sm:gap-3 xl:gap-2">
-          <FounderGroupLink size="xl" className="w-full sm:w-auto">
+          <FounderGroupLink size="xl" className="h-auto w-full whitespace-nowrap py-3.5 text-center sm:w-auto">
             Unirme al grupo de WhatsApp <ArrowRight size={18} />
           </FounderGroupLink>
           <Button asChild variant="calm-outline" size="lg" className="w-full bg-card/85 sm:w-auto">
@@ -160,7 +160,7 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        <p className="mt-3 max-w-[620px] font-body text-xs leading-relaxed text-muted-foreground sm:mt-4 xl:max-w-[480px] xl:text-foreground/58">
+        <p className="mt-3 max-w-[620px] font-body text-sm leading-relaxed text-muted-foreground sm:mt-4 xl:max-w-[480px] xl:text-foreground/72">
           Grupo fundador de Calmy · Cocreación voluntaria · Puedes salir cuando quieras. Tu nombre, foto de perfil o número podrían ser visibles según la configuración de WhatsApp.
         </p>
       </motion.div>

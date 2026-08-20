@@ -1,12 +1,21 @@
 import { motion } from "framer-motion";
-import { ClipboardCheck, MessagesSquare, Route, UserRound } from "lucide-react";
+import { ChevronRight, ClipboardCheck, MessagesSquare, Route, UserRound } from "lucide-react";
+
+// El mecanismo, no solo el resultado: qué recorre una consulta antes de la respuesta.
+const mechanism = [
+  "Tu consulta",
+  "Contexto del niño",
+  "Criterios psicológicos",
+  "Límites de seguridad",
+  "Primer paso aplicable",
+];
 
 const steps = [
   {
     icon: ClipboardCheck,
     step: "01",
     title: "Partimos de un diagnóstico profesional",
-    desc: "El padre indica si el diagnóstico de TEA o TDAH fue emitido por un psicólogo o especialista calificado.",
+    desc: "Indicas si el diagnóstico de TEA o TDAH fue emitido por un psicólogo o especialista calificado.",
   },
   {
     icon: UserRound,
@@ -75,6 +84,28 @@ const HowItWorksSection = () => (
           ))}
         </div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.45 }}
+        className="mt-8 rounded-lg border border-border/70 bg-background px-5 py-5"
+      >
+        <p className="font-display text-sm font-bold text-foreground">Qué ocurre con cada consulta</p>
+        <ol className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-2">
+          {mechanism.map((item, index) => (
+            <li key={item} className="flex items-center gap-2">
+              <span className="rounded-full border border-border bg-card px-3 py-1.5 font-body text-sm text-foreground">
+                {item}
+              </span>
+              {index < mechanism.length - 1 && (
+                <ChevronRight className="flex-shrink-0 text-muted-foreground" size={15} aria-hidden="true" />
+              )}
+            </li>
+          ))}
+        </ol>
+      </motion.div>
     </div>
   </section>
 );

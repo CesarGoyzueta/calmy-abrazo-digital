@@ -16,8 +16,13 @@
     --primary: 209 61% 42%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 174 55% 38%;
+    /* 29% de luminosidad: 5.26:1 sobre el fondo y 4.87:1 sobre el badge
+       tintado (bg-secondary/0.09). A 38% daba 3.43:1 y no pasaba AA. */
+    --secondary: 174 58% 29%;
     --secondary-foreground: 0 0% 100%;
+    /* Variante clara para superficies oscuras: sobre --foreground el token
+       normal daría 2.92:1. Esta da 8.41:1. */
+    --secondary-on-dark: 174 58% 55%;
 
     --muted: 210 22% 94%;
     --muted-foreground: 216 13% 41%;
@@ -103,7 +108,7 @@
   }
 
   .section-badge {
-    @apply inline-flex items-center rounded-full bg-secondary/[0.09] px-3 py-1.5 font-body text-[11px] font-bold uppercase text-secondary md:text-xs;
+    @apply inline-flex items-center rounded-full bg-secondary/[0.09] px-3 py-1.5 font-body text-xs font-bold uppercase text-secondary md:text-[0.8125rem];
   }
 
   .section-title {

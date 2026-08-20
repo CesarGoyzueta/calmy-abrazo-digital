@@ -13,7 +13,7 @@ const Terminos = () => (
       <h2>1. Identificación</h2>
       <p>
         Este sitio es operado por <strong>NeuroCalm</strong>, con domicilio en Lima, Perú. Para consultas
-        puedes escribir a <a href="mailto:hola@neurocalm.app">hola@neurocalm.app</a>.
+        puedes escribir a <a href="mailto:neurocalm.calmy@gmail.com">neurocalm.calmy@gmail.com</a>.
       </p>
 
       <h2>2. Objeto y estado actual</h2>
@@ -85,7 +85,7 @@ const Terminos = () => (
       <p>
         Estos términos podrán actualizarse conforme evolucione esta fase inicial. La versión vigente estará
         publicada en esta página. Para consultas escribe a{" "}
-        <a href="mailto:hola@neurocalm.app">hola@neurocalm.app</a>.
+        <a href="mailto:neurocalm.calmy@gmail.com">neurocalm.calmy@gmail.com</a>.
       </p>
     </div>
   </PageLayout>

@@ -89,9 +89,16 @@ const TrustSection = () => (
       <div className="mt-4 grid gap-3 lg:grid-cols-2">
         <div className="flex items-start gap-3 rounded-lg border border-amber-200/70 bg-amber-50/70 px-5 py-4">
           <AlertTriangle className="mt-0.5 flex-shrink-0 text-amber-700" size={18} />
-          <p className="font-body text-sm leading-relaxed text-amber-900">
-            Ante riesgo físico, autolesión, agresión intensa o una emergencia, busca atención profesional o los servicios de emergencia de tu país.
-          </p>
+          <div className="font-body text-sm leading-relaxed text-amber-900">
+            <p>
+              Ante riesgo físico, autolesión, agresión intensa o una emergencia, busca atención profesional de inmediato.
+            </p>
+            <p className="mt-2">
+              <strong className="font-semibold">En Perú:</strong> Línea 113, opción 5 (orientación en salud
+              mental del MINSA, gratuita las 24 horas). Si hay riesgo para la vida, llama al 106 (SAMU) o acude
+              a la emergencia más cercana.
+            </p>
+          </div>
         </div>
         <div className="flex items-start gap-3 rounded-lg border border-primary/15 bg-primary/5 px-5 py-4">
           <LockKeyhole className="mt-0.5 flex-shrink-0 text-primary" size={18} />

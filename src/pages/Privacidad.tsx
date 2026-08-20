@@ -14,7 +14,7 @@ const Privacidad = () => (
       <p>
         El responsable de los datos que compartas directamente con <strong>NeuroCalm</strong> es NeuroCalm,
         con domicilio en Lima, Perú. Puedes escribirnos a{" "}
-        <a href="mailto:hola@neurocalm.app">hola@neurocalm.app</a>.
+        <a href="mailto:neurocalm.calmy@gmail.com">neurocalm.calmy@gmail.com</a>.
       </p>
 
       <h2>2. Alcance de esta etapa</h2>
@@ -63,7 +63,7 @@ const Privacidad = () => (
       <p>
         Puedes salir del grupo cuando quieras y solicitar la eliminación de la información que NeuroCalm
         mantenga bajo su control escribiendo a{" "}
-        <a href="mailto:hola@neurocalm.app">hola@neurocalm.app</a>. Las copias de mensajes que permanezcan
+        <a href="mailto:neurocalm.calmy@gmail.com">neurocalm.calmy@gmail.com</a>. Las copias de mensajes que permanezcan
         en WhatsApp o en los dispositivos de otros participantes están sujetas al funcionamiento de esa
         plataforma y pueden quedar fuera del control directo de NeuroCalm.
       </p>
@@ -79,7 +79,7 @@ const Privacidad = () => (
       <p>
         Puedes solicitar acceso, rectificación, cancelación u oposición respecto de los datos personales
         que NeuroCalm controle. Para ejercer estos derechos, escríbenos a{" "}
-        <a href="mailto:hola@neurocalm.app">hola@neurocalm.app</a>.
+        <a href="mailto:neurocalm.calmy@gmail.com">neurocalm.calmy@gmail.com</a>.
       </p>
 
       <h2>9. Información de menores</h2>

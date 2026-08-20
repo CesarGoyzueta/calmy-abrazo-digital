@@ -122,13 +122,46 @@ describe("Calmy landing", () => {
     fireEvent.click(menu);
     expect(screen.getByRole("button", { name: "Cerrar menú" })).toHaveAttribute("aria-expanded", "true");
 
+    // La primera abierta es la de metodología: comunica cómo se construyen las
+    // respuestas antes que el estado de disponibilidad del producto.
+    const methodFaq = screen.getByRole("button", { name: "¿Cómo se construirán las respuestas de Calmy?" });
+    expect(methodFaq).toHaveAttribute("aria-expanded", "true");
+    expect(screen.getByText(/criterios psicológicos definidos por el equipo/i)).toBeInTheDocument();
+
     const diagnosisFaq = screen.getByRole("button", { name: "¿Necesito un diagnóstico profesional para usar Calmy?" });
-    expect(diagnosisFaq).toHaveAttribute("aria-expanded", "true");
+    expect(diagnosisFaq).toHaveAttribute("aria-expanded", "false");
+    fireEvent.click(diagnosisFaq);
     expect(screen.getByText(/Calmy no confirma diagnósticos/i)).toBeInTheDocument();
 
     const whatsappFaq = screen.getByRole("button", { name: "¿Qué ocurrirá al unirme al grupo de WhatsApp?" });
     fireEvent.click(whatsappFaq);
     expect(screen.getByText(/Calmy está en una fase inicial de cocreación/i)).toBeInTheDocument();
+  });
+
+  it("gives a concrete crisis resource instead of a vague referral", () => {
+    renderWithRouter(<Index />);
+
+    expect(screen.getAllByText(/Línea 113, opción 5/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/106 \(SAMU\)/i)).toBeInTheDocument();
+  });
+
+  it("summarises privacy commitments and links to the full policy", () => {
+    renderWithRouter(<Index />);
+
+    expect(screen.getByRole("heading", { name: "Tu información merece cuidado" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /Leer la política de privacidad completa/i }),
+    ).toHaveAttribute("href", "/privacidad");
+  });
+
+  it("exposes a skip link and a main landmark", () => {
+    renderWithRouter(<Index />);
+
+    expect(screen.getByRole("link", { name: "Saltar al contenido" })).toHaveAttribute(
+      "href",
+      "#contenido-principal",
+    );
+    expect(screen.getByRole("main")).toHaveAttribute("id", "contenido-principal");
   });
 
   it("marks the visible landing section in the navigation", () => {

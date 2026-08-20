@@ -28,7 +28,10 @@ const highlights = [
 ];
 
 const TrustHighlightsBand = () => (
-  <section aria-label="Diferencias de Calmy" className="border-b border-border/60 bg-card">
+  <section aria-labelledby="diferencias-titulo" className="border-b border-border/60 bg-card">
+    <h2 id="diferencias-titulo" className="sr-only">
+      Diferencias de Calmy
+    </h2>
     <div className="section-container grid sm:grid-cols-2 xl:grid-cols-4">
       {highlights.map((highlight, index) => (
         <article
@@ -41,8 +44,8 @@ const TrustHighlightsBand = () => (
             <highlight.icon size={19} />
           </div>
           <div>
-            <h2 className="font-display text-sm font-bold leading-snug text-foreground">{highlight.title}</h2>
-            <p className="mt-1.5 font-body text-xs leading-relaxed text-muted-foreground">{highlight.description}</p>
+            <h3 className="font-display text-sm font-bold leading-snug text-foreground">{highlight.title}</h3>
+            <p className="mt-1.5 font-body text-sm leading-relaxed text-muted-foreground">{highlight.description}</p>
           </div>
         </article>
       ))}

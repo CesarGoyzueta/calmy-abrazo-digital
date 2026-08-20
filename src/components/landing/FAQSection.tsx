@@ -4,6 +4,10 @@ import { Minus, Plus } from "lucide-react";
 
 const faqs = [
   {
+    q: "¿Cómo se construirán las respuestas de Calmy?",
+    a: "Calmy parte del contexto que la familia decide compartir (edad, diagnóstico profesional, necesidades y estrategias ya intentadas) y lo organiza junto con criterios psicológicos definidos por el equipo. El enfoque psicológico y los criterios de orientación los define y revisa Erika Rubio, psicóloga responsable del enfoque de Calmy. Cuando falta información o aparece una señal de riesgo, Calmy lo indica y remite al profesional en lugar de completar el vacío.",
+  },
+  {
     q: "¿Necesito un diagnóstico profesional para usar Calmy?",
     a: "Sí. La primera versión de Calmy estará dirigida a madres, padres y cuidadores de niños con diagnóstico de TEA o TDAH emitido por un psicólogo o especialista calificado. Calmy no confirma diagnósticos. Si todavía están en proceso de evaluación, lo adecuado es continuar con un profesional.",
   },
@@ -21,7 +25,7 @@ const faqs = [
   },
   {
     q: "¿Qué pasa si estoy en una situación urgente?",
-    a: "Calmy no es un servicio de emergencia. Ante riesgo físico, autolesión, agresión intensa o una emergencia, acude a un profesional o a los servicios de emergencia de tu país.",
+    a: "Calmy no es un servicio de emergencia. Ante riesgo físico, autolesión, agresión intensa o una emergencia, busca ayuda de inmediato. En Perú puedes llamar a la Línea 113, opción 5, orientación en salud mental del MINSA, gratuita las 24 horas. Si existe riesgo para la vida, llama al 106 (SAMU) o acude a la emergencia más cercana.",
   },
   {
     q: "¿Qué ocurrirá al unirme al grupo de WhatsApp?",
@@ -49,6 +53,7 @@ const FAQSection = () => {
         <div className="grid max-w-5xl items-start gap-3 md:grid-cols-2">
           {faqs.map((faq, index) => {
             const panelId = `faq-panel-${index}`;
+            const buttonId = `faq-button-${index}`;
             const isOpen = open === index;
 
             return (
@@ -62,10 +67,11 @@ const FAQSection = () => {
               >
                 <button
                   type="button"
+                  id={buttonId}
                   onClick={() => setOpen(isOpen ? null : index)}
                   aria-expanded={isOpen}
                   aria-controls={panelId}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                  className="flex w-full items-center justify-between gap-4 rounded-lg px-5 py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   <span className="font-display text-sm font-bold leading-snug text-foreground">{faq.q}</span>
                   <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary/8 text-primary">
@@ -77,6 +83,7 @@ const FAQSection = () => {
                     <motion.div
                       id={panelId}
                       role="region"
+                      aria-labelledby={buttonId}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

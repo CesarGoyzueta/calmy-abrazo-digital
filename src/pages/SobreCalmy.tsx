@@ -24,25 +24,25 @@ const founders = [
 const pillars = [
   {
     icon: BookOpen,
-    title: "Base psicológica estructurada",
-    text: "Las respuestas se construyen sobre conocimiento psicológico organizado y consistente, no sobre consejos genéricos.",
+    title: "Contenido definido por una psicóloga",
+    text: "Los criterios de orientación y el contenido de Calmy los define y revisa Erika Rubio, responsable del enfoque psicológico del proyecto.",
   },
   {
     icon: Brain,
     title: "Personalización con contexto",
-    text: "Calmy toma en cuenta el perfil del niño, antecedentes y preocupaciones frecuentes para orientar mejor cada respuesta.",
+    text: "Calmy tomará en cuenta el perfil que la familia decida compartir (edad, necesidades y estrategias ya intentadas) para orientar cada respuesta.",
   },
   {
     icon: ShieldCheck,
     title: "Respeto por los límites",
-    text: "Calmy acompaña, orienta y ayuda a organizar dudas. No reemplaza terapia, diagnóstico ni evaluación profesional.",
+    text: "Calmy acompañará, orientará y ayudará a organizar dudas. No reemplaza terapia, diagnóstico ni evaluación profesional.",
   },
 ];
 
 const commitments = [
   "Transparencia sobre lo que Calmy es y lo que no es",
   "Respeto por el rol de los profesionales de salud mental",
-  "Mejora continua basada en evidencia y retroalimentación",
+  "Mejora continua a partir del feedback de las familias del grupo fundador",
   "Accesibilidad para familias que necesitan apoyo",
 ];
 

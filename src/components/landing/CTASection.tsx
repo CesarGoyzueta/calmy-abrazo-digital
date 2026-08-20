@@ -19,7 +19,7 @@ const CTASection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="font-body text-sm font-bold text-secondary">Grupo fundador de Calmy</p>
+          <p className="font-body text-sm font-bold text-secondary-on-dark">Grupo fundador de Calmy</p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl font-extrabold leading-tight text-white md:text-4xl">
             Ayuda a construir Calmy desde el inicio
           </h2>
@@ -45,12 +45,12 @@ const CTASection = () => (
             ))}
           </ul>
 
-          <FounderGroupLink size="xl" className="mt-7 w-full bg-secondary text-white hover:bg-secondary/90 sm:w-auto">
+          <FounderGroupLink size="xl" className="mt-7 w-full bg-secondary-on-dark text-foreground hover:bg-secondary-on-dark/90 sm:w-auto">
             <MessageCircle size={18} />
             Unirme al grupo de WhatsApp
           </FounderGroupLink>
 
-          <p className="mt-4 font-body text-xs leading-relaxed text-white/58">
+          <p className="mt-4 font-body text-sm leading-relaxed text-white/72">
             El grupo es para cocrear la primera versión de Calmy; no ofrece atención clínica ni individual. Tu nombre, foto de perfil o número podrían ser visibles para otros integrantes según la configuración de WhatsApp.
           </p>
         </motion.div>
