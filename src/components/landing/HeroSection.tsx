@@ -176,7 +176,7 @@ const HeroSection = () => {
           loading="eager"
           {...({ fetchpriority: "high" } as Record<string, string>)}
           decoding="async"
-          className="h-full w-full object-cover object-center xl:object-[75%_center]"
+          className="h-full w-full object-cover object-center xl:object-[60%_center]"
         />
       </picture>
 
