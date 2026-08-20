@@ -5,6 +5,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import Index from "@/pages/Index";
 import Privacidad from "@/pages/Privacidad";
 import Terminos from "@/pages/Terminos";
+import { FOUNDER_GROUP_URL } from "@/config/founderGroup";
 
 const renderWithRouter = (element: ReactNode) => render(
   <MemoryRouter>
@@ -62,14 +63,16 @@ describe("Calmy landing", () => {
     expect(screen.getByText(/Grupo fundador de Calmy · Cocreación voluntaria/i)).toBeInTheDocument();
   });
 
-  it("keeps WhatsApp calls to action disabled until the real invite URL exists", () => {
+  it("activates every WhatsApp call to action with the founder group URL", () => {
     renderWithRouter(<Index />);
 
     const whatsappLinks = screen.getAllByRole("link", { name: /WhatsApp/i });
     expect(whatsappLinks.length).toBeGreaterThan(3);
     whatsappLinks.forEach((link) => {
-      expect(link).toHaveAttribute("aria-disabled", "true");
-      expect(link).not.toHaveAttribute("href");
+      expect(link).toHaveAttribute("href", FOUNDER_GROUP_URL);
+      expect(link).toHaveAttribute("target", "_blank");
+      expect(link).toHaveAttribute("rel", "noopener noreferrer");
+      expect(link).not.toHaveAttribute("aria-disabled");
     });
     expect(document.querySelector('[href*="BfZHorebqUUiXFJp8"]')).not.toBeInTheDocument();
   });

@@ -125,8 +125,8 @@ const HeroSection = () => {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="relative isolate overflow-hidden border-b border-border/60 bg-background pt-[68px] xl:min-h-[640px]">
-    <div className="section-container relative xl:min-h-[572px]">
+    <section className="relative isolate overflow-hidden border-b border-border/60 bg-background pt-[68px] xl:min-h-[560px]">
+    <div className="section-container relative xl:min-h-[492px]">
       <motion.div
         initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -165,7 +165,7 @@ const HeroSection = () => {
         </p>
       </motion.div>
 
-      <picture className="-mx-5 block aspect-[4/3] overflow-hidden sm:-mx-8 sm:aspect-[16/10] lg:-mx-10 lg:aspect-[16/9] xl:absolute xl:right-0 xl:top-6 xl:mx-0 xl:h-[510px] xl:w-[57%] xl:aspect-auto xl:rounded-lg">
+      <picture className="-mx-5 block aspect-[4/3] overflow-hidden sm:-mx-8 sm:aspect-[16/10] lg:-mx-10 lg:aspect-[16/9] xl:absolute xl:right-0 xl:top-6 xl:mx-0 xl:h-[430px] xl:w-[57%] xl:aspect-auto xl:rounded-lg">
         <source media="(min-width: 1280px)" srcSet={heroDesktop} />
         <source media="(min-width: 768px)" srcSet={heroTablet} />
         <img
@@ -176,7 +176,7 @@ const HeroSection = () => {
           loading="eager"
           {...({ fetchpriority: "high" } as Record<string, string>)}
           decoding="async"
-          className="h-full w-full object-cover object-center xl:object-[50%_center]"
+          className="h-full w-full object-cover object-center xl:origin-[48%_52%] xl:scale-[1.07] xl:object-[50%_center]"
         />
       </picture>
 
